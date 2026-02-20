@@ -1,56 +1,70 @@
-import { Check, ArrowRight } from "lucide-react";
+import { useState } from "react";
+import { Check, X, Info } from "lucide-react";
 
 const PricingSection = ({ onContactClick }) => {
+  const [isYearly, setIsYearly] = useState(false);
+
   const plans = [
     {
-      name: "Starter",
-      price: "$2,997",
-      period: "/month",
-      description: "Perfect for small businesses starting with AI automation.",
-      features: [
-        "1 AI Voice Agent OR Chatbot",
-        "Up to 500 conversations/month",
-        "Basic CRM integration",
-        "Email support",
-        "Monthly performance reports",
-        "Standard analytics dashboard",
-      ],
+      name: "Solo",
+      description: "Geeignet für 1-20 Anrufe/Tag",
+      price: isYearly ? "84" : "99",
+      period: "/ Monat",
+      cta: "Jetzt starten",
       popular: false,
+      included: [
+        { text: "1000 Minuten", subtext: "jede weitere €0,15" },
+        { text: "keine Parallelanrufe", disabled: true },
+        { text: "1 Telefonnr.", subtext: "jede weitere €7/Monat" },
+        { text: "∞ Assistenten" },
+        { text: "1 User" },
+      ],
+      features: [
+        "20+ Stimmen",
+        "25+ Sprachen",
+        "Begleiteter Einstieg (4 Std.)",
+      ],
     },
     {
-      name: "Growth",
-      price: "$5,997",
-      period: "/month",
-      description: "For growing businesses ready to scale their AI operations.",
-      features: [
-        "2 AI Voice Agents + Chatbot",
-        "Up to 2,000 conversations/month",
-        "Advanced CRM integrations",
-        "Priority support (24/7)",
-        "Weekly optimization calls",
-        "Advanced analytics & reporting",
-        "Custom workflow automation",
-        "A/B testing & optimization",
-      ],
+      name: "Team",
+      description: "Geeignet für 20-100 Anrufe/Tag",
+      price: isYearly ? "254" : "299",
+      period: "/ Monat",
+      cta: "Jetzt starten",
       popular: true,
+      included: [
+        { text: "3000 Minuten", subtext: "jede weitere €0,12" },
+        { text: "5 gleichz. Anrufe" },
+        { text: "3 Telefonnr.", subtext: "jede weitere €5/Monat" },
+        { text: "∞ Assistenten" },
+        { text: "∞ User" },
+      ],
+      features: [
+        "Alles in Solo",
+        "Eigener SIP Trunk",
+        "Outbound Anrufe",
+      ],
     },
     {
-      name: "Enterprise",
-      price: "Custom",
+      name: "Business",
+      description: "Geeignet ab 100 Anrufe/Tag",
+      price: "individuell",
       period: "",
-      description: "Full-scale AI infrastructure for enterprise operations.",
-      features: [
-        "Unlimited AI agents",
-        "Unlimited conversations",
-        "Custom AI model training",
-        "Dedicated success manager",
-        "24/7 priority support",
-        "Custom integrations",
-        "White-label options",
-        "SLA guarantees",
-        "On-premise deployment options",
-      ],
+      cta: "Demo buchen",
       popular: false,
+      included: [
+        { text: "Individuell Minuten" },
+        { text: "Individuell gleichz. Anrufe" },
+        { text: "Individuell Telefonnr." },
+        { text: "∞ Assistenten" },
+        { text: "∞ User" },
+      ],
+      features: [
+        "Alles in Team",
+        "Eigene Stimme",
+        "Single Sign-on (SSO)",
+        "Individueller SLA",
+      ],
     },
   ];
 
@@ -58,79 +72,156 @@ const PricingSection = ({ onContactClick }) => {
     <section
       id="pricing"
       data-testid="pricing-section"
-      className="section bg-[#0f172a]/30"
+      className="section bg-white text-slate-900"
     >
       <div className="container-custom">
         {/* Header */}
-        <div className="text-center mb-16">
-          <p className="text-cyan-400 font-medium mb-4 uppercase tracking-wider text-sm">
-            Pricing Plans
-          </p>
+        <div className="text-center mb-12">
           <h2
             data-testid="pricing-title"
-            className="text-3xl lg:text-4xl font-bold mb-6"
+            className="text-4xl lg:text-5xl font-bold mb-4 text-slate-900"
           >
-            Invest in{" "}
-            <span className="gradient-text">Your Growth</span>
+            Preise
           </h2>
-          <p className="text-slate-400 max-w-2xl mx-auto text-base lg:text-lg">
-            Transparent pricing with no hidden fees. Choose the plan that fits your business needs.
-          </p>
+          <div className="flex items-center justify-center gap-2 text-slate-600 mb-8">
+            <Check size={16} className="text-slate-900" />
+            <span className="text-sm font-medium">30 Tage Geld-zurück-Garantie</span>
+          </div>
+
+          {/* Billing Toggle */}
+          <div className="flex items-center justify-center gap-4">
+            <div className="bg-slate-100 p-1 rounded-full flex items-center">
+              <button
+                onClick={() => setIsYearly(true)}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-all flex items-center gap-2 ${
+                  isYearly ? "bg-white text-slate-900 shadow-sm" : "text-slate-500"
+                }`}
+              >
+                Jährlich
+                <span className="bg-blue-600 text-white text-[10px] px-2 py-0.5 rounded-full">
+                  -15%
+                </span>
+              </button>
+              <button
+                onClick={() => setIsYearly(false)}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                  !isYearly ? "bg-white text-slate-900 shadow-sm" : "text-slate-500"
+                }`}
+              >
+                Monatlich
+              </button>
+            </div>
+          </div>
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid lg:grid-cols-3 gap-6 lg:gap-4 max-w-5xl mx-auto">
           {plans.map((plan, index) => (
             <div
               key={plan.name}
               data-testid={`pricing-card-${index}`}
-              className={`glass-card p-8 relative ${
-                plan.popular ? "pricing-popular lg:scale-105" : ""
+              className={`bg-white border border-slate-200 rounded-2xl p-6 flex flex-col relative transition-all duration-300 ${
+                plan.popular ? "ring-2 ring-blue-600 shadow-xl lg:scale-105 z-10" : "shadow-sm hover:shadow-md"
               }`}
             >
-              {/* Plan Name */}
-              <h3 className="text-xl font-bold text-white mb-2">{plan.name}</h3>
-              <p className="text-sm text-slate-500 mb-6">{plan.description}</p>
+              {plan.popular && (
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                  Beliebt
+                </div>
+              )}
 
-              {/* Price */}
-              <div className="mb-8">
-                <span className="text-4xl font-bold text-white">{plan.price}</span>
-                <span className="text-slate-500">{plan.period}</span>
+              <div className="mb-6">
+                <h3 className="text-xl font-bold text-slate-900 mb-1">{plan.name}</h3>
+                <p className="text-sm text-slate-500">{plan.description}</p>
               </div>
 
-              {/* Features */}
-              <ul className="space-y-4 mb-8">
-                {plan.features.map((feature) => (
-                  <li key={feature} className="flex items-start gap-3">
-                    <div className="w-5 h-5 rounded-full bg-cyan-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <Check size={12} className="text-cyan-400" />
-                    </div>
-                    <span className="text-sm text-slate-400">{feature}</span>
-                  </li>
-                ))}
-              </ul>
+              <div className="mb-6 h-16 flex items-baseline gap-1">
+                <span className="text-4xl font-bold text-slate-900">
+                  {plan.price}
+                </span>
+                {plan.price !== "individuell" && (
+                  <>
+                    <span className="text-2xl font-bold text-slate-900">€</span>
+                    <span className="text-slate-500 text-sm">{plan.period}</span>
+                  </>
+                )}
+              </div>
 
-              {/* CTA */}
               <button
                 data-testid={`pricing-cta-${index}`}
                 onClick={onContactClick}
-                className={`w-full py-3 rounded-full font-semibold text-sm flex items-center justify-center gap-2 transition-all ${
+                className={`w-full py-3 rounded-xl font-bold text-sm transition-all mb-8 ${
                   plan.popular
-                    ? "btn-primary"
-                    : "btn-secondary"
+                    ? "bg-blue-600 text-white hover:bg-blue-700"
+                    : "bg-slate-900 text-white hover:bg-slate-800"
                 }`}
               >
-                Get Started
-                <ArrowRight size={16} />
+                {plan.cta}
               </button>
+
+              <div className="space-y-6 flex-grow">
+                {/* Included Section */}
+                <div>
+                  <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wider mb-4">
+                    Inkludiert
+                  </h4>
+                  <ul className="space-y-3">
+                    {plan.included.map((item, i) => (
+                      <li key={i} className="flex items-start gap-2">
+                        {item.disabled ? (
+                          <X size={14} className="text-slate-300 mt-1 flex-shrink-0" />
+                        ) : (
+                          <Check size={14} className="text-blue-600 mt-1 flex-shrink-0" />
+                        )}
+                        <div>
+                          <p className={`text-sm ${item.disabled ? "text-slate-300 line-through" : "text-slate-700 font-medium"}`}>
+                            {item.text}
+                          </p>
+                          {item.subtext && (
+                            <p className="text-[10px] text-slate-400">{item.subtext}</p>
+                          )}
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Features Section */}
+                <div>
+                  <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wider mb-4">
+                    Features
+                  </h4>
+                  <ul className="space-y-3">
+                    {plan.features.map((feature, i) => (
+                      <li key={i} className="flex items-start gap-2">
+                        <Check size={14} className="text-blue-600 mt-1 flex-shrink-0" />
+                        <span className="text-sm text-slate-700 font-medium">{feature}</span>
+                        {feature.includes("SIP Trunk") || feature.includes("Einstieg") || feature.includes("SLA") ? (
+                          <Info size={12} className="text-slate-300 mt-1 flex-shrink-0 cursor-help" />
+                        ) : null}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
             </div>
           ))}
         </div>
 
-        {/* Note */}
-        <p className="text-center text-sm text-slate-500 mt-8">
-          All plans include a 14-day money-back guarantee. Custom enterprise solutions available.
-        </p>
+        {/* Footer CTA */}
+        <div className="mt-12 text-center">
+          <button
+            onClick={onContactClick}
+            className="bg-blue-600 text-white px-8 py-3 rounded-xl font-bold text-sm inline-flex items-center gap-2 hover:bg-blue-700 transition-all shadow-lg shadow-blue-600/20"
+          >
+            Expertengespräch buchen
+            <div className="flex -space-x-2 ml-2">
+              {[1, 2, 3].map((i) => (
+                <div key={i} className="w-6 h-6 rounded-full border-2 border-white bg-slate-200" />
+              ))}
+            </div>
+          </button>
+        </div>
       </div>
     </section>
   );
