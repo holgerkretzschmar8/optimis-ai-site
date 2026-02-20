@@ -1,0 +1,225 @@
+/* Additional App-specific styles */
+
+/* Hero Section Specific */
+.hero-gradient {
+  background: linear-gradient(180deg, transparent 0%, var(--bg-default) 100%);
+}
+
+/* Card hover effects */
+.service-card {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+}
+
+/* Pricing card highlight */
+.pricing-popular {
+  position: relative;
+  border: 2px solid var(--primary-main);
+}
+
+.pricing-popular::before {
+  content: 'Most Popular';
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, var(--primary-gradient-start), var(--primary-gradient-end));
+  color: white;
+  padding: 4px 16px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Timeline styling */
+.timeline-connector {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  width: calc(100% - 60px);
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary-main), var(--primary-gradient-end));
+}
+
+/* Logo animation */
+.logo-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Mobile menu */
+.mobile-menu-overlay {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* Stats animation */
+.stats-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.stats-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(6, 182, 212, 0.1),
+    transparent
+  );
+  transform: rotate(45deg);
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%) rotate(45deg); }
+  100% { transform: translateX(100%) rotate(45deg); }
+}
+
+/* Case study card */
+.case-study-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.case-study-card img {
+  transition: transform 0.6s ease;
+}
+
+.case-study-card:hover img {
+  transform: scale(1.1);
+}
+
+/* FAQ accordion styling */
+.faq-item {
+  border-bottom: 1px solid var(--border-default);
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+}
+
+/* Popup animation */
+.popup-enter {
+  animation: popup-in 0.3s ease-out;
+}
+
+@keyframes popup-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Navigation */
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary-main), var(--primary-gradient-end));
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Industry grid */
+.industry-card {
+  transition: all 0.3s ease;
+}
+
+.industry-card:hover {
+  background: rgba(6, 182, 212, 0.1);
+  border-color: rgba(6, 182, 212, 0.3);
+}
+
+/* CTA section gradient */
+.cta-gradient {
+  background: linear-gradient(
+    135deg,
+    rgba(6, 182, 212, 0.2) 0%,
+    rgba(59, 130, 246, 0.1) 50%,
+    rgba(139, 92, 246, 0.1) 100%
+  );
+}
+
+/* Admin Dashboard specific styles */
+.admin-sidebar {
+  background: var(--bg-secondary);
+  border-right: 1px solid var(--border-default);
+}
+
+.admin-table {
+  background: rgba(15, 23, 42, 0.6);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.admin-table th {
+  background: rgba(6, 182, 212, 0.1);
+  padding: 16px;
+  text-align: left;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.admin-table td {
+  padding: 16px;
+  border-bottom: 1px solid var(--border-default);
+}
+
+.admin-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Status badges */
+.badge-new {
+  background: rgba(6, 182, 212, 0.2);
+  color: #06b6d4;
+}
+
+.badge-contacted {
+  background: rgba(245, 158, 11, 0.2);
+  color: #f59e0b;
+}
+
+.badge-qualified {
+  background: rgba(139, 92, 246, 0.2);
+  color: #8b5cf6;
+}
+
+.badge-converted {
+  background: rgba(16, 185, 129, 0.2);
+  color: #10b981;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+}
