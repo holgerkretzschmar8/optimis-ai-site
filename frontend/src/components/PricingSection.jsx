@@ -4,13 +4,13 @@ const PricingSection = ({ onContactClick }) => {
   const plans = [
     {
       name: "Starter",
-      price: "$2,997",
+      price: "$69,99",
       period: "/month",
       description: "Perfect for small businesses starting with AI automation.",
       features: [
-        "1 AI Voice Agent OR Chatbot",
-        "Up to 500 conversations/month",
-        "Basic CRM integration",
+        "800 minutes",
+        "1 phone number",
+        "1 user license",
         "Email support",
         "Monthly performance reports",
         "Standard analytics dashboard",
