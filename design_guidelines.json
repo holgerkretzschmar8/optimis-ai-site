@@ -1,0 +1,122 @@
+{
+  "brand": {
+    "name": "Optimis AI",
+    "tone": "Futuristic, Premium, High-Converting, Intelligent",
+    "description": "An AI automation agency helping businesses scale with intelligent workflows.",
+    "theme": "dark"
+  },
+  "typography": {
+    "headings": {
+      "family": "Outfit, sans-serif",
+      "weights": ["500", "700"],
+      "tracking": "tracking-tight"
+    },
+    "body": {
+      "family": "Inter, sans-serif",
+      "weights": ["400", "500"],
+      "leading": "leading-relaxed"
+    },
+    "mono": {
+      "family": "JetBrains Mono, monospace",
+      "weights": ["400"]
+    }
+  },
+  "colors": {
+    "background": {
+      "default": "#020617",
+      "secondary": "#0f172a",
+      "glass": "rgba(2, 6, 23, 0.7)"
+    },
+    "primary": {
+      "main": "#06b6d4",
+      "gradient_start": "#06b6d4",
+      "gradient_end": "#3b82f6",
+      "glow": "rgba(6, 182, 212, 0.5)"
+    },
+    "secondary": {
+      "main": "#8b5cf6",
+      "accent": "#d946ef"
+    },
+    "text": {
+      "primary": "#f8fafc",
+      "secondary": "#94a3b8",
+      "muted": "#64748b"
+    },
+    "border": {
+      "default": "rgba(255, 255, 255, 0.1)",
+      "hover": "rgba(255, 255, 255, 0.2)"
+    },
+    "semantic": {
+      "success": "#10b981",
+      "warning": "#f59e0b",
+      "error": "#ef4444"
+    }
+  },
+  "spacing": {
+    "container_padding": "px-6 md:px-12 lg:px-24",
+    "section_gap": "py-20 md:py-32",
+    "element_gap": "gap-6 md:gap-8"
+  },
+  "layout": {
+    "grid_system": "grid grid-cols-1 md:grid-cols-12 gap-6",
+    "max_width": "max-w-7xl mx-auto"
+  },
+  "ui_elements": {
+    "glass_card": {
+      "base": "bg-slate-950/40 backdrop-blur-xl border border-white/10 rounded-2xl",
+      "hover": "hover:bg-slate-950/60 hover:border-cyan-500/30 transition-all duration-300"
+    },
+    "primary_button": {
+      "base": "bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-full px-8 py-3",
+      "hover": "hover:shadow-[0_0_20px_rgba(6,182,212,0.4)] hover:scale-105 transition-all duration-300",
+      "text": "text-sm font-medium tracking-wide"
+    },
+    "secondary_button": {
+      "base": "bg-transparent border border-white/20 text-white rounded-full px-8 py-3",
+      "hover": "hover:bg-white/10 transition-all duration-300"
+    }
+  },
+  "animations": {
+    "scroll_trigger": "Use framer-motion for whileInView={{ opacity: 1, y: 0 }} initial={{ opacity: 0, y: 20 }}",
+    "hover_lift": "hover:-translate-y-1 hover:shadow-lg transition-transform duration-300",
+    "gradient_text": "bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 animate-gradient-x"
+  },
+  "image_urls": {
+    "hero_background": {
+      "url": "https://images.unsplash.com/photo-1698669993523-bcf101a925ef?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzR8MHwxfHNlYXJjaHw0fHxhYnN0cmFjdCUyMGJsdWUlMjBuZW9uJTIwbmV1cmFsJTIwbmV0d29yayUyMHRlY2hub2xvZ3l8ZW58MHx8fHwxNzcxMzY1MjQ4fDA&ixlib=rb-4.1.0&q=85",
+      "alt": "Abstract neon neural network background"
+    },
+    "dashboard_mockup": {
+      "url": "https://images.unsplash.com/photo-1575388902449-6bca946ad549?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2MDV8MHwxfHNlYXJjaHwxfHxmdXR1cmlzdGljJTIwdWklMjBkYXNoYm9hcmQlMjBob2xvZ3JhbXxlbnwwfHx8fDE3NzEzNjUyNDl8MA&ixlib=rb-4.1.0&q=85",
+      "alt": "AI Analytics Dashboard"
+    },
+    "case_study_medical": {
+      "url": "https://images.unsplash.com/photo-1767706508368-14e0f1b84ad0?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA3MDR8MHwxfHNlYXJjaHwyfHxsdXh1cnklMjBtZWRpY2FsJTIwc3BhJTIwaW50ZXJpb3IlMjBkYXJrfGVufDB8fHx8MTc3MTM2NTI1MHww&ixlib=rb-4.1.0&q=85",
+      "alt": "Luxury Medical Spa Interior"
+    },
+    "case_study_law": {
+      "url": "https://images.unsplash.com/photo-1694253988732-816ab6e60caa?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzh8MHwxfHNlYXJjaHw0fHxtb2Rlcm4lMjBjb3Jwb3JhdGUlMjBidXNpbmVzcyUyMG1lZXRpbmclMjBkYXJrJTIwbW9kZXxlbnwwfHx8fDE3NzEzNjUyNDl8MA&ixlib=rb-4.1.0&q=85",
+      "alt": "Modern Corporate Boardroom"
+    },
+    "case_study_solar": {
+      "url": "https://images.unsplash.com/photo-1762958266463-6af778b56beb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA5MzV8MHwxfHNlYXJjaHwyfHxtb2Rlcm4lMjBzb2xhciUyMHBhbmVsfGVufDB8fHx8MTc3MTM2NTI1Mnww&ixlib=rb-4.1.0&q=85",
+      "alt": "Solar Energy Installation"
+    },
+    "logo": {
+      "url": "https://customer-assets.emergentagent.com/job_7f9de4cc-23e2-4dee-b34f-6c95288f12e2/artifacts/5siww960_Screenshot%202026-02-17%20at%2022.30.43.png",
+      "alt": "Optimis AI Logo"
+    }
+  },
+  "component_instructions": {
+    "marketing": "Use pure HTML/Tailwind for Landing Page sections. Do not use Shadcn Card/Section components. Create custom layouts with 'relative', 'absolute', 'z-index'. Use 'backdrop-blur' liberally.",
+    "dashboard": "Use Shadcn components for the Admin Dashboard (Table, Card, Form). Customize them to match the dark theme (slate-950 background, slate-800 borders).",
+    "charts": "Use Recharts with custom tooltips. Style the lines/bars with the primary gradient colors."
+  },
+  "universal_guidelines": [
+    "Do not use generic gradients. Use purposeful, directional gradients.",
+    "Ensure 3:1 contrast for large text and 4.5:1 for normal text.",
+    "Use 'lenis' or similar smooth scrolling if possible, otherwise ensure native scroll is smooth.",
+    "Every interaction must have a hover state.",
+    "Use data-testid attributes for all interactive elements."
+  ]
+}
