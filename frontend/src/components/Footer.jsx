@@ -6,22 +6,22 @@ const LOGO_URL = "https://customer-assets.emergentagent.com/job_7f9de4cc-23e2-4d
 const Footer = () => {
   const links = {
     services: [
-      { label: "AI Voice Agents", href: "#services" },
-      { label: "AI Chatbots", href: "#services" },
-      { label: "Appointment Setters", href: "#services" },
-      { label: "Workflow Automation", href: "#services" },
-      { label: "Custom AI Systems", href: "#services" },
+      { label: "AI Voice Agents", href: "/#services" },
+      { label: "AI Chatbots", href: "/#services" },
+      { label: "Appointment Setters", href: "/#services" },
+      { label: "Workflow Automation", href: "/#services" },
+      { label: "Custom AI Systems", href: "/#services" },
     ],
     company: [
-      { label: "About Us", href: "#" },
-      { label: "Pricing", href: "#pricing" },
+      { label: "About Us", href: "/#" },
+      { label: "Pricing", href: "/#pricing" },
       { label: "Blog", href: "#" },
       { label: "Careers", href: "#" },
     ],
     support: [
-      { label: "FAQ", href: "#faq" },
+      { label: "FAQ", href: "/#faq" },
       { label: "Contact", href: "#" },
-      { label: "Privacy Policy", href: "#" },
+      { label: "Privacy Policy", href: "/privacy-policy", isInternal: true },
       { label: "Terms of Service", href: "/terms-of-service", isInternal: true },
     ],
   };
