@@ -6,9 +6,9 @@ const PricingSection = ({ onContactClick }) => {
       name: "Starter",
       price: "$69,99",
       period: "/month",
-      description: "Perfect for small businesses starting with AI automation.",
+      description: "Perfect for small-scale businesses with up to 30 calls/day",
       features: [
-        "800 minutes",
+        " 800 minutes (0,10 €/min top-up)",
         "1 phone number",
         "1 user license",
         "Email support",
@@ -21,9 +21,9 @@ const PricingSection = ({ onContactClick }) => {
       name: "Growth",
       price: "$249,99",
       period: "/month",
-      description: "For growing businesses ready to scale their AI operations.",
+      description: "For growing businesses ready to scale their AI infrastructure with 30-150 calls/day",
       features: [
-        "2500 minutes (0,10 €/min top-up)",
+        "FREE customized AI Implementation Roadmap Plan",
         "3 phone numbers",
         "3 concurrent calls",
         "Priority support (24/7)",
@@ -38,17 +38,16 @@ const PricingSection = ({ onContactClick }) => {
       name: "Enterprise",
       price: "Custom",
       period: "",
-      description: "Full-scale AI infrastructure for enterprise operations.",
+      description: "Full-scale costumized AI voice agent setup (more than 100 calls/day) and further AI Automation Assistance ",
       features: [
-        "Unlimited AI agents",
-        "Unlimited conversations",
-        "Custom AI model training",
-        "Dedicated success manager",
-        "24/7 priority support",
-        "Custom integrations",
-        "White-label options",
-        "SLA guarantees",
-        "On-premise deployment options",
+        "Custom minutes",
+        "Unlimited phone numbers",
+        "unlimited concurrent calls",
+        "Priority support",
+        "Custom voice parameterisation",
+        "Advanced analytics & reporting",
+        "FREE Website Build and Optimisation",
+        "FREE customized AI Implementation Roadmap Plan",
       ],
       popular: false,
     },
@@ -129,7 +128,7 @@ const PricingSection = ({ onContactClick }) => {
 
         {/* Note */}
         <p className="text-center text-sm text-slate-500 mt-8">
-          All plans include a 14-day money-back guarantee. Custom enterprise solutions available.
+          All plans include a 30-day money-back guarantee. Custom enterprise solutions available.
         </p>
       </div>
     </section>

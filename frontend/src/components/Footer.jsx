@@ -44,17 +44,17 @@ const Footer = () => {
               Advanced AI automation systems that optimize revenue and efficiency for modern businesses.
             </p>
             <div className="space-y-3">
-              <a href="mailto:hello@optimisai.com" className="flex items-center gap-3 text-sm text-slate-400 hover:text-cyan-400 transition-colors">
+              <a href="mailto:info@optimis-ai.com" className="flex items-center gap-3 text-sm text-slate-400 hover:text-cyan-400 transition-colors">
                 <Mail size={16} />
-                hello@optimisai.com
+                info@optimis-ai.com
               </a>
-              <a href="tel:+1-800-OPTIMIS" className="flex items-center gap-3 text-sm text-slate-400 hover:text-cyan-400 transition-colors">
+              <a href="tel:+4915757111880" className="flex items-center gap-3 text-sm text-slate-400 hover:text-cyan-400 transition-colors">
                 <Phone size={16} />
-                +1-800-OPTIMIS
+                +49 157 57111880
               </a>
               <p className="flex items-center gap-3 text-sm text-slate-400">
                 <MapPin size={16} />
-                San Francisco, CA
+                Munich, Germany
               </p>
             </div>
           </div>
