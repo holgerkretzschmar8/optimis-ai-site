@@ -5,7 +5,6 @@ import SocialProofSection from "@/components/SocialProofSection";
 import ServicesSection from "@/components/ServicesSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
 import IndustriesSection from "@/components/IndustriesSection";
-import CaseStudiesSection from "@/components/CaseStudiesSection";
 import WhyUsSection from "@/components/WhyUsSection";
 import PricingSection from "@/components/PricingSection";
 import FAQSection from "@/components/FAQSection";
@@ -53,7 +52,6 @@ const LandingPage = () => {
         <ServicesSection />
         <HowItWorksSection />
         <IndustriesSection />
-        <CaseStudiesSection />
         <WhyUsSection />
         <PricingSection onContactClick={openContact} />
         <FAQSection />

@@ -164,7 +164,7 @@ const TermsOfService = () => {
             </section>
 
             <p className="text-sm text-slate-500 pt-8 border-t border-white/10">
-              Last Updated: March 2024
+              Last Updated: February 2026
             </p>
           </div>
         </div>
