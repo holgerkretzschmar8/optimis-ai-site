@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const LOGO_URL = "https://customer-assets.emergentagent.com/job_7f9de4cc-23e2-4dee-b34f-6c95288f12e2/artifacts/5siww960_Screenshot%202026-02-17%20at%2022.30.43.png";
 
@@ -16,12 +17,12 @@ const Navigation = ({ onContactClick }) => {
   }, []);
 
   const navLinks = [
-    { label: "Services", href: "#services" },
-    { label: "How It Works", href: "#how-it-works" },
-    { label: "Industries", href: "#industries" },
-    { label: "Case Studies", href: "#case-studies" },
-    { label: "Pricing", href: "#pricing" },
-    { label: "FAQ", href: "#faq" },
+    { label: "Services", href: "/#services" },
+    { label: "How It Works", href: "/#how-it-works" },
+    { label: "Industries", href: "/#industries" },
+    { label: "Case Studies", href: "/#case-studies" },
+    { label: "Pricing", href: "/#pricing" },
+    { label: "FAQ", href: "/#faq" },
   ];
 
   return (
@@ -36,13 +37,13 @@ const Navigation = ({ onContactClick }) => {
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="#" data-testid="logo" className="flex items-center">
+          <Link to="/" data-testid="logo" className="flex items-center">
             <img
               src={LOGO_URL}
               alt="Optimis AI"
               className="h-12 w-auto object-contain"
             />
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-8">
