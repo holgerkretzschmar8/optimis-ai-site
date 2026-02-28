@@ -20,7 +20,7 @@ const LeadPopup = ({ onClose }) => {
         email,
         source: "popup",
       });
-      toast.success("Success! Check your email for your free AI assessment.");
+      toast.success("Success! Check your email for your free AI voice agent demo.");
       onClose();
     } catch (error) {
       toast.error("Something went wrong. Please try again.");
@@ -60,10 +60,10 @@ const LeadPopup = ({ onClose }) => {
             <Gift size={32} className="text-white" />
           </div>
           <h3 className="text-xl font-bold text-white mb-2">
-            Get Your Free AI Assessment
+            Get Your Free AI Voice Agent Demo
           </h3>
           <p className="text-slate-400 text-sm">
-            Discover how AI can automate your business and save 40%+ on operating costs.
+            Discover how AI can automate your business and save on operating costs.
           </p>
         </div>
 
@@ -105,7 +105,7 @@ const LeadPopup = ({ onClose }) => {
                 </>
               ) : (
                 <>
-                  Get Free Assessment
+                  Get Free Demo
                   <ArrowRight size={18} />
                 </>
               )}
