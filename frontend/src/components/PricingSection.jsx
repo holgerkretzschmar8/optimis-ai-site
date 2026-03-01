@@ -8,7 +8,7 @@ const PricingSection = ({ onContactClick }) => {
       period: "/month",
       description: "Perfect for small-scale businesses with up to 30 calls/day",
       features: [
-        " 800 minutes (0,10 €/min top-up)",
+        "800 minutes (0,10 €/min top-up)",
         "1 phone number",
         "1 user license",
         "Email support",
@@ -21,7 +21,8 @@ const PricingSection = ({ onContactClick }) => {
       name: "Growth",
       price: "$249,99",
       period: "/month",
-      description: "For growing businesses ready to scale their AI infrastructure with 30-150 calls/day",
+      description:
+        "For growing businesses ready to scale their AI infrastructure with 30-150 calls/day",
       features: [
         "FREE customized AI Implementation Roadmap Plan",
         "3 phone numbers",
@@ -38,7 +39,8 @@ const PricingSection = ({ onContactClick }) => {
       name: "Enterprise",
       price: "Custom",
       period: "",
-      description: "Full-scale costumized AI voice agent setup (more than 100 calls/day) and further AI Automation Assistance ",
+      description:
+        "Full-scale costumized AI voice agent setup (more than 100 calls/day) and further AI Automation Assistance",
       features: [
         "Custom minutes",
         "Unlimited phone numbers",
@@ -75,7 +77,7 @@ const PricingSection = ({ onContactClick }) => {
         </div>
 
         <div className="grid lg:grid-cols-3 gap-6 lg:gap-8">
-          {plans.map((plan, index) => (
+          {plans.map((plan) => (
             <div
               key={plan.name}
               className={`glass-card p-8 relative ${
