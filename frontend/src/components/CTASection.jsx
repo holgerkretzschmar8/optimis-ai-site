@@ -39,7 +39,7 @@ const CTASection = ({ onContactClick }) => {
               className="btn-primary text-base lg:text-lg px-10 py-4 inline-flex items-center gap-3"
             >
               <Calendar size={20} />
-              Book Your Free AI Strategy Call
+              Book Your Free Voice-Agent Demo
               <ArrowRight size={20} />
             </button>
 

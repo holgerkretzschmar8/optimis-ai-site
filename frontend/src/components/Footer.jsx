@@ -1,28 +1,28 @@
 import { Mail, Phone, MapPin, Linkedin, Twitter } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const LOGO_URL = "https://customer-assets.emergentagent.com/job_7f9de4cc-23e2-4dee-b34f-6c95288f12e2/artifacts/5siww960_Screenshot%202026-02-17%20at%2022.30.43.png";
 
-const Footer = () => {
+const Footer = ({ onContactClick }) => {
   const links = {
     services: [
-      { label: "AI Voice Agents", href: "#services" },
-      { label: "AI Chatbots", href: "#services" },
-      { label: "Appointment Setters", href: "#services" },
-      { label: "Workflow Automation", href: "#services" },
-      { label: "Custom AI Systems", href: "#services" },
+      { label: "AI Voice Agents", href: "/#services" },
+      { label: "AI Chatbots", href: "/#services" },
+      { label: "Appointment Setters", href: "/#services" },
+      { label: "Workflow Automation", href: "/#services" },
+      { label: "Custom AI Systems", href: "/#services" },
     ],
     company: [
-      { label: "About Us", href: "#" },
-      { label: "Case Studies", href: "#case-studies" },
-      { label: "Pricing", href: "#pricing" },
+      { label: "About Us", href: "/#" },
+      { label: "Pricing", href: "/#pricing" },
       { label: "Blog", href: "#" },
       { label: "Careers", href: "#" },
     ],
     support: [
-      { label: "FAQ", href: "#faq" },
-      { label: "Contact", href: "#" },
-      { label: "Privacy Policy", href: "#" },
-      { label: "Terms of Service", href: "#" },
+      { label: "FAQ", href: "/#faq" },
+      { label: "Contact", onClick: onContactClick },
+      { label: "Privacy Policy", href: "/privacy-policy", isInternal: true },
+      { label: "Terms of Service", href: "/terms-of-service", isInternal: true },
     ],
   };
 
@@ -44,17 +44,17 @@ const Footer = () => {
               Advanced AI automation systems that optimize revenue and efficiency for modern businesses.
             </p>
             <div className="space-y-3">
-              <a href="mailto:hello@optimisai.com" className="flex items-center gap-3 text-sm text-slate-400 hover:text-cyan-400 transition-colors">
+              <a href="mailto:info@optimis-ai.com" className="flex items-center gap-3 text-sm text-slate-400 hover:text-cyan-400 transition-colors">
                 <Mail size={16} />
-                hello@optimisai.com
+                info@optimis-ai.com
               </a>
-              <a href="tel:+1-800-OPTIMIS" className="flex items-center gap-3 text-sm text-slate-400 hover:text-cyan-400 transition-colors">
+              <a href="tel:+4915757111880" className="flex items-center gap-3 text-sm text-slate-400 hover:text-cyan-400 transition-colors">
                 <Phone size={16} />
-                +1-800-OPTIMIS
+                +49 157 57111880
               </a>
               <p className="flex items-center gap-3 text-sm text-slate-400">
                 <MapPin size={16} />
-                San Francisco, CA
+                Munich, Germany
               </p>
             </div>
           </div>
@@ -99,12 +99,28 @@ const Footer = () => {
             <ul className="space-y-3">
               {links.support.map((link) => (
                 <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="text-sm text-slate-400 hover:text-cyan-400 transition-colors"
-                  >
-                    {link.label}
-                  </a>
+                  {link.isInternal ? (
+                    <Link
+                      to={link.href}
+                      className="text-sm text-slate-400 hover:text-cyan-400 transition-colors"
+                    >
+                      {link.label}
+                    </Link>
+                  ) : link.onClick ? (
+                    <button
+                      onClick={link.onClick}
+                      className="text-sm text-slate-400 hover:text-cyan-400 transition-colors"
+                    >
+                      {link.label}
+                    </button>
+                  ) : (
+                    <a
+                      href={link.href}
+                      className="text-sm text-slate-400 hover:text-cyan-400 transition-colors"
+                    >
+                      {link.label}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>

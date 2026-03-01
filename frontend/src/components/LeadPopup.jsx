@@ -1,29 +1,35 @@
 import { useState } from "react";
 import { X, Gift, ArrowRight, Loader2 } from "lucide-react";
+import { Link } from "react-router-dom";
 import { toast } from "sonner";
 import axios from "axios";
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const FORMSPREE_URL = "https://formspree.io/f/mqedjvzr";
 
 const LeadPopup = ({ onClose }) => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
+  const [gdpr, setGdpr] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!gdpr) {
+      toast.error("Bitte akzeptieren Sie die Datenschutzbestimmungen.");
+      return;
+    }
     setIsSubmitting(true);
 
     try {
-      await axios.post(`${BACKEND_URL}/api/leads`, {
+      await axios.post(FORMSPREE_URL, {
         name,
         email,
         source: "popup",
       });
-      toast.success("Success! Check your email for your free AI assessment.");
+      toast.success("Vielen Dank! Wir haben Ihre Anfrage erhalten.");
       onClose();
     } catch (error) {
-      toast.error("Something went wrong. Please try again.");
+      toast.error("Etwas ist schief gelaufen. Bitte versuchen Sie es erneut.");
       console.error("Error submitting lead:", error);
     } finally {
       setIsSubmitting(false);
@@ -60,10 +66,10 @@ const LeadPopup = ({ onClose }) => {
             <Gift size={32} className="text-white" />
           </div>
           <h3 className="text-xl font-bold text-white mb-2">
-            Get Your Free AI Assessment
+            Get Your Free AI Voice Agent Demo
           </h3>
           <p className="text-slate-400 text-sm">
-            Discover how AI can automate your business and save 40%+ on operating costs.
+            Discover how AI can automate your business and save on operating costs.
           </p>
         </div>
 
@@ -78,7 +84,7 @@ const LeadPopup = ({ onClose }) => {
                 onChange={(e) => setName(e.target.value)}
                 required
                 className="input-dark"
-                placeholder="Your Name"
+                placeholder="Max Mustermann"
               />
             </div>
             <div>
@@ -89,9 +95,27 @@ const LeadPopup = ({ onClose }) => {
                 onChange={(e) => setEmail(e.target.value)}
                 required
                 className="input-dark"
-                placeholder="Your Email"
+                placeholder="max@mustermann.com"
               />
             </div>
+
+            <div className="flex items-start gap-3 mt-4">
+              <input
+                type="checkbox"
+                id="gdpr-popup"
+                checked={gdpr}
+                onChange={(e) => setGdpr(e.target.checked)}
+                required
+                className="mt-1 w-4 h-4 rounded border-slate-700 bg-slate-800 text-cyan-500 focus:ring-cyan-500/20"
+              />
+              <label htmlFor="gdpr-popup" className="text-[10px] text-slate-400 leading-tight">
+                Ich stimme zu, dass meine Daten zur Bearbeitung meiner Anfrage erhoben werden. Informationen finden Sie in der{" "}
+                <Link to="/privacy-policy" className="text-cyan-400 hover:underline" onClick={onClose}>
+                  Datenschutzerklärung
+                </Link>.
+              </label>
+            </div>
+
             <button
               type="submit"
               data-testid="popup-submit-button"
@@ -101,11 +125,11 @@ const LeadPopup = ({ onClose }) => {
               {isSubmitting ? (
                 <>
                   <Loader2 size={18} className="animate-spin" />
-                  Sending...
+                  Wird gesendet...
                 </>
               ) : (
                 <>
-                  Get Free Assessment
+                  Get Free Demo
                   <ArrowRight size={18} />
                 </>
               )}

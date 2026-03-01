@@ -1,4 +1,6 @@
-const PricingSection = ({ onContactClick }) => {
+import { Check, ArrowRight } from "lucide-react";
+
+export default function PricingSection({ onContactClick }) {
   const plans = [
     {
       name: "Starter",
@@ -124,4 +126,4 @@ const PricingSection = ({ onContactClick }) => {
       </div>
     </section>
   );
-};
+}
