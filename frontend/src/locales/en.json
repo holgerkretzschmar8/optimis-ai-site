@@ -199,7 +199,7 @@
     "plans": {
       "starter": {
         "name": "Starter",
-        "price": "$69.99",
+        "price": "69,99 €",
         "description": "Perfect for small-scale businesses with up to 30 calls/day",
         "features": [
           "800 minutes (0.10 €/min top-up)",
@@ -212,7 +212,7 @@
       },
       "growth": {
         "name": "Growth",
-        "price": "$249.99",
+        "price": "249,99 €",
         "description": "For growing businesses ready to scale their AI infrastructure with 30-150 calls/day",
         "features": [
           "FREE customized AI Implementation Roadmap Plan",
