@@ -30,7 +30,7 @@ const HeroSection = ({ onContactClick }) => {
       </div>
 
       {/* Animated Neural Network Background */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 pointer-events-none">
         {/* Floating orbs */}
         <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-cyan-500/30 rounded-full blur-[150px] animate-orb-1" />
         <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-blue-600/25 rounded-full blur-[120px] animate-orb-2" />
@@ -40,7 +40,7 @@ const HeroSection = ({ onContactClick }) => {
         <div className="absolute inset-0 bg-[linear-gradient(rgba(6,182,212,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.03)_1px,transparent_1px)] bg-[size:60px_60px] [mask-image:radial-gradient(ellipse_at_center,black_20%,transparent_70%)]" />
         
         {/* Animated particles */}
-        <div className="particles-container">
+        <div className="particles-container pointer-events-none">
           {[...Array(20)].map((_, i) => (
             <div
               key={i}
@@ -56,7 +56,7 @@ const HeroSection = ({ onContactClick }) => {
         </div>
 
         {/* Animated lines */}
-        <svg className="absolute inset-0 w-full h-full opacity-20" xmlns="http://www.w3.org/2000/svg">
+        <svg className="absolute inset-0 w-full h-full opacity-20 pointer-events-none" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <linearGradient id="line-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
               <stop offset="0%" stopColor="transparent" />
