@@ -307,12 +307,15 @@
       "company": "Muster GmbH",
       "message": "Erzählen Sie uns von Ihrem Unternehmen und was Sie mit KI erreichen wollen..."
     },
-    "gdpr": "Ich stimme zu, dass meine Angaben aus dem Kontaktformular zur Beantwortung meiner Anfrage erhoben und verarbeitet werden. Die Daten werden nach abgeschlossener Bearbeitung Ihrer Anfrage gelöscht. Hinweis: Sie können Ihre Einwilligung jederzeit für die Zukunft per E-Mail an info@optimis-ai.com widerrufen. Detaillierte Informationen zum Umgang mit Nutzerdaten finden Sie in unserer"
+    "gdpr": "Ich stimme zu, dass meine Angaben aus dem Kontaktformular zur Beantwortung meiner Anfrage erhoben und verarbeitet werden. Die Daten werden nach abgeschlossener Bearbeitung Ihrer Anfrage gelöscht. Hinweis: Sie können Ihre Einwilligung jederzeit für die Zukunft per E-Mail an info@optimis-ai.com widerrufen. Detaillierte Informationen zum Umgang mit Nutzerdaten finden Sie in unserer",
+    "submit": "Jetzt Strategiegespräch buchen",
+    "footer": "Wir antworten in der Regel innerhalb von 2 Stunden während der Geschäftszeiten."
   },
   "leadPopup": {
     "title": "Holen Sie sich Ihre KI-Voice-Agent-Demo",
     "description": "Entdecken Sie, wie KI Ihr Unternehmen automatisieren und Betriebskosten senken kann.",
-    "submit": "Kostenlose Demo anfordern",
+    "submit": "Meine kostenlose KI-Demo anfordern",
+    "footer": "Begrenzte Plätze verfügbar. Jetzt sichern.",
     "gdpr": "Ich stimme zu, dass meine Daten zur Bearbeitung meiner Anfrage erhoben werden. Informationen finden Sie in der"
   },
   "privacy": {
