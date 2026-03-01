@@ -39,13 +39,14 @@ const LandingPage = () => {
     const handleScroll = () => {
       if (hasShownPopup) return;
 
-      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const scrollPosition = window.scrollY;
-      const scrollPercentage = (scrollPosition / scrollHeight) * 100;
-
-      if (scrollPercentage >= 50) {
-        setShowLeadPopup(true);
-        setHasShownPopup(true);
+      const whyUsSection = document.getElementById('why-us');
+      if (whyUsSection) {
+        const rect = whyUsSection.getBoundingClientRect();
+        // Trigger when the section bottom enters the view (user has scrolled past the main content of Why Us)
+        if (rect.bottom < window.innerHeight) {
+          setShowLeadPopup(true);
+          setHasShownPopup(true);
+        }
       }
     };
 
@@ -55,6 +56,12 @@ const LandingPage = () => {
 
   const openContact = () => setIsContactOpen(true);
   const closeContact = () => setIsContactOpen(false);
+  const handleShowPopup = () => {
+    if (!hasShownPopup) {
+      setShowLeadPopup(true);
+      setHasShownPopup(true);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-[#020617] relative">
@@ -69,7 +76,7 @@ const LandingPage = () => {
         <ServicesSection />
         <HowItWorksSection />
         <IndustriesSection />
-        <WhyUsSection onShowPopup={() => setShowLeadPopup(true)} />
+        <WhyUsSection onShowPopup={handleShowPopup} />
         <PricingSection onContactClick={openContact} />
         <FAQSection />
         <CTASection onContactClick={openContact} />
@@ -80,9 +87,9 @@ const LandingPage = () => {
       {isContactOpen && (
         <ContactModal isOpen={isContactOpen} onClose={closeContact} />
       )}
-      
+
       {showLeadPopup && (
-        <LeadPopup onClose={() => setShowLeadPopup(false)} />
+        <LeadPopup isOpen={showLeadPopup} onClose={() => setShowLeadPopup(false)} />
       )}
     </div>
   );
