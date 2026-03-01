@@ -3,54 +3,53 @@ import { Check, ArrowRight } from "lucide-react";
 const PricingSection = ({ onContactClick }) => {
   const plans = [
     {
-      name: "Solo",
-      price: "99 €",
+      name: "Starter",
+      price: "$69,99",
       period: "/month",
-      description: "Suitable for 1–20 calls/day",
+      description: "Perfect for small-scale businesses with up to 30 calls/day",
       features: [
-        "1000 minutes (€0.15 per additional)",
-        "No parallel calls",
-        "1 phone number (€7/mo additional)",
-        "Unlimited assistants",
-        "1 user",
-        "20+ voices",
-        "25+ languages",
-        "Guided onboarding (4 hrs)",
+        "800 minutes (0,10 €/min top-up)",
+        "1 phone number",
+        "1 user license",
+        "Email support",
+        "Monthly performance reports",
+        "Standard analytics dashboard",
       ],
       popular: false,
     },
     {
-      name: "Team",
-      price: "299 €",
+      name: "Growth",
+      price: "$249,99",
       period: "/month",
-      description: "Suitable for 20–100 calls/day",
+      description:
+        "For growing businesses ready to scale their AI infrastructure with 30-150 calls/day",
       features: [
-        "3000 minutes (€0.12 per additional)",
-        "5 concurrent calls",
-        "3 phone numbers (€5/mo additional)",
-        "Unlimited assistants",
-        "Unlimited users",
-        "Everything in Solo",
-        "Connect own SIP",
-        "Outbound calls",
+        "FREE customized AI Implementation Roadmap Plan",
+        "3 phone numbers",
+        "3 concurrent calls",
+        "Priority support (24/7)",
+        "Custom voice parameterisation",
+        "Advanced analytics & reporting",
+        "FREE Website Build and Optimisation",
+        "Multi-Lingual Voice Assistant",
       ],
       popular: true,
     },
     {
-      name: "Business",
+      name: "Enterprise",
       price: "Custom",
       period: "",
-      description: "Suitable from 100+ calls/day",
+      description:
+        "Full-scale costumized AI voice agent setup (more than 100 calls/day) and further AI Automation Assistance",
       features: [
         "Custom minutes",
-        "Custom concurrent calls",
-        "Custom phone numbers",
-        "Unlimited assistants",
-        "Unlimited users",
-        "Everything in Team",
-        "Custom voice",
-        "Single Sign-On (SSO)",
-        "Custom SLA",
+        "Unlimited phone numbers",
+        "Unlimited concurrent calls",
+        "Priority support",
+        "Custom voice parameterisation",
+        "Advanced analytics & reporting",
+        "FREE Website Build and Optimisation",
+        "FREE customized AI Implementation Roadmap Plan",
       ],
       popular: false,
     },
@@ -73,8 +72,7 @@ const PricingSection = ({ onContactClick }) => {
           </h2>
 
           <p className="text-slate-400 max-w-2xl mx-auto text-base lg:text-lg">
-            Transparent pricing with no hidden fees. Choose the plan that fits
-            your business needs.
+            Transparent pricing with no hidden fees. Choose the plan that fits your business needs.
           </p>
         </div>
 
@@ -86,13 +84,17 @@ const PricingSection = ({ onContactClick }) => {
                 plan.popular ? "pricing-popular lg:scale-105" : ""
               }`}
             >
+              {plan.popular && (
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-cyan-500 text-slate-900 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                  Most popular
+                </div>
+              )}
+
               <h3 className="text-xl font-bold text-white mb-2">{plan.name}</h3>
               <p className="text-sm text-slate-500 mb-6">{plan.description}</p>
 
               <div className="mb-8">
-                <span className="text-4xl font-bold text-white">
-                  {plan.price}
-                </span>
+                <span className="text-4xl font-bold text-white">{plan.price}</span>
                 <span className="text-slate-500">{plan.period}</span>
               </div>
 
@@ -121,8 +123,7 @@ const PricingSection = ({ onContactClick }) => {
         </div>
 
         <p className="text-center text-sm text-slate-500 mt-8">
-          All plans include a 14-day money-back guarantee. Custom enterprise
-          solutions available.
+          All plans include a 30-day money-back guarantee. Custom enterprise solutions available.
         </p>
       </div>
     </section>
