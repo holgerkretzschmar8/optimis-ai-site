@@ -44,7 +44,7 @@ const PricingSection = ({ onContactClick }) => {
       features: [
         "Custom minutes",
         "Unlimited phone numbers",
-        "Unlimited concurrent calls",
+        "unlimited concurrent calls",
         "Priority support",
         "Custom voice parameterisation",
         "Advanced analytics & reporting",
@@ -84,12 +84,6 @@ const PricingSection = ({ onContactClick }) => {
                 plan.popular ? "pricing-popular lg:scale-105" : ""
               }`}
             >
-              {plan.popular && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-cyan-500 text-slate-900 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">
-                  Most popular
-                </div>
-              )}
-
               <h3 className="text-xl font-bold text-white mb-2">{plan.name}</h3>
               <p className="text-sm text-slate-500 mb-6">{plan.description}</p>
 
