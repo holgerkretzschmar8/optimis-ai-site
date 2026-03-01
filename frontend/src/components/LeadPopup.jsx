@@ -7,6 +7,9 @@ import { useTranslation } from "react-i18next";
 import {
   Dialog,
   DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
 } from "@/components/ui/dialog";
 
 const FORMSPREE_URL = "https://formspree.io/f/mqedjvzr";
@@ -48,6 +51,11 @@ const LeadPopup = ({ isOpen, onClose }) => {
         className="sm:max-w-md bg-slate-950/95 border-white/10 backdrop-blur-xl p-0 overflow-hidden" 
         data-testid="lead-popup"
       >
+        <DialogHeader className="sr-only">
+          <DialogTitle>{t('leadPopup.title')}</DialogTitle>
+          <DialogDescription>{t('leadPopup.description')}</DialogDescription>
+        </DialogHeader>
+
         {/* Gradient Header */}
         <div className="bg-gradient-to-br from-cyan-500/20 to-blue-600/20 p-8 text-center relative">
           <div className="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center mb-4 shadow-[0_0_20px_rgba(6,182,212,0.3)]">
