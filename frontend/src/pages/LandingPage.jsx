@@ -24,16 +24,16 @@ const LandingPage = () => {
   useEffect(() => {
     // Update Document Title and Meta Description
     document.title = i18n.language === 'de'
-      ? "Optimis AI | Enterprise KI-Automatisierungsagentur"
-      : "Optimis AI | Enterprise AI Automation Agency";
+      ? "Optimis AI | KI-Automatisierungsagentur für Umsatz & Effizienz"
+      : "Optimis AI | AI Automation Agency for Revenue & Efficiency";
 
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute('content', i18n.language === 'de'
-        ? "Optimis AI hilft Unternehmen bei der Skalierung mit maßgeschneiderten KI-Voice-Agents, Chatbots und Workflow-Automatisierung."
-        : "Optimis AI helps businesses scale with custom AI voice agents, chatbots, and workflow automation.");
+        ? "Optimis AI entwickelt fortschrittliche KI-Automatisierungssysteme, die Umsatz, Workflows und die betriebliche Effizienz moderner Unternehmen optimieren."
+        : "Optimis AI builds advanced AI automation systems that optimize revenue, workflows, and operational efficiency for modern businesses.");
     }
-  }, [i18n.language]);
+  }, [i18n.language, i18n]);
 
   useEffect(() => {
     const handleScroll = () => {
