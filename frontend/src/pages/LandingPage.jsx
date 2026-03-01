@@ -69,8 +69,7 @@ const LandingPage = () => {
         <ServicesSection />
         <HowItWorksSection />
         <IndustriesSection />
-        <CaseStudiesSection />
-        <WhyUsSection />
+        <WhyUsSection onShowPopup={() => setShowLeadPopup(true)} />
         <PricingSection onContactClick={openContact} />
         <FAQSection />
         <CTASection onContactClick={openContact} />

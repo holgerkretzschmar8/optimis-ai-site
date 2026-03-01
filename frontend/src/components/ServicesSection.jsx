@@ -52,8 +52,7 @@ const ServicesSection = () => {
             data-testid="services-title"
             className="text-3xl lg:text-4xl font-bold mb-6"
           >
-            {t('services.title').split('That')[0]} That{" "}
-            <span className="gradient-text">{t('services.title').split('That')[1]}</span>
+            {t('services.titleMain')} <span className="gradient-text">{t('services.titleGradient')}</span>
           </h2>
           <p className="text-slate-400 max-w-2xl mx-auto text-base lg:text-lg">
             {t('services.description')}

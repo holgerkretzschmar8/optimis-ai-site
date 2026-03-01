@@ -1,7 +1,7 @@
 import { Cpu, Wrench, Zap, TrendingUp, HeadphonesIcon, BarChart3 } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
-const WhyUsSection = () => {
+const WhyUsSection = ({ onShowPopup }) => {
   const { t } = useTranslation();
   const reasons = [
     {
@@ -41,6 +41,7 @@ const WhyUsSection = () => {
       id="why-us"
       data-testid="why-us-section"
       className="section"
+      onMouseEnter={onShowPopup}
     >
       <div className="container-custom">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">

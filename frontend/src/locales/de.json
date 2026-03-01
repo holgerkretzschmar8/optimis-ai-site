@@ -34,10 +34,10 @@
   "hero": {
     "badge": "KI-Automatisierungsagentur",
     "headline": {
-      "line1": "Moderne KI-Systeme",
-      "line2": "Umsatz & Effizienz",
-      "line3": "maximieren",
-      "that": "für"
+      "line1": "Moderne KI-Systeme,",
+      "line2": "die Umsatz & Effizienz",
+      "line3": "optimieren",
+      "that": ""
     },
     "subheadline": "Wir entwickeln intelligente Automatisierungen für moderne Unternehmen.",
     "description": "Setzen Sie KI-Voice-Agents, Chatbots und Workflow-Automatisierungen ein, die Ihr Unternehmen rund um die Uhr skalieren – ohne Fixkosten zu erhöhen.",
@@ -172,9 +172,9 @@
   },
   "whyUs": {
     "badge": "Vorteile",
-    "titleMain": "Warum",
-    "titleGradient": "Optimis AI?",
-    "description": "Wir sind nicht nur eine weitere KI-Agentur. Wir sind Ihr strategischer Partner für den Aufbau intelligenter Systeme, die messbares Wachstum fördern.",
+    "titleMain": "Der",
+    "titleGradient": "Optimis Vorteil",
+    "description": "Wir sind nicht nur eine weitere KI-Agentur. Wir sind Ihr strategischer Partner für den Aufbau intelligenter Systeme, die messbares Unternehmenswachstum fördern.",
     "stats": {
       "deployed": "KI-Systeme implementiert",
       "retention": "Kundenbindung",

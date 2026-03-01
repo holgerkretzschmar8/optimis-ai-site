@@ -64,7 +64,6 @@ const Navigation = ({ onContactClick }) => {
     { label: t('nav.services'), href: "/#services" },
     { label: t('nav.howItWorks'), href: "/#how-it-works" },
     { label: t('nav.industries'), href: "/#industries" },
-    { label: t('nav.caseStudies'), href: "/#case-studies" },
     { label: t('nav.whyUs'), href: "/#why-us" },
     { label: t('nav.pricing'), href: "/#pricing" },
     { label: t('nav.faq'), href: "/#faq" },
