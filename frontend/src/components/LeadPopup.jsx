@@ -3,7 +3,7 @@ import { X, Gift, ArrowRight, Loader2 } from "lucide-react";
 import { toast } from "sonner";
 import axios from "axios";
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const FORMSPREE_URL = "https://formspree.io/f/mqedjvzr";
 
 const LeadPopup = ({ onClose }) => {
   const [email, setEmail] = useState("");
@@ -15,15 +15,15 @@ const LeadPopup = ({ onClose }) => {
     setIsSubmitting(true);
 
     try {
-      await axios.post(`${BACKEND_URL}/api/leads`, {
+      await axios.post(FORMSPREE_URL, {
         name,
         email,
         source: "popup",
       });
-      toast.success("Success! Check your email for your free AI voice agent demo.");
+      toast.success("Vielen Dank! Wir haben Ihre Anfrage erhalten.");
       onClose();
     } catch (error) {
-      toast.error("Something went wrong. Please try again.");
+      toast.error("Etwas ist schief gelaufen. Bitte versuchen Sie es erneut.");
       console.error("Error submitting lead:", error);
     } finally {
       setIsSubmitting(false);
@@ -42,7 +42,7 @@ const LeadPopup = ({ onClose }) => {
       {/* Popup */}
       <div
         data-testid="lead-popup"
-        className="popup-enter relative w-full max-w-md glass-card overflow-hidden"
+        className="popup-enter relative w-full max-md glass-card overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}
@@ -78,7 +78,7 @@ const LeadPopup = ({ onClose }) => {
                 onChange={(e) => setName(e.target.value)}
                 required
                 className="input-dark"
-                placeholder="Your Name"
+                placeholder="Max Mustermann"
               />
             </div>
             <div>
@@ -89,7 +89,7 @@ const LeadPopup = ({ onClose }) => {
                 onChange={(e) => setEmail(e.target.value)}
                 required
                 className="input-dark"
-                placeholder="Your Email"
+                placeholder="max@mustermann.com"
               />
             </div>
             <button
@@ -101,7 +101,7 @@ const LeadPopup = ({ onClose }) => {
               {isSubmitting ? (
                 <>
                   <Loader2 size={18} className="animate-spin" />
-                  Sending...
+                  Wird gesendet...
                 </>
               ) : (
                 <>

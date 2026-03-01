@@ -3,7 +3,7 @@ import { X, Send, Loader2 } from "lucide-react";
 import { toast } from "sonner";
 import axios from "axios";
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const FORMSPREE_URL = "https://formspree.io/f/mqedjvzr";
 
 const ContactModal = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
@@ -24,15 +24,15 @@ const ContactModal = ({ isOpen, onClose }) => {
     setIsSubmitting(true);
 
     try {
-      await axios.post(`${BACKEND_URL}/api/leads`, {
+      await axios.post(FORMSPREE_URL, {
         ...formData,
         source: "contact_modal",
       });
-      toast.success("Thank you! We'll be in touch within 24 hours.");
+      toast.success("Vielen Dank! Wir werden uns innerhalb von 24 Stunden bei Ihnen melden.");
       setFormData({ name: "", email: "", phone: "", company: "", message: "" });
       onClose();
     } catch (error) {
-      toast.error("Something went wrong. Please try again.");
+      toast.error("Etwas ist schief gelaufen. Bitte versuchen Sie es erneut.");
       console.error("Error submitting lead:", error);
     } finally {
       setIsSubmitting(false);
@@ -71,7 +71,7 @@ const ContactModal = ({ isOpen, onClose }) => {
             Book Your Free Strategy Call
           </h3>
           <p className="text-slate-400 text-sm">
-            Fill out the form below and we&apos;ll contact you within 24 hours.
+            Fill out the form below and we'll contact you within 24 hours.
           </p>
         </div>
 
@@ -88,7 +88,7 @@ const ContactModal = ({ isOpen, onClose }) => {
                 onChange={handleChange}
                 required
                 className="input-dark"
-                placeholder="John Smith"
+                placeholder="Max Mustermann"
               />
             </div>
             <div>
@@ -101,7 +101,7 @@ const ContactModal = ({ isOpen, onClose }) => {
                 onChange={handleChange}
                 required
                 className="input-dark"
-                placeholder="john@company.com"
+                placeholder="max@mustermann.com"
               />
             </div>
           </div>
@@ -116,7 +116,7 @@ const ContactModal = ({ isOpen, onClose }) => {
                 value={formData.phone}
                 onChange={handleChange}
                 className="input-dark"
-                placeholder="+1 (555) 000-0000"
+                placeholder="+49 123 4567890"
               />
             </div>
             <div>
@@ -128,7 +128,7 @@ const ContactModal = ({ isOpen, onClose }) => {
                 value={formData.company}
                 onChange={handleChange}
                 className="input-dark"
-                placeholder="Company Inc."
+                placeholder="Muster GmbH"
               />
             </div>
           </div>
@@ -142,7 +142,7 @@ const ContactModal = ({ isOpen, onClose }) => {
               onChange={handleChange}
               rows={4}
               className="input-dark resize-none"
-              placeholder="Tell us about your business and what you're looking to achieve with AI..."
+              placeholder="Erzählen Sie uns von Ihrem Unternehmen und was Sie mit KI erreichen wollen..."
             />
           </div>
 
@@ -155,7 +155,7 @@ const ContactModal = ({ isOpen, onClose }) => {
             {isSubmitting ? (
               <>
                 <Loader2 size={18} className="animate-spin" />
-                Submitting...
+                Wird gesendet...
               </>
             ) : (
               <>
