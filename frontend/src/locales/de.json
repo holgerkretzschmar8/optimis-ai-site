@@ -283,7 +283,11 @@
   },
   "footer": {
     "description": "Moderne KI-Automatisierungssysteme, die Umsatz und Effizienz für moderne Unternehmen optimieren.",
-    "location": "München, Deutschland"
+    "location": "München, Deutschland",
+    "servicesTitle": "Leistungen",
+    "companyTitle": "Unternehmen",
+    "supportTitle": "Support",
+    "copyright": "© {{year}} Optimis AI. Alle Rechte vorbehalten."
   },
   "contactModal": {
     "title": "Strategiegespräch buchen",

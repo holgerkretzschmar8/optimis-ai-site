@@ -283,7 +283,11 @@
   },
   "footer": {
     "description": "Advanced AI automation systems that optimize revenue and efficiency for modern businesses.",
-    "location": "Munich, Germany"
+    "location": "Munich, Germany",
+    "servicesTitle": "Services",
+    "companyTitle": "Company",
+    "supportTitle": "Support",
+    "copyright": "© {{year}} Optimis AI. All rights reserved."
   },
   "contactModal": {
     "title": "Book Your Free Strategy Call",
