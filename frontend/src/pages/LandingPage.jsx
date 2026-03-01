@@ -58,7 +58,7 @@ const LandingPage = () => {
         <CTASection onContactClick={openContact} />
       </main>
 
-      <Footer />
+      <Footer onContactClick={openContact} />
 
       {isContactOpen && (
         <ContactModal isOpen={isContactOpen} onClose={closeContact} />

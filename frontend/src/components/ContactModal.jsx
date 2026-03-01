@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { X, Send, Loader2 } from "lucide-react";
+import { Link } from "react-router-dom";
 import { toast } from "sonner";
 import axios from "axios";
 
@@ -12,11 +13,13 @@ const ContactModal = ({ isOpen, onClose }) => {
     phone: "",
     company: "",
     message: "",
+    gdpr: false,
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value, type, checked } = e.target;
+    setFormData({ ...formData, [name]: type === "checkbox" ? checked : value });
   };
 
   const handleSubmit = async (e) => {
@@ -108,7 +111,7 @@ const ContactModal = ({ isOpen, onClose }) => {
 
           <div className="grid sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm text-slate-400 mb-2">Phone</label>
+              <label className="block text-sm text-slate-400 mb-2">Phone (Optional)</label>
               <input
                 type="tel"
                 name="phone"
@@ -134,16 +137,35 @@ const ContactModal = ({ isOpen, onClose }) => {
           </div>
 
           <div>
-            <label className="block text-sm text-slate-400 mb-2">Message</label>
+            <label className="block text-sm text-slate-400 mb-2">Message *</label>
             <textarea
               name="message"
               data-testid="contact-message-input"
               value={formData.message}
               onChange={handleChange}
               rows={4}
+              required
               className="input-dark resize-none"
               placeholder="Erzählen Sie uns von Ihrem Unternehmen und was Sie mit KI erreichen wollen..."
             />
+          </div>
+
+          <div className="flex items-start gap-3">
+            <input
+              type="checkbox"
+              name="gdpr"
+              id="gdpr"
+              checked={formData.gdpr}
+              onChange={handleChange}
+              required
+              className="mt-1 w-4 h-4 rounded border-slate-700 bg-slate-800 text-cyan-500 focus:ring-cyan-500/20"
+            />
+            <label htmlFor="gdpr" className="text-xs text-slate-400 leading-tight">
+              Ich stimme zu, dass meine Angaben aus dem Kontaktformular zur Beantwortung meiner Anfrage erhoben und verarbeitet werden. Die Daten werden nach abgeschlossener Bearbeitung Ihrer Anfrage gelöscht. Hinweis: Sie können Ihre Einwilligung jederzeit für die Zukunft per E-Mail an info@optimis-ai.com widerrufen. Detaillierte Informationen zum Umgang mit Nutzerdaten finden Sie in unserer{" "}
+              <Link to="/privacy-policy" className="text-cyan-400 hover:underline" onClick={onClose}>
+                Datenschutzerklärung
+              </Link>.
+            </label>
           </div>
 
           <button

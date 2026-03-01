@@ -167,7 +167,7 @@ const PrivacyPolicy = () => {
         </div>
       </main>
 
-      <Footer />
+      <Footer onContactClick={openContact} />
 
       {isContactOpen && (
         <ContactModal isOpen={isContactOpen} onClose={closeContact} />

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { X, Gift, ArrowRight, Loader2 } from "lucide-react";
+import { Link } from "react-router-dom";
 import { toast } from "sonner";
 import axios from "axios";
 
@@ -8,10 +9,15 @@ const FORMSPREE_URL = "https://formspree.io/f/mqedjvzr";
 const LeadPopup = ({ onClose }) => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
+  const [gdpr, setGdpr] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!gdpr) {
+      toast.error("Bitte akzeptieren Sie die Datenschutzbestimmungen.");
+      return;
+    }
     setIsSubmitting(true);
 
     try {
@@ -42,7 +48,7 @@ const LeadPopup = ({ onClose }) => {
       {/* Popup */}
       <div
         data-testid="lead-popup"
-        className="popup-enter relative w-full max-md glass-card overflow-hidden"
+        className="popup-enter relative w-full max-w-md glass-card overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}
@@ -92,6 +98,24 @@ const LeadPopup = ({ onClose }) => {
                 placeholder="max@mustermann.com"
               />
             </div>
+
+            <div className="flex items-start gap-3 mt-4">
+              <input
+                type="checkbox"
+                id="gdpr-popup"
+                checked={gdpr}
+                onChange={(e) => setGdpr(e.target.checked)}
+                required
+                className="mt-1 w-4 h-4 rounded border-slate-700 bg-slate-800 text-cyan-500 focus:ring-cyan-500/20"
+              />
+              <label htmlFor="gdpr-popup" className="text-[10px] text-slate-400 leading-tight">
+                Ich stimme zu, dass meine Daten zur Bearbeitung meiner Anfrage erhoben werden. Informationen finden Sie in der{" "}
+                <Link to="/privacy-policy" className="text-cyan-400 hover:underline" onClick={onClose}>
+                  Datenschutzerklärung
+                </Link>.
+              </label>
+            </div>
+
             <button
               type="submit"
               data-testid="popup-submit-button"

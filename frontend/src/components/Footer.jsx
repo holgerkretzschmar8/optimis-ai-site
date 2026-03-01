@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const LOGO_URL = "https://customer-assets.emergentagent.com/job_7f9de4cc-23e2-4dee-b34f-6c95288f12e2/artifacts/5siww960_Screenshot%202026-02-17%20at%2022.30.43.png";
 
-const Footer = () => {
+const Footer = ({ onContactClick }) => {
   const links = {
     services: [
       { label: "AI Voice Agents", href: "/#services" },
@@ -20,7 +20,7 @@ const Footer = () => {
     ],
     support: [
       { label: "FAQ", href: "/#faq" },
-      { label: "Contact", href: "#" },
+      { label: "Contact", onClick: onContactClick },
       { label: "Privacy Policy", href: "/privacy-policy", isInternal: true },
       { label: "Terms of Service", href: "/terms-of-service", isInternal: true },
     ],
@@ -106,6 +106,13 @@ const Footer = () => {
                     >
                       {link.label}
                     </Link>
+                  ) : link.onClick ? (
+                    <button
+                      onClick={link.onClick}
+                      className="text-sm text-slate-400 hover:text-cyan-400 transition-colors"
+                    >
+                      {link.label}
+                    </button>
                   ) : (
                     <a
                       href={link.href}
