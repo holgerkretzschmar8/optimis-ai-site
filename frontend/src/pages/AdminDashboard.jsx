@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   Users,
@@ -33,12 +33,18 @@ const AdminDashboard = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [filter, setFilter] = useState("all");
 
-  const getAuthHeaders = () => {
-    const token = localStorage.getItem("admin_token");
-    return { Authorization: `Bearer ${token}` };
-  };
+  const handleLogout = useCallback(() => {
+    localStorage.removeItem("admin_token");
+    localStorage.removeItem("admin_user");
+    navigate("/admin/login");
+  }, [navigate]);
 
-  const fetchData = async () => {
+  const fetchData = useCallback(async () => {
+    const getAuthHeaders = () => {
+      const token = localStorage.getItem("admin_token");
+      return { Authorization: `Bearer ${token}` };
+    };
+
     try {
       const [leadsRes, statsRes] = await Promise.all([
         axios.get(`${BACKEND_URL}/api/admin/leads`, { headers: getAuthHeaders() }),
@@ -56,7 +62,7 @@ const AdminDashboard = () => {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [handleLogout]);
 
   useEffect(() => {
     const token = localStorage.getItem("admin_token");
@@ -65,13 +71,7 @@ const AdminDashboard = () => {
       return;
     }
     fetchData();
-  }, [navigate]);
-
-  const handleLogout = () => {
-    localStorage.removeItem("admin_token");
-    localStorage.removeItem("admin_user");
-    navigate("/admin/login");
-  };
+  }, [navigate, fetchData]);
 
   const updateLeadStatus = async (leadId, status) => {
     try {
