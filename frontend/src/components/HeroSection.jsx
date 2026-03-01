@@ -12,6 +12,21 @@ const HeroSection = ({ onContactClick }) => {
       data-testid="hero-section"
       className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden"
     >
+      {/* Background Video */}
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none opacity-50">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover grayscale-0 brightness-[0.5] contrast-[1.1]"
+        >
+          <source src="https://cdn.builder.io/o/assets%2Fb6ada3fcbf6a4608a81d82bb64ba566b%2F94003049cb6e4893be80e7b11a27eaff?alt=media&token=a027c45d-0764-4ff9-b553-6af3339fa42f&apiKey=b6ada3fcbf6a4608a81d82bb64ba566b" type="video/mp4" />
+        </video>
+        {/* Extra layer to ensure readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#020617]/50 via-transparent to-[#020617]" />
+      </div>
+
       {/* Animated Neural Network Background */}
       <div className="absolute inset-0">
         {/* Floating orbs */}
