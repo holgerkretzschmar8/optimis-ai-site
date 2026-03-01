@@ -181,7 +181,7 @@
       "roi": "Durchschnittlicher ROI"
     },
     "items": {
-      "models": { "title": "Enterprise-KI-Modelle", "description": "Wir nutzen die neuesten GPT-4, Claude und individuell trainierten Modelle für höchste Performance." },
+      "models": { "title": "Enterprise-KI-Modelle", "description": "Wir nutzen die neuesten GPT, Claude und individuell trainierten Modelle für höchste Performance." },
       "custom": { "title": "Maßgeschneiderte Systeme", "description": "Keine Standardvorlagen. Jede Lösung wird speziell für Ihre Bedürfnisse entwickelt." },
       "deployment": { "title": "Schnelle Implementierung", "description": "In Tagen einsatzbereit, nicht Monaten. Unser optimierter Prozess liefert schnelle Ergebnisse." },
       "optimization": { "title": "Kontinuierliche Optimierung", "description": "Wir überwachen und verbessern Ihre KI-Systeme kontinuierlich für Spitzenleistung." },

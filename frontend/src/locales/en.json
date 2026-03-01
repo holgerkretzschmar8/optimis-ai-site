@@ -171,7 +171,7 @@
     }
   },
   "whyUs": {
-    "badge": "Why Us",
+    "badge": "WHY OPTIMIS AI",
     "titleMain": "The",
     "titleGradient": "Optimis Advantage",
     "description": "We're not just another AI agency. We're your strategic partner in building intelligent systems that drive measurable business growth.",
@@ -181,7 +181,7 @@
       "roi": "Average ROI"
     },
     "items": {
-      "models": { "title": "Enterprise-Grade AI Models", "description": "We use the latest GPT-4, Claude, and custom-trained models for superior performance." },
+      "models": { "title": "Enterprise-Grade AI Models", "description": "We use the latest GPT, Claude, and custom-trained models for superior performance." },
       "custom": { "title": "Custom-Built Systems", "description": "No cookie-cutter templates. Every solution is engineered for your specific needs." },
       "deployment": { "title": "Fast Deployment", "description": "Go live in days, not months. Our streamlined process gets you results quickly." },
       "optimization": { "title": "Ongoing Optimization", "description": "We continuously monitor and improve your AI systems for peak performance." },
