@@ -13,18 +13,18 @@ const HeroSection = ({ onContactClick }) => {
       className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden"
     >
       {/* Background Video */}
-      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none opacity-40">
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none opacity-50">
         <video
           autoPlay
           loop
           muted
           playsInline
-          className="w-full h-full object-cover grayscale brightness-[0.4] contrast-125"
+          className="w-full h-full object-cover grayscale-0 brightness-[0.5] contrast-[1.1]"
         >
-          <source src="https://cdn.builder.io/o/assets%2Fb6ada3fcbf6a4608a81d82bb64ba566b%2F83b6eaac4cad4c2281a3678d64543138?alt=media&token=9fe40824-29b6-4ba3-97bf-6005ed53fcbc&apiKey=b6ada3fcbf6a4608a81d82bb64ba566b" type="video/mp4" />
+          <source src="https://cdn.builder.io/o/assets%2Fb6ada3fcbf6a4608a81d82bb64ba566b%2F94003049cb6e4893be80e7b11a27eaff?alt=media&token=a027c45d-0764-4ff9-b553-6af3339fa42f&apiKey=b6ada3fcbf6a4608a81d82bb64ba566b" type="video/mp4" />
         </video>
         {/* Extra layer to ensure readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#020617]/40 via-transparent to-[#020617]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#020617]/50 via-transparent to-[#020617]" />
       </div>
 
       {/* Animated Neural Network Background */}
