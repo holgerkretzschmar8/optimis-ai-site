@@ -133,7 +133,7 @@ const LeadPopup = ({ isOpen, onClose }) => {
           </form>
 
           <p className="text-xs text-slate-500 text-center mt-4">
-            {t('common.noSpam')}
+            {t('leadPopup.footer')}
           </p>
         </div>
       </DialogContent>

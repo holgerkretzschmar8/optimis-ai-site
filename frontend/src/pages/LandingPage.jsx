@@ -84,13 +84,9 @@ const LandingPage = () => {
 
       <Footer onContactClick={openContact} />
 
-      {isContactOpen && (
-        <ContactModal isOpen={isContactOpen} onClose={closeContact} />
-      )}
+      <ContactModal isOpen={isContactOpen} onClose={closeContact} />
 
-      {showLeadPopup && (
-        <LeadPopup isOpen={showLeadPopup} onClose={() => setShowLeadPopup(false)} />
-      )}
+      <LeadPopup isOpen={showLeadPopup} onClose={() => setShowLeadPopup(false)} />
     </div>
   );
 };

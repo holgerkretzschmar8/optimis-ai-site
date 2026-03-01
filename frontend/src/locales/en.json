@@ -171,9 +171,9 @@
     }
   },
   "whyUs": {
-    "badge": "WHY OPTIMIS AI",
-    "titleMain": "The",
-    "titleGradient": "Optimis Advantage",
+    "badge": "Why Us",
+    "titleMain": "The Optimis",
+    "titleGradient": "Advantage",
     "description": "We're not just another AI agency. We're your strategic partner in building intelligent systems that drive measurable business growth.",
     "stats": {
       "deployed": "AI Systems Deployed",
@@ -307,12 +307,15 @@
       "company": "Muster GmbH",
       "message": "Tell us about your company and what you want to achieve with AI..."
     },
-    "gdpr": "I agree that my details from the contact form will be collected and processed to answer my request. The data will be deleted after your request has been processed. Note: You can revoke your consent at any time for the future by e-mail to info@optimis-ai.com. Detailed information on the handling of user data can be found in our"
+    "gdpr": "I agree that my details from the contact form will be collected and processed to answer my request. The data will be deleted after your request has been processed. Note: You can revoke your consent at any time for the future by e-mail to info@optimis-ai.com. Detailed information on the handling of user data can be found in our",
+    "submit": "Book My Free Strategy Call",
+    "footer": "We typically respond within 2 hours during business hours."
   },
   "leadPopup": {
     "title": "Get Your Free AI Voice Agent Demo",
     "description": "Discover how AI can automate your business and save on operating costs.",
-    "submit": "Get Free Demo",
+    "submit": "Claim My Free AI Demo",
+    "footer": "Limited spots available. Secure yours now.",
     "gdpr": "I agree that my data will be collected to process my request. Information can be found in the"
   },
   "privacy": {
