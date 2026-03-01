@@ -5,6 +5,7 @@ import SocialProofSection from "@/components/SocialProofSection";
 import ServicesSection from "@/components/ServicesSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
 import IndustriesSection from "@/components/IndustriesSection";
+import CaseStudiesSection from "@/components/CaseStudiesSection";
 import WhyUsSection from "@/components/WhyUsSection";
 import PricingSection from "@/components/PricingSection";
 import FAQSection from "@/components/FAQSection";
@@ -21,7 +22,7 @@ const LandingPage = () => {
   useEffect(() => {
     const handleScroll = () => {
       if (hasShownPopup) return;
-      
+
       const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
       const scrollPosition = window.scrollY;
       const scrollPercentage = (scrollPosition / scrollHeight) * 100;
@@ -43,15 +44,16 @@ const LandingPage = () => {
     <div className="min-h-screen bg-[#020617] relative">
       {/* Neural Network Background */}
       <div className="neural-bg" />
-      
+
       <Navigation onContactClick={openContact} />
-      
+
       <main>
         <HeroSection onContactClick={openContact} />
         <SocialProofSection />
         <ServicesSection />
         <HowItWorksSection />
         <IndustriesSection />
+        <CaseStudiesSection />
         <WhyUsSection />
         <PricingSection onContactClick={openContact} />
         <FAQSection />

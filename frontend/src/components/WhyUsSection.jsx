@@ -44,18 +44,17 @@ const WhyUsSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Content */}
           <div>
-            <p className="text-cyan-400 font-medium mb-4 uppercase tracking-wider text-sm">
-              Why Optimis AI
+            <p className="text-cyan-400 font-medium mb-4 uppercase tracking-wider text-sm" data-testid="why-us-label">
+              Why Us
             </p>
             <h2
               data-testid="why-us-title"
               className="text-3xl lg:text-4xl font-bold mb-6"
             >
-              The{" "}
-              <span className="gradient-text">Optimis Advantage</span>
+              Why Choose <span className="gradient-text">Optimis AI?</span>
             </h2>
             <p className="text-slate-400 mb-8 text-base lg:text-lg">
-              We&apos;re not just another AI agency. We&apos;re your strategic partner in building intelligent systems that drive measurable business growth.
+              We&apos;re not just another AI agency. We&apos;re your strategic partner in building intelligent systems that drive measurable business growth and operational excellence.
             </p>
 
             {/* Stats */}

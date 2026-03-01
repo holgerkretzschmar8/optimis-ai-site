@@ -1,12 +1,16 @@
 import { useState } from "react";
-import { X, Gift, ArrowRight, Loader2 } from "lucide-react";
+import { Gift, ArrowRight, Loader2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
 import axios from "axios";
+import {
+  Dialog,
+  DialogContent,
+} from "@/components/ui/dialog";
 
 const FORMSPREE_URL = "https://formspree.io/f/mqedjvzr";
 
-const LeadPopup = ({ onClose }) => {
+const LeadPopup = ({ isOpen, onClose }) => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [gdpr, setGdpr] = useState(false);
@@ -37,32 +41,14 @@ const LeadPopup = ({ onClose }) => {
   };
 
   return (
-    <div
-      data-testid="lead-popup-overlay"
-      className="fixed inset-0 z-50 flex items-center justify-center p-4"
-      onClick={onClose}
-    >
-      {/* Backdrop */}
-      <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" />
-
-      {/* Popup */}
-      <div
+    <Dialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
+      <DialogContent 
+        className="sm:max-w-md bg-slate-950/95 border-white/10 backdrop-blur-xl p-0 overflow-hidden" 
         data-testid="lead-popup"
-        className="popup-enter relative w-full max-w-md glass-card overflow-hidden"
-        onClick={(e) => e.stopPropagation()}
       >
-        {/* Close Button */}
-        <button
-          data-testid="lead-popup-close"
-          onClick={onClose}
-          className="absolute top-4 right-4 text-slate-400 hover:text-white transition-colors z-10"
-        >
-          <X size={24} />
-        </button>
-
         {/* Gradient Header */}
-        <div className="bg-gradient-to-br from-cyan-500/20 to-blue-600/20 p-8 text-center">
-          <div className="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center mb-4">
+        <div className="bg-gradient-to-br from-cyan-500/20 to-blue-600/20 p-8 text-center relative">
+          <div className="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center mb-4 shadow-[0_0_20px_rgba(6,182,212,0.3)]">
             <Gift size={32} className="text-white" />
           </div>
           <h3 className="text-xl font-bold text-white mb-2">
@@ -140,8 +126,8 @@ const LeadPopup = ({ onClose }) => {
             No spam. Unsubscribe anytime.
           </p>
         </div>
-      </div>
-    </div>
+      </DialogContent>
+    </Dialog>
   );
 };
 
