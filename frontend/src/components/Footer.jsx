@@ -1,28 +1,30 @@
 import { Mail, Phone, MapPin, Linkedin, Twitter } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const LOGO_URL = "https://customer-assets.emergentagent.com/job_7f9de4cc-23e2-4dee-b34f-6c95288f12e2/artifacts/5siww960_Screenshot%202026-02-17%20at%2022.30.43.png";
 
 const Footer = ({ onContactClick }) => {
+  const { t } = useTranslation();
   const links = {
     services: [
-      { label: "AI Voice Agents", href: "/#services" },
-      { label: "AI Chatbots", href: "/#services" },
-      { label: "Appointment Setters", href: "/#services" },
-      { label: "Workflow Automation", href: "/#services" },
-      { label: "Custom AI Systems", href: "/#services" },
+      { label: t('services.items.voice.title'), href: "/#services" },
+      { label: t('services.items.chatbots.title'), href: "/#services" },
+      { label: t('services.items.appointment.title'), href: "/#services" },
+      { label: t('services.items.workflow.title'), href: "/#services" },
+      { label: t('services.items.custom.title'), href: "/#services" },
     ],
     company: [
-      { label: "About Us", href: "/#" },
-      { label: "Pricing", href: "/#pricing" },
-      { label: "Blog", href: "#" },
-      { label: "Careers", href: "#" },
+      { label: t('common.aboutUs'), href: "/#" },
+      { label: t('common.pricing'), href: "/#pricing" },
+      { label: t('common.blog'), href: "#" },
+      { label: t('common.careers'), href: "#" },
     ],
     support: [
-      { label: "FAQ", href: "/#faq" },
-      { label: "Contact", onClick: onContactClick },
-      { label: "Privacy Policy", href: "/privacy-policy", isInternal: true },
-      { label: "Terms of Service", href: "/terms-of-service", isInternal: true },
+      { label: t('common.faq'), href: "/#faq" },
+      { label: t('common.contact'), onClick: onContactClick },
+      { label: t('common.privacyPolicy'), href: "/privacy-policy", isInternal: true },
+      { label: t('common.termsOfService'), href: "/terms-of-service", isInternal: true },
     ],
   };
 
@@ -41,7 +43,7 @@ const Footer = ({ onContactClick }) => {
               className="h-10 w-auto mb-6"
             />
             <p className="text-slate-400 text-sm mb-6 max-w-sm">
-              Advanced AI automation systems that optimize revenue and efficiency for modern businesses.
+              {t('footer.description')}
             </p>
             <div className="space-y-3">
               <a href="mailto:info@optimis-ai.com" className="flex items-center gap-3 text-sm text-slate-400 hover:text-cyan-400 transition-colors">
@@ -54,14 +56,14 @@ const Footer = ({ onContactClick }) => {
               </a>
               <p className="flex items-center gap-3 text-sm text-slate-400">
                 <MapPin size={16} />
-                Munich, Germany
+                {t('footer.location')}
               </p>
             </div>
           </div>
 
           {/* Services */}
           <div>
-            <h4 className="font-semibold text-white mb-4">Services</h4>
+            <h4 className="font-semibold text-white mb-4">{t('footer.servicesTitle')}</h4>
             <ul className="space-y-3">
               {links.services.map((link) => (
                 <li key={link.label}>
@@ -78,7 +80,7 @@ const Footer = ({ onContactClick }) => {
 
           {/* Company */}
           <div>
-            <h4 className="font-semibold text-white mb-4">Company</h4>
+            <h4 className="font-semibold text-white mb-4">{t('footer.companyTitle')}</h4>
             <ul className="space-y-3">
               {links.company.map((link) => (
                 <li key={link.label}>
@@ -95,7 +97,7 @@ const Footer = ({ onContactClick }) => {
 
           {/* Support */}
           <div>
-            <h4 className="font-semibold text-white mb-4">Support</h4>
+            <h4 className="font-semibold text-white mb-4">{t('footer.supportTitle')}</h4>
             <ul className="space-y-3">
               {links.support.map((link) => (
                 <li key={link.label}>
@@ -130,7 +132,7 @@ const Footer = ({ onContactClick }) => {
         {/* Bottom */}
         <div className="border-t border-white/5 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-slate-500">
-            © {new Date().getFullYear()} Optimis AI. All rights reserved.
+            {t('footer.copyright', { year: new Date().getFullYear() })}
           </p>
           <div className="flex items-center gap-4">
             <a

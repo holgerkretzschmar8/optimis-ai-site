@@ -1,10 +1,12 @@
 import { ArrowRight, Play, Shield, Zap, Clock } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const HeroSection = ({ onContactClick }) => {
+  const { t } = useTranslation();
   const trustIndicators = [
-    { icon: Shield, text: "Enterprise-Grade Security" },
-    { icon: Zap, text: "24/7 AI Automation" },
-    { icon: Clock, text: "Same-Week Deployment" },
+    { icon: Shield, text: t('hero.trust.security') },
+    { icon: Zap, text: t('hero.trust.automation') },
+    { icon: Clock, text: t('hero.trust.deployment') },
   ];
 
   return (
@@ -83,7 +85,7 @@ const HeroSection = ({ onContactClick }) => {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 mb-10 animate-fade-in-up">
             <span className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse" />
-            <span className="text-sm text-cyan-400 font-medium tracking-wide">AI Automation Agency</span>
+            <span className="text-sm text-cyan-400 font-medium tracking-wide">{t('hero.badge')}</span>
           </div>
 
           {/* Main Headline */}
@@ -92,12 +94,12 @@ const HeroSection = ({ onContactClick }) => {
             className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[1.1] mb-8 animate-fade-in-up"
             style={{ animationDelay: "0.1s" }}
           >
-            <span className="block text-white">Advanced AI Systems</span>
+            <span className="block text-white">{t('hero.headline.line1')}</span>
             <span className="block mt-2">
-              That{" "}
-              <span className="gradient-text animate-gradient">Optimize Revenue</span>
+              {t('hero.headline.that')}{" "}
+              <span className="gradient-text animate-gradient">{t('hero.headline.line2')}</span>
             </span>
-            <span className="block text-white mt-2">& Efficiency</span>
+            <span className="block text-white mt-2">{t('hero.headline.line3')}</span>
           </h1>
 
           {/* Subheadline */}
@@ -106,14 +108,14 @@ const HeroSection = ({ onContactClick }) => {
             className="text-xl lg:text-2xl text-slate-400 mb-6 max-w-3xl mx-auto animate-fade-in-up font-light"
             style={{ animationDelay: "0.2s" }}
           >
-            We design intelligent automation for modern businesses.
+            {t('hero.subheadline')}
           </p>
 
-          <p 
+          <p
             className="text-base lg:text-lg text-slate-500 mb-12 max-w-2xl mx-auto animate-fade-in-up"
             style={{ animationDelay: "0.3s" }}
           >
-            Deploy AI voice agents, chatbots, and workflow automation that scale your business 24/7 without increasing overhead.
+            {t('hero.description')}
           </p>
 
           {/* CTA Buttons */}
@@ -126,7 +128,7 @@ const HeroSection = ({ onContactClick }) => {
               onClick={onContactClick}
               className="btn-primary inline-flex items-center justify-center gap-2 text-base lg:text-lg px-10 py-4"
             >
-              Book a Free Strategy Call
+              {t('hero.primaryCTA')}
               <ArrowRight size={20} />
             </button>
             <a
@@ -135,7 +137,7 @@ const HeroSection = ({ onContactClick }) => {
               className="btn-secondary inline-flex items-center justify-center gap-2 text-base lg:text-lg px-10 py-4"
             >
               <Play size={20} />
-              See How It Works
+              {t('hero.secondaryCTA')}
             </a>
           </div>
 

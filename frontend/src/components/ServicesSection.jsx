@@ -1,36 +1,38 @@
 import { Phone, MessageSquare, Calendar, Workflow, Cpu, ArrowRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const ServicesSection = () => {
+  const { t } = useTranslation();
   const services = [
     {
       icon: Phone,
-      title: "AI Voice Agents",
-      description: "Human-like inbound & outbound AI callers that qualify and close leads around the clock.",
-      features: ["Natural conversations", "Multi-language support", "CRM integration"],
+      title: t('services.items.voice.title'),
+      description: t('services.items.voice.description'),
+      features: t('services.items.voice.features', { returnObjects: true }),
     },
     {
       icon: MessageSquare,
-      title: "AI Chatbots",
-      description: "24/7 intelligent website chat automation that engages visitors and converts them to customers.",
-      features: ["Instant responses", "Lead qualification", "Seamless handoff"],
+      title: t('services.items.chatbots.title'),
+      description: t('services.items.chatbots.description'),
+      features: t('services.items.chatbots.features', { returnObjects: true }),
     },
     {
       icon: Calendar,
-      title: "AI Appointment Setters",
-      description: "Automatically qualify prospects and book meetings directly into your calendar.",
-      features: ["Smart scheduling", "Timezone aware", "Calendar sync"],
+      title: t('services.items.appointment.title'),
+      description: t('services.items.appointment.description'),
+      features: t('services.items.appointment.features', { returnObjects: true }),
     },
     {
       icon: Workflow,
-      title: "Workflow Automation",
-      description: "Integrate AI into CRMs, pipelines, and internal systems to eliminate manual tasks.",
-      features: ["Process automation", "Data sync", "Custom triggers"],
+      title: t('services.items.workflow.title'),
+      description: t('services.items.workflow.description'),
+      features: t('services.items.workflow.features', { returnObjects: true }),
     },
     {
       icon: Cpu,
-      title: "Custom AI Systems",
-      description: "Tailored AI infrastructure designed specifically for your scaling business needs.",
-      features: ["Custom models", "API development", "Enterprise scale"],
+      title: t('services.items.custom.title'),
+      description: t('services.items.custom.description'),
+      features: t('services.items.custom.features', { returnObjects: true }),
     },
   ];
 
@@ -44,17 +46,17 @@ const ServicesSection = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <p className="text-cyan-400 font-medium mb-4 uppercase tracking-wider text-sm">
-            Our Services
+            {t('services.badge')}
           </p>
           <h2
             data-testid="services-title"
             className="text-3xl lg:text-4xl font-bold mb-6"
           >
-            AI Solutions That{" "}
-            <span className="gradient-text">Drive Results</span>
+            {t('services.title').split('That')[0]} That{" "}
+            <span className="gradient-text">{t('services.title').split('That')[1]}</span>
           </h2>
           <p className="text-slate-400 max-w-2xl mx-auto text-base lg:text-lg">
-            From voice agents to complete workflow automation, we build and deploy AI systems that work 24/7.
+            {t('services.description')}
           </p>
         </div>
 

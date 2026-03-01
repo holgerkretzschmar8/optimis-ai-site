@@ -4,32 +4,34 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { useTranslation } from "react-i18next";
 
 const FAQSection = () => {
+  const { t } = useTranslation();
   const faqs = [
     {
-      question: "How does AI voice technology work?",
-      answer: "Our AI voice agents use advanced natural language processing and speech synthesis to have human-like conversations. They can understand context, respond naturally, and handle complex conversations including appointment booking, lead qualification, and customer support. The technology is trained on millions of conversations to ensure natural, effective interactions.",
+      question: t('faq.items.q1.q'),
+      answer: t('faq.items.q1.a'),
     },
     {
-      question: "Does it integrate with my CRM?",
-      answer: "Yes! We integrate with all major CRM platforms including Salesforce, HubSpot, Zoho, Pipedrive, and many more. Our team handles the entire integration process, ensuring your AI systems sync seamlessly with your existing workflows. Custom integrations are also available for enterprise clients.",
+      question: t('faq.items.q2.q'),
+      answer: t('faq.items.q2.a'),
     },
     {
-      question: "Is it compliant and secure?",
-      answer: "Absolutely. We take security and compliance seriously. Our systems are SOC 2 compliant, GDPR ready, and HIPAA compliant for healthcare clients. All data is encrypted in transit and at rest, and we maintain strict access controls. We can provide detailed security documentation upon request.",
+      question: t('faq.items.q3.q'),
+      answer: t('faq.items.q3.a'),
     },
     {
-      question: "How long does setup take?",
-      answer: "Most implementations are completed within 1-2 weeks. This includes initial consultation, system configuration, CRM integration, testing, and launch. More complex enterprise deployments may take 3-4 weeks. We pride ourselves on fast deployment without sacrificing quality.",
+      question: t('faq.items.q4.q'),
+      answer: t('faq.items.q4.a'),
     },
     {
-      question: "Do you customize solutions?",
-      answer: "Every solution we build is customized to your specific business needs. We don't believe in one-size-fits-all templates. Our team works with you to understand your processes, brand voice, and goals to create AI systems that feel like a natural extension of your team.",
+      question: t('faq.items.q5.q'),
+      answer: t('faq.items.q5.a'),
     },
     {
-      question: "What kind of support do you provide?",
-      answer: "All plans include dedicated support. Starter plans receive email support with 24-hour response times. Growth plans include 24/7 priority support and weekly optimization calls. Enterprise clients get a dedicated success manager and on-call support. We're committed to your success.",
+      question: t('faq.items.q6.q'),
+      answer: t('faq.items.q6.a'),
     },
   ];
 
@@ -43,17 +45,17 @@ const FAQSection = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <p className="text-cyan-400 font-medium mb-4 uppercase tracking-wider text-sm">
-            FAQ
+            {t('faq.badge')}
           </p>
           <h2
             data-testid="faq-title"
             className="text-3xl lg:text-4xl font-bold mb-6"
           >
-            Common{" "}
-            <span className="gradient-text">Questions</span>
+            {t('faq.titleMain')}{" "}
+            <span className="gradient-text">{t('faq.titleGradient')}</span>
           </h2>
           <p className="text-slate-400 max-w-2xl mx-auto text-base lg:text-lg">
-            Everything you need to know about our AI automation solutions.
+            {t('faq.description')}
           </p>
         </div>
 

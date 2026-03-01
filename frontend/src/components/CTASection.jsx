@@ -1,6 +1,8 @@
 import { ArrowRight, Calendar, Sparkles } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const CTASection = ({ onContactClick }) => {
+  const { t } = useTranslation();
   return (
     <section
       data-testid="cta-section"
@@ -16,7 +18,7 @@ const CTASection = ({ onContactClick }) => {
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 mb-8">
               <Sparkles size={16} className="text-cyan-400" />
-              <span className="text-sm text-cyan-400 font-medium">Limited Spots Available</span>
+              <span className="text-sm text-cyan-400 font-medium">{t('cta.badge')}</span>
             </div>
 
             {/* Headline */}
@@ -24,12 +26,12 @@ const CTASection = ({ onContactClick }) => {
               data-testid="cta-headline"
               className="text-3xl lg:text-5xl font-bold mb-6"
             >
-              Ready to Optimize Your{" "}
-              <span className="gradient-text">Revenue With AI?</span>
+              {t('cta.titleMain')}{" "}
+              <span className="gradient-text">{t('cta.titleGradient')}</span>
             </h2>
 
             <p className="text-slate-400 max-w-2xl mx-auto mb-8 text-base lg:text-lg">
-              Join the businesses that are already using AI to scale faster, reduce costs, and close more deals.
+              {t('cta.description')}
             </p>
 
             {/* CTA Button */}
@@ -39,13 +41,13 @@ const CTASection = ({ onContactClick }) => {
               className="btn-primary text-base lg:text-lg px-10 py-4 inline-flex items-center gap-3"
             >
               <Calendar size={20} />
-              Book Your Free Voice-Agent Demo
+              {t('cta.button')}
               <ArrowRight size={20} />
             </button>
 
             {/* Urgency Text */}
             <p className="text-sm text-slate-500 mt-6">
-              Limited onboarding slots available monthly. Secure your spot today.
+              {t('cta.urgency')}
             </p>
           </div>
         </div>

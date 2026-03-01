@@ -1,10 +1,39 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Globe } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const LOGO_URL = "https://customer-assets.emergentagent.com/job_7f9de4cc-23e2-4dee-b34f-6c95288f12e2/artifacts/5siww960_Screenshot%202026-02-17%20at%2022.30.43.png";
 
+const LanguageToggle = () => {
+  const { i18n } = useTranslation();
+  const currentLang = i18n.language || 'en';
+
+  const toggleLanguage = () => {
+    const nextLang = currentLang === 'en' ? 'de' : 'en';
+    i18n.changeLanguage(nextLang);
+  };
+
+  return (
+    <button
+      onClick={toggleLanguage}
+      className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-800/50 border border-white/10 hover:border-cyan-500/50 transition-all group"
+      aria-label="Toggle Language"
+    >
+      <img
+        src={currentLang === 'en' ? "https://flagcdn.com/w20/us.png" : "https://flagcdn.com/w20/de.png"}
+        alt={currentLang.toUpperCase()}
+        className="w-5 h-auto rounded-sm object-cover"
+      />
+      <span className="text-xs font-bold text-slate-300 group-hover:text-white uppercase">
+        {currentLang}
+      </span>
+    </button>
+  );
+};
+
 const Navigation = ({ onContactClick }) => {
+  const { t } = useTranslation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
@@ -32,13 +61,13 @@ const Navigation = ({ onContactClick }) => {
   }, []);
 
   const navLinks = [
-    { label: "Services", href: "/#services" },
-    { label: "How It Works", href: "/#how-it-works" },
-    { label: "Industries", href: "/#industries" },
-    { label: "Case Studies", href: "/#case-studies" },
-    { label: "Why Us", href: "/#why-us" },
-    { label: "Pricing", href: "/#pricing" },
-    { label: "FAQ", href: "/#faq" },
+    { label: t('nav.services'), href: "/#services" },
+    { label: t('nav.howItWorks'), href: "/#how-it-works" },
+    { label: t('nav.industries'), href: "/#industries" },
+    { label: t('nav.caseStudies'), href: "/#case-studies" },
+    { label: t('nav.whyUs'), href: "/#why-us" },
+    { label: t('nav.pricing'), href: "/#pricing" },
+    { label: t('nav.faq'), href: "/#faq" },
   ];
 
   return (
@@ -80,25 +109,29 @@ const Navigation = ({ onContactClick }) => {
             ))}
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden lg:block">
+          <div className="hidden lg:flex items-center gap-6">
+            <LanguageToggle />
+            {/* CTA Button */}
             <button
               data-testid="nav-cta-button"
               onClick={onContactClick}
               className="btn-primary text-sm"
             >
-              Book Strategy Call
+              {t('common.bookCall')}
             </button>
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            data-testid="mobile-menu-button"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden text-white p-2"
-          >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          <div className="lg:hidden flex items-center gap-4">
+            <LanguageToggle />
+            <button
+              data-testid="mobile-menu-button"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="text-white p-2"
+            >
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -128,7 +161,7 @@ const Navigation = ({ onContactClick }) => {
               }}
               className="btn-primary w-full text-center mt-4"
             >
-              Book Strategy Call
+              {t('common.bookCall')}
             </button>
           </div>
         </div>

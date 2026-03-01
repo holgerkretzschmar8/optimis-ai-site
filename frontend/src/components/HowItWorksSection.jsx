@@ -1,24 +1,26 @@
 import { Target, Wrench, Rocket } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const HowItWorksSection = () => {
+  const { t } = useTranslation();
   const steps = [
     {
       number: "01",
       icon: Target,
-      title: "Strategy & System Mapping",
-      description: "We analyze your business processes, identify automation opportunities, and design a custom AI roadmap tailored to your goals.",
+      title: t('howItWorks.steps.step1.title'),
+      description: t('howItWorks.steps.step1.description'),
     },
     {
       number: "02",
       icon: Wrench,
-      title: "Build & Integration",
-      description: "Our team develops and integrates AI systems seamlessly with your existing tools, CRM, and workflows with zero disruption.",
+      title: t('howItWorks.steps.step2.title'),
+      description: t('howItWorks.steps.step2.description'),
     },
     {
       number: "03",
       icon: Rocket,
-      title: "Launch, Optimize & Scale",
-      description: "We deploy your AI systems, monitor performance, and continuously optimize to maximize ROI and scale with your growth.",
+      title: t('howItWorks.steps.step3.title'),
+      description: t('howItWorks.steps.step3.description'),
     },
   ];
 
@@ -32,17 +34,17 @@ const HowItWorksSection = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <p className="text-cyan-400 font-medium mb-4 uppercase tracking-wider text-sm">
-            How It Works
+            {t('howItWorks.badge')}
           </p>
           <h2
             data-testid="how-it-works-title"
             className="text-3xl lg:text-4xl font-bold mb-6"
           >
-            Your Path to{" "}
-            <span className="gradient-text">AI Automation</span>
+            {t('howItWorks.titleMain')}{" "}
+            <span className="gradient-text">{t('howItWorks.titleGradient')}</span>
           </h2>
           <p className="text-slate-400 max-w-2xl mx-auto text-base lg:text-lg">
-            A proven 3-step process that transforms your business operations.
+            {t('howItWorks.description')}
           </p>
         </div>
 

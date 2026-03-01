@@ -3,6 +3,7 @@ import { Send, Loader2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
 import axios from "axios";
+import { useTranslation } from "react-i18next";
 import {
   Dialog,
   DialogContent,
@@ -14,6 +15,7 @@ import {
 const FORMSPREE_URL = "https://formspree.io/f/mqedjvzr";
 
 const ContactModal = ({ isOpen, onClose }) => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -38,11 +40,11 @@ const ContactModal = ({ isOpen, onClose }) => {
         ...formData,
         source: "contact_modal",
       });
-      toast.success("Vielen Dank! Wir werden uns innerhalb von 24 Stunden bei Ihnen melden.");
+      toast.success(t('contactModal.success'));
       setFormData({ name: "", email: "", phone: "", company: "", message: "", gdpr: false });
       onClose();
     } catch (error) {
-      toast.error("Etwas ist schief gelaufen. Bitte versuchen Sie es erneut.");
+      toast.error(t('contactModal.error') || t('common.errorOccurred'));
       console.error("Error submitting lead:", error);
     } finally {
       setIsSubmitting(false);
@@ -56,10 +58,10 @@ const ContactModal = ({ isOpen, onClose }) => {
           {/* Header */}
           <DialogHeader className="text-center mb-8">
             <DialogTitle className="text-2xl font-bold text-white mb-2">
-              Book Your Free Strategy Call
+              {t('contactModal.title')}
             </DialogTitle>
             <DialogDescription className="text-slate-400 text-sm">
-              Fill out the form below and we'll contact you within 24 hours.
+              {t('contactModal.description')}
             </DialogDescription>
           </DialogHeader>
 
@@ -67,7 +69,7 @@ const ContactModal = ({ isOpen, onClose }) => {
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="grid sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm text-slate-400 mb-2">Name *</label>
+                <label className="block text-sm text-slate-400 mb-2">{t('contactModal.labels.name')}</label>
                 <input
                   type="text"
                   name="name"
@@ -76,11 +78,11 @@ const ContactModal = ({ isOpen, onClose }) => {
                   onChange={handleChange}
                   required
                   className="input-dark"
-                  placeholder="Max Mustermann"
+                  placeholder={t('contactModal.placeholders.name')}
                 />
               </div>
               <div>
-                <label className="block text-sm text-slate-400 mb-2">Email *</label>
+                <label className="block text-sm text-slate-400 mb-2">{t('contactModal.labels.email')}</label>
                 <input
                   type="email"
                   name="email"
@@ -89,14 +91,14 @@ const ContactModal = ({ isOpen, onClose }) => {
                   onChange={handleChange}
                   required
                   className="input-dark"
-                  placeholder="max@mustermann.com"
+                  placeholder={t('contactModal.placeholders.email')}
                 />
               </div>
             </div>
 
             <div className="grid sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm text-slate-400 mb-2">Phone (Optional)</label>
+                <label className="block text-sm text-slate-400 mb-2">{t('contactModal.labels.phone')}</label>
                 <input
                   type="tel"
                   name="phone"
@@ -104,11 +106,11 @@ const ContactModal = ({ isOpen, onClose }) => {
                   value={formData.phone}
                   onChange={handleChange}
                   className="input-dark"
-                  placeholder="+49 123 4567890"
+                  placeholder={t('contactModal.placeholders.phone')}
                 />
               </div>
               <div>
-                <label className="block text-sm text-slate-400 mb-2">Company</label>
+                <label className="block text-sm text-slate-400 mb-2">{t('contactModal.labels.company')}</label>
                 <input
                   type="text"
                   name="company"
@@ -116,13 +118,13 @@ const ContactModal = ({ isOpen, onClose }) => {
                   value={formData.company}
                   onChange={handleChange}
                   className="input-dark"
-                  placeholder="Muster GmbH"
+                  placeholder={t('contactModal.placeholders.company')}
                 />
               </div>
             </div>
 
             <div>
-              <label className="block text-sm text-slate-400 mb-2">Message *</label>
+              <label className="block text-sm text-slate-400 mb-2">{t('contactModal.labels.message')}</label>
               <textarea
                 name="message"
                 data-testid="contact-message-input"
@@ -131,7 +133,7 @@ const ContactModal = ({ isOpen, onClose }) => {
                 rows={4}
                 required
                 className="input-dark resize-none"
-                placeholder="Erzählen Sie uns von Ihrem Unternehmen und was Sie mit KI erreichen wollen..."
+                placeholder={t('contactModal.placeholders.message')}
               />
             </div>
 
@@ -146,9 +148,9 @@ const ContactModal = ({ isOpen, onClose }) => {
                 className="mt-1 w-4 h-4 rounded border-slate-700 bg-slate-800 text-cyan-500 focus:ring-cyan-500/20"
               />
               <label htmlFor="gdpr" className="text-xs text-slate-400 leading-tight">
-                Ich stimme zu, dass meine Angaben aus dem Kontaktformular zur Beantwortung meiner Anfrage erhoben und verarbeitet werden. Die Daten werden nach abgeschlossener Bearbeitung Ihrer Anfrage gelöscht. Hinweis: Sie können Ihre Einwilligung jederzeit für die Zukunft per E-Mail an info@optimis-ai.com widerrufen. Detaillierte Informationen zum Umgang mit Nutzerdaten finden Sie in unserer{" "}
+                {t('contactModal.gdpr')}{" "}
                 <Link to="/privacy-policy" className="text-cyan-400 hover:underline" onClick={onClose}>
-                  Datenschutzerklärung
+                  {t('common.privacyPolicy')}
                 </Link>.
               </label>
             </div>
@@ -162,19 +164,19 @@ const ContactModal = ({ isOpen, onClose }) => {
               {isSubmitting ? (
                 <>
                   <Loader2 size={18} className="animate-spin" />
-                  Wird gesendet...
+                  {t('common.sending')}
                 </>
               ) : (
                 <>
                   <Send size={18} />
-                  Book My Strategy Call
+                  {t('contactModal.submit')}
                 </>
               )}
             </button>
           </form>
 
           <p className="text-xs text-slate-500 text-center mt-4">
-            By submitting, you agree to our Privacy Policy and Terms of Service.
+            {t('contactModal.footer')}
           </p>
         </div>
       </DialogContent>

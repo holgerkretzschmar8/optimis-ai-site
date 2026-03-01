@@ -1,56 +1,31 @@
 import { Check, ArrowRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export default function PricingSection({ onContactClick }) {
+  const { t } = useTranslation();
   const plans = [
     {
-      name: "Starter",
-      price: "$69,99",
-      period: "/month",
-      description: "Perfect for small-scale businesses with up to 30 calls/day",
-      features: [
-        "800 minutes (0,10 €/min top-up)",
-        "1 phone number",
-        "1 user license",
-        "Email support",
-        "Monthly performance reports",
-        "Standard analytics dashboard",
-      ],
+      name: t('pricing.plans.starter.name'),
+      price: t('pricing.plans.starter.price'),
+      period: t('pricing.period'),
+      description: t('pricing.plans.starter.description'),
+      features: t('pricing.plans.starter.features', { returnObjects: true }),
       popular: false,
     },
     {
-      name: "Growth",
-      price: "$249,99",
-      period: "/month",
-      description:
-        "For growing businesses ready to scale their AI infrastructure with 30-150 calls/day",
-      features: [
-        "FREE customized AI Implementation Roadmap Plan",
-        "3 phone numbers",
-        "3 concurrent calls",
-        "Priority support (24/7)",
-        "Custom voice parameterisation",
-        "Advanced analytics & reporting",
-        "FREE Website Build and Optimisation",
-        "Multi-Lingual Voice Assistant",
-      ],
+      name: t('pricing.plans.growth.name'),
+      price: t('pricing.plans.growth.price'),
+      period: t('pricing.period'),
+      description: t('pricing.plans.growth.description'),
+      features: t('pricing.plans.growth.features', { returnObjects: true }),
       popular: true,
     },
     {
-      name: "Enterprise",
-      price: "Custom",
+      name: t('pricing.plans.enterprise.name'),
+      price: t('pricing.plans.enterprise.price'),
       period: "",
-      description:
-        "Full-scale costumized AI voice agent setup (more than 100 calls/day) and further AI Automation Assistance",
-      features: [
-        "Custom minutes",
-        "Unlimited phone numbers",
-        "unlimited concurrent calls",
-        "Priority support",
-        "Custom voice parameterisation",
-        "Advanced analytics & reporting",
-        "FREE Website Build and Optimisation",
-        "FREE customized AI Implementation Roadmap Plan",
-      ],
+      description: t('pricing.plans.enterprise.description'),
+      features: t('pricing.plans.enterprise.features', { returnObjects: true }),
       popular: false,
     },
   ];
@@ -64,16 +39,15 @@ export default function PricingSection({ onContactClick }) {
       <div className="container-custom">
         <div className="text-center mb-16">
           <p className="text-cyan-400 font-medium mb-4 uppercase tracking-wider text-sm">
-            Pricing Plans
+            {t('pricing.badge')}
           </p>
 
           <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-            Invest in <span className="gradient-text">Your Growth</span>
+            {t('pricing.titleMain')} <span className="gradient-text">{t('pricing.titleGradient')}</span>
           </h2>
 
           <p className="text-slate-400 max-w-2xl mx-auto text-base lg:text-lg">
-            Transparent pricing with no hidden fees. Choose the plan that fits
-            your business needs.
+            {t('pricing.description')}
           </p>
         </div>
 
@@ -112,7 +86,7 @@ export default function PricingSection({ onContactClick }) {
                   plan.popular ? "btn-primary" : "btn-secondary"
                 }`}
               >
-                Get Started
+                {t('common.getStarted')}
                 <ArrowRight size={16} />
               </button>
             </div>
@@ -120,8 +94,7 @@ export default function PricingSection({ onContactClick }) {
         </div>
 
         <p className="text-center text-sm text-slate-500 mt-8">
-          All plans include a 30-day money-back guarantee. Custom enterprise
-          solutions available.
+          {t('pricing.guarantee')}
         </p>
       </div>
     </section>

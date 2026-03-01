@@ -3,6 +3,7 @@ import { Gift, ArrowRight, Loader2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
 import axios from "axios";
+import { useTranslation } from "react-i18next";
 import {
   Dialog,
   DialogContent,
@@ -11,6 +12,7 @@ import {
 const FORMSPREE_URL = "https://formspree.io/f/mqedjvzr";
 
 const LeadPopup = ({ isOpen, onClose }) => {
+  const { t } = useTranslation();
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [gdpr, setGdpr] = useState(false);
@@ -19,7 +21,7 @@ const LeadPopup = ({ isOpen, onClose }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!gdpr) {
-      toast.error("Bitte akzeptieren Sie die Datenschutzbestimmungen.");
+      toast.error(t('common.errorOccurred'));
       return;
     }
     setIsSubmitting(true);
@@ -30,10 +32,10 @@ const LeadPopup = ({ isOpen, onClose }) => {
         email,
         source: "popup",
       });
-      toast.success("Vielen Dank! Wir haben Ihre Anfrage erhalten.");
+      toast.success(t('leadPopup.success') || t('common.vielenDank'));
       onClose();
     } catch (error) {
-      toast.error("Etwas ist schief gelaufen. Bitte versuchen Sie es erneut.");
+      toast.error(t('common.errorOccurred'));
       console.error("Error submitting lead:", error);
     } finally {
       setIsSubmitting(false);
@@ -52,10 +54,10 @@ const LeadPopup = ({ isOpen, onClose }) => {
             <Gift size={32} className="text-white" />
           </div>
           <h3 className="text-xl font-bold text-white mb-2">
-            Get Your Free AI Voice Agent Demo
+            {t('leadPopup.title')}
           </h3>
           <p className="text-slate-400 text-sm">
-            Discover how AI can automate your business and save on operating costs.
+            {t('leadPopup.description')}
           </p>
         </div>
 
@@ -70,7 +72,7 @@ const LeadPopup = ({ isOpen, onClose }) => {
                 onChange={(e) => setName(e.target.value)}
                 required
                 className="input-dark"
-                placeholder="Max Mustermann"
+                placeholder={t('contactModal.placeholders.name')}
               />
             </div>
             <div>
@@ -81,7 +83,7 @@ const LeadPopup = ({ isOpen, onClose }) => {
                 onChange={(e) => setEmail(e.target.value)}
                 required
                 className="input-dark"
-                placeholder="max@mustermann.com"
+                placeholder={t('contactModal.placeholders.email')}
               />
             </div>
 
@@ -95,9 +97,9 @@ const LeadPopup = ({ isOpen, onClose }) => {
                 className="mt-1 w-4 h-4 rounded border-slate-700 bg-slate-800 text-cyan-500 focus:ring-cyan-500/20"
               />
               <label htmlFor="gdpr-popup" className="text-[10px] text-slate-400 leading-tight">
-                Ich stimme zu, dass meine Daten zur Bearbeitung meiner Anfrage erhoben werden. Informationen finden Sie in der{" "}
+                {t('leadPopup.gdpr')}{" "}
                 <Link to="/privacy-policy" className="text-cyan-400 hover:underline" onClick={onClose}>
-                  Datenschutzerklärung
+                  {t('common.privacyPolicy')}
                 </Link>.
               </label>
             </div>
@@ -111,11 +113,11 @@ const LeadPopup = ({ isOpen, onClose }) => {
               {isSubmitting ? (
                 <>
                   <Loader2 size={18} className="animate-spin" />
-                  Wird gesendet...
+                  {t('common.sending')}
                 </>
               ) : (
                 <>
-                  Get Free Demo
+                  {t('leadPopup.submit')}
                   <ArrowRight size={18} />
                 </>
               )}
@@ -123,7 +125,7 @@ const LeadPopup = ({ isOpen, onClose }) => {
           </form>
 
           <p className="text-xs text-slate-500 text-center mt-4">
-            No spam. Unsubscribe anytime.
+            {t('common.noSpam')}
           </p>
         </div>
       </DialogContent>

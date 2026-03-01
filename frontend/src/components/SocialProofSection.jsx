@@ -1,14 +1,16 @@
 import { useEffect, useState, useRef } from "react";
+import { useTranslation } from "react-i18next";
 
 const SocialProofSection = () => {
+  const { t } = useTranslation();
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
 
   const stats = [
-    { value: 300, suffix: "%", label: "Faster Lead Response" },
-    { value: 40, suffix: "%", label: "Reduction in Operating Costs" },
-    { value: 24, suffix: "/7", label: "AI Sales & Support Agents" },
-    { value: 10, suffix: "K+", label: "Conversations Automated" },
+    { value: 300, suffix: "%", label: t('socialProof.stats.response') },
+    { value: 40, suffix: "%", label: t('socialProof.stats.costs') },
+    { value: 24, suffix: "/7", label: t('socialProof.stats.agents') },
+    { value: 10, suffix: "K+", label: t('socialProof.stats.automated') },
   ];
 
   const logos = [
@@ -72,7 +74,7 @@ const SocialProofSection = () => {
         {/* Client Logos */}
         <div className="text-center">
           <p className="text-sm text-slate-500 mb-8 uppercase tracking-wider">
-            Trusted by innovative companies
+            {t('socialProof.trustedBy')}
           </p>
           <div className="flex flex-wrap justify-center items-center gap-8 lg:gap-12">
             {logos.map((logo, index) => (
