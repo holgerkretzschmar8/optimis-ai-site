@@ -72,7 +72,8 @@ const PricingSection = ({ onContactClick }) => {
           </h2>
 
           <p className="text-slate-400 max-w-2xl mx-auto text-base lg:text-lg">
-            Transparent pricing with no hidden fees. Choose the plan that fits your business needs.
+            Transparent pricing with no hidden fees. Choose the plan that fits
+            your business needs.
           </p>
         </div>
 
@@ -88,7 +89,9 @@ const PricingSection = ({ onContactClick }) => {
               <p className="text-sm text-slate-500 mb-6">{plan.description}</p>
 
               <div className="mb-8">
-                <span className="text-4xl font-bold text-white">{plan.price}</span>
+                <span className="text-4xl font-bold text-white">
+                  {plan.price}
+                </span>
                 <span className="text-slate-500">{plan.period}</span>
               </div>
 
@@ -117,7 +120,8 @@ const PricingSection = ({ onContactClick }) => {
         </div>
 
         <p className="text-center text-sm text-slate-500 mt-8">
-          All plans include a 30-day money-back guarantee. Custom enterprise solutions available.
+          All plans include a 30-day money-back guarantee. Custom enterprise
+          solutions available.
         </p>
       </div>
     </section>
