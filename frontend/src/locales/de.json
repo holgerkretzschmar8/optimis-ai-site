@@ -1,0 +1,335 @@
+{
+  "common": {
+    "bookCall": "Strategiegespräch buchen",
+    "strategyCall": "Strategiegespräch",
+    "freeDemo": "Kostenlose Demo",
+    "getStarted": "Jetzt starten",
+    "learnMore": "Mehr erfahren",
+    "seeHowItWorks": "So funktioniert es",
+    "privacyPolicy": "Datenschutzerklärung",
+    "termsOfService": "Nutzungsbedingungen",
+    "contact": "Kontakt",
+    "aboutUs": "Über uns",
+    "pricing": "Preise",
+    "faq": "FAQ",
+    "blog": "Blog",
+    "careers": "Karriere",
+    "allRightsReserved": "Alle Rechte vorbehalten.",
+    "effectiveDate": "Stand",
+    "limitedSpots": "Begrenzte Plätze verfügbar",
+    "noSpam": "Kein Spam. Jederzeit abbestellbar.",
+    "sending": "Wird gesendet...",
+    "vielenDank": "Vielen Dank! Wir werden uns innerhalb von 24 Stunden bei Ihnen melden.",
+    "errorOccurred": "Etwas ist schief gelaufen. Bitte versuchen Sie es erneut."
+  },
+  "nav": {
+    "services": "Leistungen",
+    "howItWorks": "Ablauf",
+    "industries": "Branchen",
+    "caseStudies": "Fallstudien",
+    "whyUs": "Vorteile",
+    "pricing": "Preise",
+    "faq": "FAQ"
+  },
+  "hero": {
+    "badge": "KI-Automatisierungsagentur",
+    "headline": {
+      "line1": "Moderne KI-Systeme,",
+      "line2": "die Umsatz & Effizienz",
+      "line3": "optimieren",
+      "that": ""
+    },
+    "subheadline": "Wir entwickeln intelligente Automatisierungen für moderne Unternehmen.",
+    "description": "Setzen Sie KI-Voice-Agents, Chatbots und Workflow-Automatisierungen ein, die Ihr Unternehmen rund um die Uhr skalieren – ohne Fixkosten zu erhöhen.",
+    "primaryCTA": "Kostenloses Strategiegespräch buchen",
+    "secondaryCTA": "So funktioniert es",
+    "trust": {
+      "security": "Sicherheit auf Enterprise-Niveau",
+      "automation": "24/7 KI-Automatisierung",
+      "deployment": "Implementierung in einer Woche"
+    }
+  },
+  "socialProof": {
+    "stats": {
+      "response": "Schnellere Lead-Reaktion",
+      "costs": "Senkung der Betriebskosten",
+      "agents": "KI-Vertriebs- & Support-Agents",
+      "automated": "Automatisierte Konversationen"
+    },
+    "trustedBy": "Vertraut von innovativen Unternehmen"
+  },
+  "services": {
+    "badge": "Unsere Leistungen",
+    "titleMain": "KI-Lösungen, die",
+    "titleGradient": "Ergebnisse liefern",
+    "description": "Von Voice-Agents bis hin zur kompletten Workflow-Automatisierung bauen und implementieren wir KI-Systeme, die rund um die Uhr für Sie arbeiten.",
+    "items": {
+      "voice": {
+        "title": "KI-Voice-Agents",
+        "description": "Menschlich klingende Inbound- & Outbound-KI-Anrufer, die Leads rund um die Uhr qualifizieren und abschließen.",
+        "features": ["Natürliche Gespräche", "Mehrsprachiger Support", "CRM-Integration"]
+      },
+      "chatbots": {
+        "title": "KI-Chatbots",
+        "description": "24/7 intelligente Chat-Automatisierung für Ihre Website, die Besucher anspricht und in Kunden verwandelt.",
+        "features": ["Sofortige Antworten", "Lead-Qualifizierung", "Nahtlose Übergabe"]
+      },
+      "appointment": {
+        "title": "KI-Terminplaner",
+        "description": "Qualifizieren Sie Interessenten automatisch und buchen Sie Termine direkt in Ihren Kalender.",
+        "features": ["Intelligente Planung", "Zeitzonen-Berücksichtigung", "Kalender-Synchronisierung"]
+      },
+      "workflow": {
+        "title": "Workflow-Automatisierung",
+        "description": "Integrieren Sie KI in CRMs, Pipelines und interne Systeme, um manuelle Aufgaben zu eliminieren.",
+        "features": ["Prozessautomatisierung", "Datensynchronisation", "Eigene Trigger"]
+      },
+      "custom": {
+        "title": "Individuelle KI-Systeme",
+        "description": "Maßgeschneiderte KI-Infrastruktur, die speziell auf die Skalierungsbedürfnisse Ihres Unternehmens zugeschnitten ist.",
+        "features": ["Eigene Modelle", "API-Entwicklung", "Enterprise-Skalierung"]
+      }
+    }
+  },
+  "howItWorks": {
+    "badge": "Ablauf",
+    "titleMain": "Ihr Weg zur",
+    "titleGradient": "KI-Automatisierung",
+    "description": "Ein bewährter 3-Stufen-Prozess, der Ihre Geschäftsprozesse transformiert.",
+    "steps": {
+      "step1": {
+        "title": "Strategie & System-Mapping",
+        "description": "Wir analysieren Ihre Geschäftsprozesse, identifizieren Automatisierungspotenziale und entwerfen eine maßgeschneiderte KI-Roadmap."
+      },
+      "step2": {
+        "title": "Entwicklung & Integration",
+        "description": "Unser Team entwickelt und integriert KI-Systeme nahtlos in Ihre bestehenden Tools, CRMs und Workflows – ohne Betriebsunterbrechung."
+      },
+      "step3": {
+        "title": "Launch, Optimierung & Skalierung",
+        "description": "Wir implementieren Ihre KI-Systeme, überwachen die Performance und optimieren kontinuierlich, um den ROI zu maximieren."
+      }
+    }
+  },
+  "industries": {
+    "badge": "Branchen, die wir unterstützen",
+    "titleMain": "KI-Lösungen für",
+    "titleGradient": "jede Branche",
+    "description": "Spezialisierte KI-Automatisierung, zugeschnitten auf die einzigartigen Herausforderungen Ihrer Branche.",
+    "items": {
+      "realEstate": { "name": "Immobilien", "description": "Lead-Qualifizierung & Follow-up" },
+      "lawFirms": { "name": "Anwaltskanzleien", "description": "Mandantenaufnahme & Planung" },
+      "medSpas": { "name": "Med Spas", "description": "Terminbuchung & Erinnerungen" },
+      "solar": { "name": "Solar", "description": "Lead-Gen & Qualifizierungsgespräche" },
+      "insurance": { "name": "Versicherungen", "description": "Angebotserstellung & Follow-up" },
+      "marketing": { "name": "Marketing-Agenturen", "description": "Kundenkommunikation & Reporting" },
+      "ecommerce": { "name": "E-Commerce", "description": "Kundensupport & Upselling" }
+    }
+  },
+  "caseStudies": {
+    "badge": "Fallstudien",
+    "titleMain": "Echte Ergebnisse von",
+    "titleGradient": "echten Kunden",
+    "description": "Erfahren Sie, wie Unternehmen wie Ihres mit unseren KI-Systemen transformatives Wachstum erzielt haben.",
+    "challenge": "Herausforderung",
+    "solution": "Unsere Lösung",
+    "viewAll": "Alle Fallstudien ansehen",
+    "items": {
+      "medSpa": {
+        "title": "Transformation einer Med-Spa-Kette",
+        "industry": "Gesundheit & Beauty",
+        "problem": "Hohes Anrufaufkommen überlastet den Empfang, verpasste Termine und Umsatzeinbußen.",
+        "solution": "Einsatz von KI-Voice-Agents für 24/7-Buchungen und KI-Chatbots für sofortige Antworten.",
+        "results": {
+          "appointments": "Steigerung der gebuchten Termine",
+          "noShows": "Reduzierung von No-Shows",
+          "roi": "ROI im ersten Quartal"
+        }
+      },
+      "lawFirm": {
+        "title": "Revolution der Mandantenaufnahme",
+        "industry": "Rechtsdienstleistungen",
+        "problem": "Langsame Lead-Reaktionszeiten und manuelle Aufnahme führen zum Verlust qualifizierter Leads.",
+        "solution": "Implementierung KI-gestützter Lead-Qualifizierung und automatisierter Workflows.",
+        "results": {
+          "staffing": "Senkung der Personalkosten",
+          "responseTime": "Durchschnittliche Reaktionszeit (vorher 24 Std.)",
+          "satisfaction": "Kundenzufreidenheits-Score"
+        }
+      },
+      "solar": {
+        "title": "Optimierung der Solar-Lead-Gen",
+        "industry": "Erneuerbare Energien",
+        "problem": "Vertriebsteam durch unqualifizierte Leads überlastet, Zeitverschwendung bei aussichtslosen Interessenten.",
+        "solution": "Einsatz von Outbound-KI-Anrufen zur Lead-Qualifizierung vor der Übergabe an Mitarbeiter.",
+        "results": {
+          "qualified": "Steigerung qualifizierter Leads",
+          "closeRate": "Verbesserung der Abschlussrate",
+          "revenue": "Zusätzlich generierter Umsatz"
+        }
+      }
+    }
+  },
+  "whyUs": {
+    "badge": "WARUM OPTIMIS AI",
+    "titleMain": "Der",
+    "titleGradient": "Optimis Vorteil",
+    "description": "Wir sind nicht nur eine weitere KI-Agentur. Wir sind Ihr strategischer Partner für den Aufbau intelligenter Systeme, die messbares Unternehmenswachstum fördern.",
+    "stats": {
+      "deployed": "KI-Systeme implementiert",
+      "retention": "Kundenbindung",
+      "roi": "Durchschnittlicher ROI"
+    },
+    "items": {
+      "models": { "title": "Enterprise-KI-Modelle", "description": "Wir nutzen die neuesten GPT, Claude und individuell trainierten Modelle für höchste Performance." },
+      "custom": { "title": "Maßgeschneiderte Systeme", "description": "Keine Standardvorlagen. Jede Lösung wird speziell für Ihre Bedürfnisse entwickelt." },
+      "deployment": { "title": "Schnelle Implementierung", "description": "In Tagen einsatzbereit, nicht Monaten. Unser optimierter Prozess liefert schnelle Ergebnisse." },
+      "optimization": { "title": "Kontinuierliche Optimierung", "description": "Wir überwachen und verbessern Ihre KI-Systeme kontinuierlich für Spitzenleistung." },
+      "support": { "title": "Engagiertes Support-Team", "description": "Ihr Erfolg ist unsere Priorität. Erhalten Sie Experten-Support, wann immer Sie ihn brauchen." },
+      "performance": { "title": "Datenbasierte Performance", "description": "Echtzeit-Analysen und Reporting, damit Sie Ihren ROI jederzeit im Blick haben." }
+    }
+  },
+  "pricing": {
+    "badge": "Preismodelle",
+    "titleMain": "Investieren Sie in",
+    "titleGradient": "Ihr Wachstum",
+    "description": "Transparente Preise ohne versteckte Gebühren. Wählen Sie das passende Modell für Ihr Unternehmen.",
+    "guarantee": "Alle Pläne beinhalten eine 30-Tage-Geld-zurück-Garantie. Individuelle Enterprise-Lösungen verfügbar.",
+    "period": "/Monat",
+    "plans": {
+      "starter": {
+        "name": "Starter",
+        "price": "69,99 €",
+        "description": "Ideal für kleine Unternehmen mit bis zu 30 Anrufen/Tag",
+        "features": [
+          "800 Minuten (0,10 €/Min. Nachfüllung)",
+          "1 Telefonnummer",
+          "1 Benutzerlizenz",
+          "E-Mail-Support",
+          "Monatliche Performance-Berichte",
+          "Standard-Analyse-Dashboard"
+        ]
+      },
+      "growth": {
+        "name": "Growth",
+        "price": "249,99 €",
+        "description": "Für wachsende Unternehmen mit 30-150 Anrufen/Tag",
+        "features": [
+          "2500 Minuten (0,1 €/Min. Nachfüllung)",
+          "3 Telefonnummern",
+          "3 gleichzeitige Anrufe",
+          "Prioritäts-Support (24/7)",
+          "Eigene Sprach-Parametrisierung",
+          "Erweiterte Analysen & Reporting",
+          "GRATIS Website-Erstellung & Optimierung",
+          "Mehrsprachiger Voice-Assistant"
+        ]
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "price": "Individuell",
+        "description": "Umfassende KI-Voice-Agent-Lösungen (>100 Anrufe/Tag) und weitere KI-Automatisierung",
+        "features": [
+          "Individuelle Minutenpakete",
+          "Unbegrenzte Telefonnummern",
+          "Unbegrenzte gleichzeitige Anrufe",
+          "Prioritäts-Support",
+          "Eigene Sprach-Parametrisierung",
+          "Erweiterte Analysen & Reporting",
+          "GRATIS Website-Erstellung & Optimierung",
+          "GRATIS individueller KI-Implementierungsplan"
+        ]
+      }
+    }
+  },
+  "faq": {
+    "badge": "FAQ",
+    "titleMain": "Häufige",
+    "titleGradient": "Fragen",
+    "description": "Alles, was Sie über unsere KI-Automatisierungslösungen wissen müssen.",
+    "items": {
+      "q1": {
+        "q": "Wie funktioniert KI-Voice-Technologie?",
+        "a": "Unsere KI-Voice-Agents nutzen fortschrittliche natürliche Sprachverarbeitung und Sprachsynthese für menschlich klingende Gespräche. Sie verstehen den Kontext, antworten natürlich und können komplexe Abläufe wie Terminbuchungen und Lead-Qualifizierungen übernehmen."
+      },
+      "q2": {
+        "q": "Lässt es sich in mein CRM integrieren?",
+        "a": "Ja! Wir integrieren uns in alle gängigen CRM-Plattformen wie Salesforce, HubSpot, Zoho, Pipedrive und viele mehr. Unser Team übernimmt den gesamten Integrationsprozess."
+      },
+      "q3": {
+        "q": "Ist es konform und sicher?",
+        "a": "Absolut. Wir nehmen Sicherheit ernst. Unsere Systeme sind SOC 2 konform, DSGVO-bereit und HIPAA-konform für Kunden im Gesundheitswesen. Alle Daten werden verschlüsselt übertragen und gespeichert."
+      },
+      "q4": {
+        "q": "Wie lange dauert die Einrichtung?",
+        "a": "Die meisten Implementierungen sind innerhalb von 1-2 Wochen abgeschlossen. Dies umfasst Beratung, Konfiguration, CRM-Integration, Tests und den Launch."
+      },
+      "q5": {
+        "q": "Bieten Sie maßgeschneiderte Lösungen an?",
+        "a": "Jede von uns entwickelte Lösung wird individuell auf Ihre spezifischen Geschäftsanforderungen zugeschnitten. Wir glauben nicht an Standardvorlagen."
+      },
+      "q6": {
+        "q": "Welche Art von Support bieten Sie an?",
+        "a": "Alle Pläne beinhalten engagierten Support. Starter-Pläne erhalten E-Mail-Support, Growth-Pläne 24/7 Prioritäts-Support und Enterprise-Kunden einen persönlichen Success Manager."
+      }
+    }
+  },
+  "cta": {
+    "badge": "Begrenzte Plätze verfügbar",
+    "titleMain": "Bereit, Ihren",
+    "titleGradient": "Umsatz mit KI zu optimieren?",
+    "description": "Schließen Sie sich den Unternehmen an, die bereits KI nutzen, um schneller zu skalieren, Kosten zu senken und mehr Abschlüsse zu erzielen.",
+    "button": "Kostenlose Voice-Agent-Demo buchen",
+    "urgency": "Begrenzte Onboarding-Plätze pro Monat verfügbar. Sichern Sie sich Ihren Platz heute."
+  },
+  "footer": {
+    "description": "Moderne KI-Automatisierungssysteme, die Umsatz und Effizienz für moderne Unternehmen optimieren.",
+    "location": "München, Deutschland",
+    "servicesTitle": "Leistungen",
+    "companyTitle": "Unternehmen",
+    "supportTitle": "Support",
+    "copyright": "© {{year}} Optimis AI. Alle Rechte vorbehalten."
+  },
+  "contactModal": {
+    "title": "Strategiegespräch buchen",
+    "description": "Füllen Sie das Formular aus und wir melden uns innerhalb von 24 Stunden bei Ihnen.",
+    "labels": {
+      "name": "Name *",
+      "email": "E-Mail *",
+      "phone": "Telefon (Optional)",
+      "company": "Unternehmen",
+      "message": "Nachricht *"
+    },
+    "placeholders": {
+      "name": "Max Mustermann",
+      "email": "max@mustermann.com",
+      "phone": "+49 123 4567890",
+      "company": "Muster GmbH",
+      "message": "Erzählen Sie uns von Ihrem Unternehmen und was Sie mit KI erreichen wollen..."
+    },
+    "gdpr": "Ich stimme zu, dass meine Angaben aus dem Kontaktformular zur Beantwortung meiner Anfrage erhoben und verarbeitet werden. Die Daten werden nach abgeschlossener Bearbeitung Ihrer Anfrage gelöscht. Hinweis: Sie können Ihre Einwilligung jederzeit für die Zukunft per E-Mail an info@optimis-ai.com widerrufen. Detaillierte Informationen zum Umgang mit Nutzerdaten finden Sie in unserer"
+  },
+  "leadPopup": {
+    "title": "Holen Sie sich Ihre KI-Voice-Agent-Demo",
+    "description": "Entdecken Sie, wie KI Ihr Unternehmen automatisieren und Betriebskosten senken kann.",
+    "submit": "Kostenlose Demo anfordern",
+    "gdpr": "Ich stimme zu, dass meine Daten zur Bearbeitung meiner Anfrage erhoben werden. Informationen finden Sie in der"
+  },
+  "privacy": {
+    "title": "Datenschutzerklärung",
+    "effectiveDate": "Stand: 28.02.2026",
+    "sections": {
+      "s1": {
+        "title": "1. Verantwortlicher (Art. 13 Abs. 1 lit. a DSGVO)",
+        "content": "Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO) ist:",
+        "name": "Optimis AI",
+        "ceo": "Geschäftsführer: Holger Kretzschmar",
+        "address": "Fichtenstr. 6, 82178 Puchheim, Deutschland"
+      },
+      "s2": {
+        "title": "2. Allgemeine Informationen zur Datenverarbeitung",
+        "content": "Wir verarbeiten personenbezogene Daten unter Einhaltung der DSGVO und geltender lokaler Gesetze."
+      }
+    }
+  }
+}

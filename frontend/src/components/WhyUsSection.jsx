@@ -1,36 +1,38 @@
 import { Cpu, Wrench, Zap, TrendingUp, HeadphonesIcon, BarChart3 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
-const WhyUsSection = () => {
+const WhyUsSection = ({ onShowPopup }) => {
+  const { t } = useTranslation();
   const reasons = [
     {
       icon: Cpu,
-      title: "Enterprise-Grade AI Models",
-      description: "We use the latest GPT-4, Claude, and custom-trained models for superior performance.",
+      title: t('whyUs.items.models.title'),
+      description: t('whyUs.items.models.description'),
     },
     {
       icon: Wrench,
-      title: "Custom-Built Systems",
-      description: "No cookie-cutter templates. Every solution is engineered for your specific needs.",
+      title: t('whyUs.items.custom.title'),
+      description: t('whyUs.items.custom.description'),
     },
     {
       icon: Zap,
-      title: "Fast Deployment",
-      description: "Go live in days, not months. Our streamlined process gets you results quickly.",
+      title: t('whyUs.items.deployment.title'),
+      description: t('whyUs.items.deployment.description'),
     },
     {
       icon: TrendingUp,
-      title: "Ongoing Optimization",
-      description: "We continuously monitor and improve your AI systems for peak performance.",
+      title: t('whyUs.items.optimization.title'),
+      description: t('whyUs.items.optimization.description'),
     },
     {
       icon: HeadphonesIcon,
-      title: "Dedicated Support Team",
-      description: "Your success is our priority. Get expert support whenever you need it.",
+      title: t('whyUs.items.support.title'),
+      description: t('whyUs.items.support.description'),
     },
     {
       icon: BarChart3,
-      title: "Data-Driven Performance",
-      description: "Real-time analytics and reporting so you always know your ROI.",
+      title: t('whyUs.items.performance.title'),
+      description: t('whyUs.items.performance.description'),
     },
   ];
 
@@ -39,38 +41,38 @@ const WhyUsSection = () => {
       id="why-us"
       data-testid="why-us-section"
       className="section"
+      onMouseEnter={onShowPopup}
     >
       <div className="container-custom">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Content */}
           <div>
-            <p className="text-cyan-400 font-medium mb-4 uppercase tracking-wider text-sm">
-              Why Optimis AI
+            <p className="text-cyan-400 font-medium mb-4 uppercase tracking-wider text-sm" data-testid="why-us-label">
+              {t('whyUs.badge')}
             </p>
             <h2
               data-testid="why-us-title"
               className="text-3xl lg:text-4xl font-bold mb-6"
             >
-              The{" "}
-              <span className="gradient-text">Optimis Advantage</span>
+              {t('whyUs.titleMain')} <span className="gradient-text">{t('whyUs.titleGradient')}</span>
             </h2>
             <p className="text-slate-400 mb-8 text-base lg:text-lg">
-              We&apos;re not just another AI agency. We&apos;re your strategic partner in building intelligent systems that drive measurable business growth.
+              {t('whyUs.description')}
             </p>
 
             {/* Stats */}
             <div className="grid grid-cols-3 gap-6 mb-8">
               <div>
                 <p className="text-3xl font-bold gradient-text">50+</p>
-                <p className="text-sm text-slate-500">AI Systems Deployed</p>
+                <p className="text-sm text-slate-500">{t('whyUs.stats.deployed')}</p>
               </div>
               <div>
                 <p className="text-3xl font-bold gradient-text">98%</p>
-                <p className="text-sm text-slate-500">Client Retention</p>
+                <p className="text-sm text-slate-500">{t('whyUs.stats.retention')}</p>
               </div>
               <div>
                 <p className="text-3xl font-bold gradient-text">5x</p>
-                <p className="text-sm text-slate-500">Average ROI</p>
+                <p className="text-sm text-slate-500">{t('whyUs.stats.roi')}</p>
               </div>
             </div>
           </div>

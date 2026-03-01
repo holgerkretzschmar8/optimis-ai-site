@@ -1,0 +1,335 @@
+{
+  "common": {
+    "bookCall": "Book Strategy Call",
+    "strategyCall": "Strategy Call",
+    "freeDemo": "Free Demo",
+    "getStarted": "Get Started",
+    "learnMore": "Learn More",
+    "seeHowItWorks": "See How It Works",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "contact": "Contact",
+    "aboutUs": "About Us",
+    "pricing": "Pricing",
+    "faq": "FAQ",
+    "blog": "Blog",
+    "careers": "Careers",
+    "allRightsReserved": "All rights reserved.",
+    "effectiveDate": "Effective Date",
+    "limitedSpots": "Limited Spots Available",
+    "noSpam": "No spam. Unsubscribe anytime.",
+    "sending": "Sending...",
+    "vielenDank": "Thank you! We will get back to you within 24 hours.",
+    "errorOccurred": "Something went wrong. Please try again."
+  },
+  "nav": {
+    "services": "Services",
+    "howItWorks": "How It Works",
+    "industries": "Industries",
+    "caseStudies": "Case Studies",
+    "whyUs": "Why Us",
+    "pricing": "Pricing",
+    "faq": "FAQ"
+  },
+  "hero": {
+    "badge": "AI Automation Agency",
+    "headline": {
+      "line1": "Advanced AI Systems",
+      "line2": "Optimize Revenue",
+      "line3": "& Efficiency",
+      "that": "That"
+    },
+    "subheadline": "We design intelligent automation for modern businesses.",
+    "description": "Deploy AI voice agents, chatbots, and workflow automation that scale your business 24/7 without increasing overhead.",
+    "primaryCTA": "Book a Free Strategy Call",
+    "secondaryCTA": "See How It Works",
+    "trust": {
+      "security": "Enterprise-Grade Security",
+      "automation": "24/7 AI Automation",
+      "deployment": "Same-Week Deployment"
+    }
+  },
+  "socialProof": {
+    "stats": {
+      "response": "Faster Lead Response",
+      "costs": "Reduction in Operating Costs",
+      "agents": "AI Sales & Support Agents",
+      "automated": "Conversations Automated"
+    },
+    "trustedBy": "Trusted by innovative companies"
+  },
+  "services": {
+    "badge": "Our Services",
+    "titleMain": "AI Solutions That",
+    "titleGradient": "Drive Results",
+    "description": "From voice agents to complete workflow automation, we build and deploy AI systems that work 24/7.",
+    "items": {
+      "voice": {
+        "title": "AI Voice Agents",
+        "description": "Human-like inbound & outbound AI callers that qualify and close leads around the clock.",
+        "features": ["Natural conversations", "Multi-language support", "CRM integration"]
+      },
+      "chatbots": {
+        "title": "AI Chatbots",
+        "description": "24/7 intelligent website chat automation that engages visitors and converts them to customers.",
+        "features": ["Instant responses", "Lead qualification", "Seamless handoff"]
+      },
+      "appointment": {
+        "title": "AI Appointment Setters",
+        "description": "Automatically qualify prospects and book meetings directly into your calendar.",
+        "features": ["Smart scheduling", "Timezone aware", "Calendar sync"]
+      },
+      "workflow": {
+        "title": "Workflow Automation",
+        "description": "Integrate AI into CRMs, pipelines, and internal systems to eliminate manual tasks.",
+        "features": ["Process automation", "Data sync", "Custom triggers"]
+      },
+      "custom": {
+        "title": "Custom AI Systems",
+        "description": "Tailored AI infrastructure designed specifically for your scaling business needs.",
+        "features": ["Custom models", "API development", "Enterprise scale"]
+      }
+    }
+  },
+  "howItWorks": {
+    "badge": "How It Works",
+    "titleMain": "Your Path to",
+    "titleGradient": "AI Automation",
+    "description": "A proven 3-step process that transforms your business operations.",
+    "steps": {
+      "step1": {
+        "title": "Strategy & System Mapping",
+        "description": "We analyze your business processes, identify automation opportunities, and design a custom AI roadmap tailored to your goals."
+      },
+      "step2": {
+        "title": "Build & Integration",
+        "description": "Our team develops and integrates AI systems seamlessly with your existing tools, CRM, and workflows with zero disruption."
+      },
+      "step3": {
+        "title": "Launch, Optimize & Scale",
+        "description": "We deploy your AI systems, monitor performance, and continuously optimize to maximize ROI and scale with your growth."
+      }
+    }
+  },
+  "industries": {
+    "badge": "Industries We Serve",
+    "titleMain": "AI Solutions for",
+    "titleGradient": "Every Industry",
+    "description": "Specialized AI automation tailored to your industry's unique challenges.",
+    "items": {
+      "realEstate": { "name": "Real Estate", "description": "Lead qualification & follow-up" },
+      "lawFirms": { "name": "Law Firms", "description": "Client intake & scheduling" },
+      "medSpas": { "name": "Med Spas", "description": "Appointment booking & reminders" },
+      "solar": { "name": "Solar", "description": "Lead gen & qualification calls" },
+      "insurance": { "name": "Insurance", "description": "Quote generation & follow-up" },
+      "marketing": { "name": "Marketing Agencies", "description": "Client communication & reporting" },
+      "ecommerce": { "name": "E-commerce", "description": "Customer support & upselling" }
+    }
+  },
+  "caseStudies": {
+    "badge": "Case Studies",
+    "titleMain": "Real Results from",
+    "titleGradient": "Real Clients",
+    "description": "See how businesses like yours achieved transformational growth with our AI systems.",
+    "challenge": "The Challenge",
+    "solution": "Our Solution",
+    "viewAll": "View All Case Studies",
+    "items": {
+      "medSpa": {
+        "title": "Med Spa Chain Transformation",
+        "industry": "Healthcare & Beauty",
+        "problem": "High call volume overwhelming front desk, missed appointments, and lost revenue.",
+        "solution": "Deployed AI voice agents for 24/7 booking and AI chatbots for instant responses.",
+        "results": {
+          "appointments": "Increase in Booked Appointments",
+          "noShows": "Reduction in No-Shows",
+          "roi": "ROI in First Quarter"
+        }
+      },
+      "lawFirm": {
+        "title": "Law Firm Client Intake Revolution",
+        "industry": "Legal Services",
+        "problem": "Slow lead response times and manual intake processes causing qualified leads to go cold.",
+        "solution": "Implemented AI-powered lead qualification and automated intake workflows.",
+        "results": {
+          "staffing": "Reduction in Staffing Costs",
+          "responseTime": "Average Response Time (was 24hrs)",
+          "satisfaction": "Client Satisfaction Score"
+        }
+      },
+      "solar": {
+        "title": "Solar Company Lead Gen Overhaul",
+        "industry": "Renewable Energy",
+        "problem": "Sales team overwhelmed with unqualified leads, wasting time on dead-end prospects.",
+        "solution": "Deployed AI outbound calling for lead qualification before human handoff.",
+        "results": {
+          "qualified": "Increase in Qualified Leads",
+          "closeRate": "Improvement in Close Rate",
+          "revenue": "Additional Revenue Generated"
+        }
+      }
+    }
+  },
+  "whyUs": {
+    "badge": "WHY OPTIMIS AI",
+    "titleMain": "The",
+    "titleGradient": "Optimis Advantage",
+    "description": "We're not just another AI agency. We're your strategic partner in building intelligent systems that drive measurable business growth.",
+    "stats": {
+      "deployed": "AI Systems Deployed",
+      "retention": "Client Retention",
+      "roi": "Average ROI"
+    },
+    "items": {
+      "models": { "title": "Enterprise-Grade AI Models", "description": "We use the latest GPT, Claude, and custom-trained models for superior performance." },
+      "custom": { "title": "Custom-Built Systems", "description": "No cookie-cutter templates. Every solution is engineered for your specific needs." },
+      "deployment": { "title": "Fast Deployment", "description": "Go live in days, not months. Our streamlined process gets you results quickly." },
+      "optimization": { "title": "Ongoing Optimization", "description": "We continuously monitor and improve your AI systems for peak performance." },
+      "support": { "title": "Dedicated Support Team", "description": "Your success is our priority. Get expert support whenever you need it." },
+      "performance": { "title": "Data-Driven Performance", "description": "Real-time analytics and reporting so you always know your ROI." }
+    }
+  },
+  "pricing": {
+    "badge": "Pricing Plans",
+    "titleMain": "Invest in",
+    "titleGradient": "Your Growth",
+    "description": "Transparent pricing with no hidden fees. Choose the plan that fits your business needs.",
+    "guarantee": "All plans include a 30-day money-back guarantee. Custom enterprise solutions available.",
+    "period": "/month",
+    "plans": {
+      "starter": {
+        "name": "Starter",
+        "price": "69,99 €",
+        "description": "Perfect for small-scale businesses with up to 30 calls/day",
+        "features": [
+          "800 minutes (0.10 €/min top-up)",
+          "1 phone number",
+          "1 user license",
+          "Email support",
+          "Monthly performance reports",
+          "Standard analytics dashboard"
+        ]
+      },
+      "growth": {
+        "name": "Growth",
+        "price": "249,99 €",
+        "description": "For growing businesses ready to scale their AI infrastructure with 30-150 calls/day",
+        "features": [
+          "2500 minutes (0,1 €/min top-up)",
+          "3 phone numbers",
+          "3 concurrent calls",
+          "Priority support (24/7)",
+          "Custom voice parameterisation",
+          "Advanced analytics & reporting",
+          "FREE Website Build and Optimisation",
+          "Multi-Lingual Voice Assistant"
+        ]
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "price": "Custom",
+        "description": "Full-scale costumized AI voice agent setup (more than 100 calls/day) and further AI Automation Assistance",
+        "features": [
+          "Custom minutes",
+          "Unlimited phone numbers",
+          "unlimited concurrent calls",
+          "Priority support",
+          "Custom voice parameterisation",
+          "Advanced analytics & reporting",
+          "FREE Website Build and Optimisation",
+          "FREE customized AI Implementation Roadmap Plan"
+        ]
+      }
+    }
+  },
+  "faq": {
+    "badge": "FAQ",
+    "titleMain": "Common",
+    "titleGradient": "Questions",
+    "description": "Everything you need to know about our AI automation solutions.",
+    "items": {
+      "q1": {
+        "q": "How does AI voice technology work?",
+        "a": "Our AI voice agents use advanced natural language processing and speech synthesis to have human-like conversations. They can understand context, respond naturally, and handle complex conversations including appointment booking, lead qualification, and customer support. The technology is trained on millions of conversations to ensure natural, effective interactions."
+      },
+      "q2": {
+        "q": "Does it integrate with my CRM?",
+        "a": "Yes! We integrate with all major CRM platforms including Salesforce, HubSpot, Zoho, Pipedrive, and many more. Our team handles the entire integration process, ensuring your AI systems sync seamlessly with your existing workflows. Custom integrations are also available for enterprise clients."
+      },
+      "q3": {
+        "q": "Is it compliant and secure?",
+        "a": "Absolutely. We take security and compliance seriously. Our systems are SOC 2 compliant, GDPR ready, and HIPAA compliant for healthcare clients. All data is encrypted in transit and at rest, and we maintain strict access controls. We can provide detailed security documentation upon request."
+      },
+      "q4": {
+        "q": "How long does setup take?",
+        "a": "Most implementations are completed within 1-2 weeks. This includes initial consultation, system configuration, CRM integration, testing, and launch. More complex enterprise deployments may take 3-4 weeks. We pride ourselves on fast deployment without sacrificing quality."
+      },
+      "q5": {
+        "q": "Do you customize solutions?",
+        "a": "Every solution we build is customized to your specific business needs. We don't believe in one-size-fits-all templates. Our team works with you to understand your processes, brand voice, and goals to create AI systems that feel like a natural extension of your team."
+      },
+      "q6": {
+        "q": "What kind of support do you provide?",
+        "a": "All plans include dedicated support. Starter plans receive email support with 24-hour response times. Growth plans include 24/7 priority support and weekly optimization calls. Enterprise clients get a dedicated success manager and on-call support. We're committed to your success."
+      }
+    }
+  },
+  "cta": {
+    "badge": "Limited Spots Available",
+    "titleMain": "Ready to Optimize Your",
+    "titleGradient": "Revenue With AI?",
+    "description": "Join the businesses that are already using AI to scale faster, reduce costs, and close more deals.",
+    "button": "Book Your Free Voice-Agent Demo",
+    "urgency": "Limited onboarding slots available monthly. Secure your spot today."
+  },
+  "footer": {
+    "description": "Advanced AI automation systems that optimize revenue and efficiency for modern businesses.",
+    "location": "Munich, Germany",
+    "servicesTitle": "Services",
+    "companyTitle": "Company",
+    "supportTitle": "Support",
+    "copyright": "© {{year}} Optimis AI. All rights reserved."
+  },
+  "contactModal": {
+    "title": "Book Your Free Strategy Call",
+    "description": "Fill out the form below and we'll contact you within 24 hours.",
+    "labels": {
+      "name": "Name *",
+      "email": "Email *",
+      "phone": "Phone (Optional)",
+      "company": "Company",
+      "message": "Message *"
+    },
+    "placeholders": {
+      "name": "Max Mustermann",
+      "email": "max@mustermann.com",
+      "phone": "+49 123 4567890",
+      "company": "Muster GmbH",
+      "message": "Tell us about your company and what you want to achieve with AI..."
+    },
+    "gdpr": "I agree that my details from the contact form will be collected and processed to answer my request. The data will be deleted after your request has been processed. Note: You can revoke your consent at any time for the future by e-mail to info@optimis-ai.com. Detailed information on the handling of user data can be found in our"
+  },
+  "leadPopup": {
+    "title": "Get Your Free AI Voice Agent Demo",
+    "description": "Discover how AI can automate your business and save on operating costs.",
+    "submit": "Get Free Demo",
+    "gdpr": "I agree that my data will be collected to process my request. Information can be found in the"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "effectiveDate": "Effective Date: 28.02.2026",
+    "sections": {
+      "s1": {
+        "title": "1. Controller Information (Art. 13 GDPR)",
+        "content": "Controller within the meaning of the General Data Protection Regulation (GDPR):",
+        "name": "Optimis AI",
+        "ceo": "Managing Director: Holger Kretzschmar",
+        "address": "Fichtenstr. 6, 82178 Puchheim, Germany"
+      },
+      "s2": {
+        "title": "2. General Information on Data Protection",
+        "content": "We process personal data in accordance with the GDPR and applicable local laws."
+      }
+    }
+  }
+}

@@ -1,14 +1,16 @@
 import { Home, Scale, Heart, Sun, Shield, Megaphone, ShoppingCart } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const IndustriesSection = () => {
+  const { t } = useTranslation();
   const industries = [
-    { icon: Home, name: "Real Estate", description: "Lead qualification & follow-up" },
-    { icon: Scale, name: "Law Firms", description: "Client intake & scheduling" },
-    { icon: Heart, name: "Med Spas", description: "Appointment booking & reminders" },
-    { icon: Sun, name: "Solar", description: "Lead gen & qualification calls" },
-    { icon: Shield, name: "Insurance", description: "Quote generation & follow-up" },
-    { icon: Megaphone, name: "Marketing Agencies", description: "Client communication & reporting" },
-    { icon: ShoppingCart, name: "E-commerce", description: "Customer support & upselling" },
+    { icon: Home, name: t('industries.items.realEstate.name'), description: t('industries.items.realEstate.description') },
+    { icon: Scale, name: t('industries.items.lawFirms.name'), description: t('industries.items.lawFirms.description') },
+    { icon: Heart, name: t('industries.items.medSpas.name'), description: t('industries.items.medSpas.description') },
+    { icon: Sun, name: t('industries.items.solar.name'), description: t('industries.items.solar.description') },
+    { icon: Shield, name: t('industries.items.insurance.name'), description: t('industries.items.insurance.description') },
+    { icon: Megaphone, name: t('industries.items.marketing.name'), description: t('industries.items.marketing.description') },
+    { icon: ShoppingCart, name: t('industries.items.ecommerce.name'), description: t('industries.items.ecommerce.description') },
   ];
 
   return (
@@ -21,17 +23,17 @@ const IndustriesSection = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <p className="text-cyan-400 font-medium mb-4 uppercase tracking-wider text-sm">
-            Industries We Serve
+            {t('industries.badge')}
           </p>
           <h2
             data-testid="industries-title"
             className="text-3xl lg:text-4xl font-bold mb-6"
           >
-            AI Solutions for{" "}
-            <span className="gradient-text">Every Industry</span>
+            {t('industries.titleMain')}{" "}
+            <span className="gradient-text">{t('industries.titleGradient')}</span>
           </h2>
           <p className="text-slate-400 max-w-2xl mx-auto text-base lg:text-lg">
-            Specialized AI automation tailored to your industry&apos;s unique challenges.
+            {t('industries.description')}
           </p>
         </div>
 

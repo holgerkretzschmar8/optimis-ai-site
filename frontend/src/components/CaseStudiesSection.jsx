@@ -1,41 +1,43 @@
 import { TrendingUp, ArrowUpRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const CaseStudiesSection = () => {
+  const { t } = useTranslation();
   const caseStudies = [
     {
-      title: "Med Spa Chain Transformation",
-      industry: "Healthcare & Beauty",
+      title: t('caseStudies.items.medSpa.title'),
+      industry: t('caseStudies.items.medSpa.industry'),
       image: "https://images.unsplash.com/photo-1767706508368-14e0f1b84ad0?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA3MDR8MHwxfHNlYXJjaHwyfHxsdXh1cnklMjBtZWRpY2FsJTIwc3BhJTIwaW50ZXJpb3IlMjBkYXJrfGVufDB8fHx8MTc3MTM2NTI1MHww&ixlib=rb-4.1.0&q=85",
-      problem: "High call volume overwhelming front desk, missed appointments, and lost revenue.",
-      solution: "Deployed AI voice agents for 24/7 booking and AI chatbots for instant responses.",
+      problem: t('caseStudies.items.medSpa.problem'),
+      solution: t('caseStudies.items.medSpa.solution'),
       results: [
-        { metric: "212%", label: "Increase in Booked Appointments" },
-        { metric: "45%", label: "Reduction in No-Shows" },
-        { metric: "3x", label: "ROI in First Quarter" },
+        { metric: "212%", label: t('caseStudies.items.medSpa.results.appointments') },
+        { metric: "45%", label: t('caseStudies.items.medSpa.results.noShows') },
+        { metric: "3x", label: t('caseStudies.items.medSpa.results.roi') },
       ],
     },
     {
-      title: "Law Firm Client Intake Revolution",
-      industry: "Legal Services",
+      title: t('caseStudies.items.lawFirm.title'),
+      industry: t('caseStudies.items.lawFirm.industry'),
       image: "https://images.unsplash.com/photo-1694253988732-816ab6e60caa?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzh8MHwxfHNlYXJjaHw0fHxtb2Rlcm4lMjBjb3Jwb3JhdGUlMjBidXNpbmVzcyUyMG1lZXRpbmclMjBkYXJrJTIwbW9kZXxlbnwwfHx8fDE3NzEzNjUyNDl8MA&ixlib=rb-4.1.0&q=85",
-      problem: "Slow lead response times and manual intake processes causing qualified leads to go cold.",
-      solution: "Implemented AI-powered lead qualification and automated intake workflows.",
+      problem: t('caseStudies.items.lawFirm.problem'),
+      solution: t('caseStudies.items.lawFirm.solution'),
       results: [
-        { metric: "68%", label: "Reduction in Staffing Costs" },
-        { metric: "5 min", label: "Average Response Time (was 24hrs)" },
-        { metric: "89%", label: "Client Satisfaction Score" },
+        { metric: "68%", label: t('caseStudies.items.lawFirm.results.staffing') },
+        { metric: "5 min", label: t('caseStudies.items.lawFirm.results.responseTime') },
+        { metric: "89%", label: t('caseStudies.items.lawFirm.results.satisfaction') },
       ],
     },
     {
-      title: "Solar Company Lead Gen Overhaul",
-      industry: "Renewable Energy",
+      title: t('caseStudies.items.solar.title'),
+      industry: t('caseStudies.items.solar.industry'),
       image: "https://images.unsplash.com/photo-1762958266463-6af778b56beb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA5MzV8MHwxfHNlYXJjaHwyfHxtb2Rlcm4lMjBzb2xhciUyMHBhbmVsfGVufDB8fHx8MTc3MTM2NTI1Mnww&ixlib=rb-4.1.0&q=85",
-      problem: "Sales team overwhelmed with unqualified leads, wasting time on dead-end prospects.",
-      solution: "Deployed AI outbound calling for lead qualification before human handoff.",
+      problem: t('caseStudies.items.solar.problem'),
+      solution: t('caseStudies.items.solar.solution'),
       results: [
-        { metric: "340%", label: "Increase in Qualified Leads" },
-        { metric: "52%", label: "Improvement in Close Rate" },
-        { metric: "$2.4M", label: "Additional Revenue Generated" },
+        { metric: "340%", label: t('caseStudies.items.solar.results.qualified') },
+        { metric: "52%", label: t('caseStudies.items.solar.results.closeRate') },
+        { metric: "$2.4M", label: t('caseStudies.items.solar.results.revenue') },
       ],
     },
   ];
@@ -50,17 +52,17 @@ const CaseStudiesSection = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <p className="text-cyan-400 font-medium mb-4 uppercase tracking-wider text-sm">
-            Case Studies
+            {t('caseStudies.badge')}
           </p>
           <h2
             data-testid="case-studies-title"
             className="text-3xl lg:text-4xl font-bold mb-6"
           >
-            Real Results from{" "}
-            <span className="gradient-text">Real Clients</span>
+            {t('caseStudies.titleMain')}{" "}
+            <span className="gradient-text">{t('caseStudies.titleGradient')}</span>
           </h2>
           <p className="text-slate-400 max-w-2xl mx-auto text-base lg:text-lg">
-            See how businesses like yours achieved transformational growth with our AI systems.
+            {t('caseStudies.description')}
           </p>
         </div>
 
@@ -96,11 +98,11 @@ const CaseStudiesSection = () => {
 
                   <div className="space-y-4 mb-8">
                     <div>
-                      <p className="text-xs uppercase tracking-wider text-slate-500 mb-1">The Challenge</p>
+                      <p className="text-xs uppercase tracking-wider text-slate-500 mb-1">{t('caseStudies.challenge')}</p>
                       <p className="text-slate-400 text-sm">{study.problem}</p>
                     </div>
                     <div>
-                      <p className="text-xs uppercase tracking-wider text-slate-500 mb-1">Our Solution</p>
+                      <p className="text-xs uppercase tracking-wider text-slate-500 mb-1">{t('caseStudies.solution')}</p>
                       <p className="text-slate-400 text-sm">{study.solution}</p>
                     </div>
                   </div>
@@ -128,7 +130,7 @@ const CaseStudiesSection = () => {
         {/* View All CTA */}
         <div className="text-center mt-12">
           <button className="btn-secondary inline-flex items-center gap-2">
-            View All Case Studies
+            {t('caseStudies.viewAll')}
             <ArrowUpRight size={18} />
           </button>
         </div>
