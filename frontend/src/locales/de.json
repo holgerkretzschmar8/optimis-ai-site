@@ -1,5 +1,7 @@
 {
   "common": {
+    "siteTitle": "Optimis AI | Enterprise KI-Automatisierungsagentur",
+    "siteDescription": "Optimis AI hilft Unternehmen mit maßgeschneiderten KI-Voice-Agents, Chatbots und Workflow-Automatisierung zu skalieren.",
     "bookCall": "Strategiegespräch buchen",
     "strategyCall": "Strategiegespräch",
     "freeDemo": "Kostenlose Demo",
