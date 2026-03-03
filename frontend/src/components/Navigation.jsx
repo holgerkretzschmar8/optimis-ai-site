@@ -8,10 +8,26 @@ const LOGO_URL = "https://customer-assets.emergentagent.com/job_7f9de4cc-23e2-4d
 const LanguageToggle = () => {
   const { i18n } = useTranslation();
   const currentLang = i18n.language || 'en';
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const toggleLanguage = () => {
     const nextLang = currentLang === 'en' ? 'de' : 'en';
+
+    let nextPath = location.pathname;
+
+    if (nextLang === 'de') {
+      if (!nextPath.startsWith('/de')) {
+        nextPath = `/de${nextPath === '/' ? '' : nextPath}`;
+      }
+    } else {
+      if (nextPath.startsWith('/de')) {
+        nextPath = nextPath.replace(/^\/de/, '') || '/';
+      }
+    }
+
     i18n.changeLanguage(nextLang);
+    navigate(nextPath);
   };
 
   return (
