@@ -22,13 +22,25 @@ const LandingPage = () => {
   const [hasShownPopup, setHasShownPopup] = useState(false);
 
   useEffect(() => {
-    // Update Document Title and Meta Description
+    // Update Document Title and Meta Tags
     document.title = t('common.siteTitle');
 
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', t('common.siteDescription'));
-    }
+    const updateMetaTag = (selector, content) => {
+      const tag = document.querySelector(selector);
+      if (tag) {
+        tag.setAttribute('content', content);
+      }
+    };
+
+    updateMetaTag('meta[name="description"]', t('common.siteDescription'));
+    updateMetaTag('meta[name="keywords"]', t('common.keywords'));
+    updateMetaTag('meta[property="og:title"]', t('common.ogTitle'));
+    updateMetaTag('meta[property="og:description"]', t('common.ogDescription'));
+    updateMetaTag('meta[name="twitter:title"]', t('common.ogTitle'));
+    updateMetaTag('meta[name="twitter:description"]', t('common.ogDescription'));
+
+    // Update HTML lang attribute
+    document.documentElement.lang = i18n.language;
   }, [i18n.language, i18n, t]);
 
   useEffect(() => {

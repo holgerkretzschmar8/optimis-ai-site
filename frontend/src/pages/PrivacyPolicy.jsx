@@ -5,13 +5,29 @@ import Footer from "@/components/Footer";
 import ContactModal from "@/components/ContactModal";
 
 const PrivacyPolicy = () => {
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [isContactOpen, setIsContactOpen] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = i18n.language === 'de' ? "Datenschutzerklärung | Optimis AI" : "Privacy Policy | Optimis AI";
-  }, [i18n.language]);
+    const title = `${t('common.privacyPolicy')} | Optimis AI`;
+    document.title = title;
+
+    const updateMetaTag = (selector, content) => {
+      const tag = document.querySelector(selector);
+      if (tag) {
+        tag.setAttribute('content', content);
+      }
+    };
+
+    updateMetaTag('meta[name="description"]', t('common.privacyPolicyDescription'));
+    updateMetaTag('meta[property="og:title"]', title);
+    updateMetaTag('meta[property="og:description"]', t('common.privacyPolicyDescription'));
+    updateMetaTag('meta[name="twitter:title"]', title);
+    updateMetaTag('meta[name="twitter:description"]', t('common.privacyPolicyDescription'));
+
+    document.documentElement.lang = i18n.language;
+  }, [i18n.language, t, i18n]);
 
   const openContact = () => setIsContactOpen(true);
   const closeContact = () => setIsContactOpen(false);
