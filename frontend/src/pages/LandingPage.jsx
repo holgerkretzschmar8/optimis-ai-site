@@ -23,15 +23,11 @@ const LandingPage = () => {
 
   useEffect(() => {
     // Update Document Title and Meta Description
-    document.title = i18n.language === 'de'
-      ? "Optimis AI | KI-Automatisierungsagentur für Umsatz & Effizienz"
-      : "Optimis AI | AI Automation Agency for Revenue & Efficiency";
+    document.title = t('common.siteTitle');
 
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', i18n.language === 'de'
-        ? "Optimis AI entwickelt fortschrittliche KI-Automatisierungssysteme, die Umsatz, Workflows und die betriebliche Effizienz moderner Unternehmen optimieren."
-        : "Optimis AI builds advanced AI automation systems that optimize revenue, workflows, and operational efficiency for modern businesses.");
+      metaDescription.setAttribute('content', t('common.siteDescription'));
     }
   }, [i18n.language, i18n]);
 

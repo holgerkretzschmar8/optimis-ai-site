@@ -1,5 +1,7 @@
 {
   "common": {
+    "siteTitle": "Optimis AI | Enterprise AI Automation Agency",
+    "siteDescription": "Optimis AI helps businesses scale with custom AI voice agents, chatbots, and workflow automation.",
     "bookCall": "Book Strategy Call",
     "strategyCall": "Strategy Call",
     "freeDemo": "Free Demo",
