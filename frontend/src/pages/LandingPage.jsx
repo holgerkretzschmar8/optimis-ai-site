@@ -29,7 +29,7 @@ const LandingPage = () => {
     if (metaDescription) {
       metaDescription.setAttribute('content', t('common.siteDescription'));
     }
-  }, [i18n.language, i18n]);
+  }, [i18n.language, i18n, t]);
 
   useEffect(() => {
     const handleScroll = () => {
