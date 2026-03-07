@@ -65,6 +65,13 @@ const AdminDashboard = () => {
   }, [handleLogout]);
 
   useEffect(() => {
+    // Add noindex to admin pages
+    const robotsTag = document.querySelector('meta[name="robots"]');
+    if (robotsTag) {
+      robotsTag.setAttribute('content', 'noindex, nofollow');
+    }
+    document.title = "Admin Dashboard | Optimis AI";
+
     const token = localStorage.getItem("admin_token");
     if (!token) {
       navigate("/admin/login");

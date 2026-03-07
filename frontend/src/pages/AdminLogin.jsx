@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Eye, EyeOff, Loader2, Lock } from "lucide-react";
 import { toast } from "sonner";
@@ -17,6 +17,15 @@ const AdminLogin = () => {
     email: "",
     password: "",
   });
+
+  useEffect(() => {
+    // Add noindex to admin pages
+    const robotsTag = document.querySelector('meta[name="robots"]');
+    if (robotsTag) {
+      robotsTag.setAttribute('content', 'noindex, nofollow');
+    }
+    document.title = "Admin Login | Optimis AI";
+  }, []);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
