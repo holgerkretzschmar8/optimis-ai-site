@@ -26,6 +26,31 @@ const TermsOfService = () => {
     updateMetaTag('meta[name="twitter:title"]', title);
     updateMetaTag('meta[name="twitter:description"]', t('common.termsOfServiceDescription'));
 
+    // Reset Robots Tag to index, follow for production pages
+    const robotsTag = document.querySelector('meta[name="robots"]');
+    if (robotsTag && (window.location.hostname === "www.optimis-ai.com" || window.location.hostname === "optimis-ai.com")) {
+      robotsTag.setAttribute('content', 'index, follow');
+    }
+
+    // Update Hreflang Tags
+    const updateLinkTag = (selector, attr, content) => {
+      const tag = document.querySelector(selector);
+      if (tag) tag.setAttribute(attr, content);
+    };
+
+    updateLinkTag('link[hreflang="en"]', 'href', 'https://www.optimis-ai.com/terms-of-service');
+    updateLinkTag('link[hreflang="de"]', 'href', 'https://www.optimis-ai.com/de/terms-of-service');
+    updateLinkTag('link[hreflang="x-default"]', 'href', 'https://www.optimis-ai.com/terms-of-service');
+
+    // Update Canonical Tag
+    const canonicalTag = document.querySelector('link[rel="canonical"]');
+    if (canonicalTag) {
+      const canonicalUrl = i18n.language === 'de'
+        ? 'https://www.optimis-ai.com/de/terms-of-service'
+        : 'https://www.optimis-ai.com/terms-of-service';
+      canonicalTag.setAttribute('href', canonicalUrl);
+    }
+
     document.documentElement.lang = i18n.language;
   }, [i18n.language, t, i18n]);
 

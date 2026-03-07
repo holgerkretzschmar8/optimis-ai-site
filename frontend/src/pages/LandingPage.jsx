@@ -39,6 +39,31 @@ const LandingPage = () => {
     updateMetaTag('meta[name="twitter:title"]', t('common.ogTitle'));
     updateMetaTag('meta[name="twitter:description"]', t('common.ogDescription'));
 
+    // Reset Robots Tag to index, follow for production pages
+    const robotsTag = document.querySelector('meta[name="robots"]');
+    if (robotsTag && (window.location.hostname === "www.optimis-ai.com" || window.location.hostname === "optimis-ai.com")) {
+      robotsTag.setAttribute('content', 'index, follow');
+    }
+
+    // Update Hreflang Tags
+    const updateLinkTag = (selector, attr, content) => {
+      const tag = document.querySelector(selector);
+      if (tag) tag.setAttribute(attr, content);
+    };
+
+    updateLinkTag('link[hreflang="en"]', 'href', 'https://www.optimis-ai.com');
+    updateLinkTag('link[hreflang="de"]', 'href', 'https://www.optimis-ai.com/de');
+    updateLinkTag('link[hreflang="x-default"]', 'href', 'https://www.optimis-ai.com');
+
+    // Update Canonical Tag
+    const canonicalTag = document.querySelector('link[rel="canonical"]');
+    if (canonicalTag) {
+      const canonicalUrl = i18n.language === 'de'
+        ? 'https://www.optimis-ai.com/de'
+        : 'https://www.optimis-ai.com';
+      canonicalTag.setAttribute('href', canonicalUrl);
+    }
+
     // Update HTML lang attribute
     document.documentElement.lang = i18n.language;
   }, [i18n.language, i18n, t]);

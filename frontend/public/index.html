@@ -26,6 +26,15 @@
         Learn how to configure a non-root public URL by running `npm run build`.
         -->
         <title>Optimis AI | Enterprise AI Automation Agency</title>
+        <meta name="robots" content="index, follow" id="robots-meta" />
+        <script>
+            // Noindex if not on production domain
+            if (window.location.hostname !== "www.optimis-ai.com" && window.location.hostname !== "optimis-ai.com") {
+                var robots = document.getElementById("robots-meta");
+                if (robots) robots.setAttribute("content", "noindex, nofollow");
+            }
+        </script>
+        <link rel="canonical" href="https://www.optimis-ai.com" />
         <link rel="alternate" hreflang="en" href="https://www.optimis-ai.com" />
         <link rel="alternate" hreflang="de" href="https://www.optimis-ai.com/de" />
         <link rel="alternate" hreflang="x-default" href="https://www.optimis-ai.com" />
