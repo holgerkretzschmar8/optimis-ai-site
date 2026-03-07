@@ -39,16 +39,27 @@ const LandingPage = () => {
     updateMetaTag('meta[name="twitter:title"]', t('common.ogTitle'));
     updateMetaTag('meta[name="twitter:description"]', t('common.ogDescription'));
 
-    // Reset Robots Tag to index, follow for production pages
+    // Ensure Robots Tag is index, follow for production pages
     const robotsTag = document.querySelector('meta[name="robots"]');
-    if (robotsTag && (window.location.hostname === "www.optimis-ai.com" || window.location.hostname === "optimis-ai.com")) {
+    if (robotsTag &&
+       (window.location.hostname.indexOf("optimis-ai.com") !== -1 ||
+        window.location.hostname.indexOf("builder.io") !== -1)) {
       robotsTag.setAttribute('content', 'index, follow');
     }
 
     // Update Hreflang Tags
     const updateLinkTag = (selector, attr, content) => {
-      const tag = document.querySelector(selector);
-      if (tag) tag.setAttribute(attr, content);
+      let tag = document.querySelector(selector);
+      if (!tag) {
+        tag = document.createElement('link');
+        tag.setAttribute('rel', 'alternate');
+        if (selector.indexOf('hreflang') !== -1) {
+          const lang = selector.match(/hreflang="([^"]+)"/)[1];
+          tag.setAttribute('hreflang', lang);
+        }
+        document.head.appendChild(tag);
+      }
+      tag.setAttribute(attr, content);
     };
 
     updateLinkTag('link[hreflang="en"]', 'href', 'https://www.optimis-ai.com');
@@ -56,13 +67,16 @@ const LandingPage = () => {
     updateLinkTag('link[hreflang="x-default"]', 'href', 'https://www.optimis-ai.com');
 
     // Update Canonical Tag
-    const canonicalTag = document.querySelector('link[rel="canonical"]');
-    if (canonicalTag) {
-      const canonicalUrl = i18n.language === 'de'
-        ? 'https://www.optimis-ai.com/de'
-        : 'https://www.optimis-ai.com';
-      canonicalTag.setAttribute('href', canonicalUrl);
+    let canonicalTag = document.querySelector('link[rel="canonical"]');
+    if (!canonicalTag) {
+      canonicalTag = document.createElement('link');
+      canonicalTag.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonicalTag);
     }
+    const canonicalUrl = i18n.language === 'de'
+      ? 'https://www.optimis-ai.com/de'
+      : 'https://www.optimis-ai.com';
+    canonicalTag.setAttribute('href', canonicalUrl);
 
     // Update HTML lang attribute
     document.documentElement.lang = i18n.language;
