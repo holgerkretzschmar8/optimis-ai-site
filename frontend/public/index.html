@@ -28,16 +28,16 @@
         <title>Optimis AI | Enterprise AI Automation Agency</title>
         <meta name="robots" content="index, follow" id="robots-meta" />
         <script>
-            // Noindex if not on production domain
-            if (window.location.hostname !== "www.optimis-ai.com" && window.location.hostname !== "optimis-ai.com") {
+            // Only noindex on explicit staging/preview environments
+            // Avoid blocking Google's Live Test hostnames
+            if (window.location.hostname.indexOf("vercel.app") !== -1 ||
+                window.location.hostname.indexOf("preview") !== -1 ||
+                window.location.hostname.indexOf("localhost") !== -1 ||
+                window.location.hostname.indexOf("127.0.0.1") !== -1) {
                 var robots = document.getElementById("robots-meta");
                 if (robots) robots.setAttribute("content", "noindex, nofollow");
             }
         </script>
-        <link rel="canonical" href="https://www.optimis-ai.com" />
-        <link rel="alternate" hreflang="en" href="https://www.optimis-ai.com" />
-        <link rel="alternate" hreflang="de" href="https://www.optimis-ai.com/de" />
-        <link rel="alternate" hreflang="x-default" href="https://www.optimis-ai.com" />
         <meta name="description" content="Optimis AI helps businesses scale with custom AI voice agents, chatbots, and workflow automation." />
         <meta name="keywords" content="AI Automation, AI Voice Agents, Chatbots, Workflow Automation, AI Agency, Business Optimization, KI-Automatisierung, KI-Voice-Agents, Workflow-Automatisierung, KI-Agentur, Business-Optimierung" />
         <meta property="og:title" content="Optimis AI | Enterprise AI Automation Agency" />
