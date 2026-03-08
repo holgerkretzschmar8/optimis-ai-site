@@ -105,18 +105,21 @@ const LandingPage = () => {
   }, [hasShownPopup]);
 
   useEffect(() => {
-    // Show study popup after 10 seconds for German users
-    if (i18n.language === 'de' && !hasShownStudyPopup) {
-      const timer = setTimeout(() => {
-        // Only show if lead popup is not already showing
-        if (!showLeadPopup) {
-          setShowStudyPopup(true);
-          setHasShownStudyPopup(true);
+    const handleStudyScroll = () => {
+      // Show study popup when user starts scrolling (past a threshold) for German users
+      if (i18n.language === 'de' && !hasShownStudyPopup) {
+        if (window.scrollY > 200) {
+          // Only show if lead popup is not already showing
+          if (!showLeadPopup) {
+            setShowStudyPopup(true);
+            setHasShownStudyPopup(true);
+          }
         }
-      }, 10000); // 10 seconds
+      }
+    };
 
-      return () => clearTimeout(timer);
-    }
+    window.addEventListener("scroll", handleStudyScroll);
+    return () => window.removeEventListener("scroll", handleStudyScroll);
   }, [i18n.language, hasShownStudyPopup, showLeadPopup]);
 
   const openContact = () => setIsContactOpen(true);
