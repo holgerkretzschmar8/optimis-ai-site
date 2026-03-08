@@ -14,12 +14,15 @@ import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import ContactModal from "@/components/ContactModal";
 import LeadPopup from "@/components/LeadPopup";
+import StudyInvitePopup from "@/components/StudyInvitePopup";
 
 const LandingPage = () => {
   const { t, i18n } = useTranslation();
   const [isContactOpen, setIsContactOpen] = useState(false);
   const [showLeadPopup, setShowLeadPopup] = useState(false);
   const [hasShownPopup, setHasShownPopup] = useState(false);
+  const [showStudyPopup, setShowStudyPopup] = useState(false);
+  const [hasShownStudyPopup, setHasShownStudyPopup] = useState(false);
 
   useEffect(() => {
     // Update Document Title and Meta Tags
@@ -101,6 +104,21 @@ const LandingPage = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [hasShownPopup]);
 
+  useEffect(() => {
+    // Show study popup after 10 seconds for German users
+    if (i18n.language === 'de' && !hasShownStudyPopup) {
+      const timer = setTimeout(() => {
+        // Only show if lead popup is not already showing
+        if (!showLeadPopup) {
+          setShowStudyPopup(true);
+          setHasShownStudyPopup(true);
+        }
+      }, 10000); // 10 seconds
+
+      return () => clearTimeout(timer);
+    }
+  }, [i18n.language, hasShownStudyPopup, showLeadPopup]);
+
   const openContact = () => setIsContactOpen(true);
   const closeContact = () => setIsContactOpen(false);
   const handleShowPopup = () => {
@@ -134,6 +152,8 @@ const LandingPage = () => {
       <ContactModal isOpen={isContactOpen} onClose={closeContact} />
 
       <LeadPopup isOpen={showLeadPopup} onClose={() => setShowLeadPopup(false)} />
+
+      <StudyInvitePopup isOpen={showStudyPopup} onClose={() => setShowStudyPopup(false)} />
     </div>
   );
 };
