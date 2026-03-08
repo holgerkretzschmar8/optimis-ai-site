@@ -325,6 +325,16 @@
     "footer": "Limited spots available. Secure yours now.",
     "gdpr": "I agree that my data will be collected to process my request. Information can be found in the"
   },
+  "studyPopup": {
+    "title": "Invitation to our AI Voice Agent Study",
+    "description": "We are conducting a study on the use of AI voice agents. Participate and help us shape the future of AI communication.",
+    "rewardTitle": "Your reward for participating:",
+    "reward1": "Free premium responsive website worth €5,000 to €10,000 (only domain & hosting costs apply).",
+    "reward2": "Test AI voice agent for free for one month.",
+    "limitation": "Limited to the first 50 users!",
+    "cta": "Participate in the study now",
+    "close": "Maybe later"
+  },
   "privacy": {
     "title": "Privacy Policy",
     "effectiveDate": "Effective Date: 28.02.2026",
