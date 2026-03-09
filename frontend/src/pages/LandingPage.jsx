@@ -106,8 +106,8 @@ const LandingPage = () => {
 
   useEffect(() => {
     const handleStudyScroll = () => {
-      // Show study popup when user starts scrolling (past a threshold) for German users
-      if (i18n.language === 'de' && !hasShownStudyPopup) {
+      // Show study popup when user starts scrolling (past a threshold)
+      if (!hasShownStudyPopup) {
         if (window.scrollY > 200) {
           // Only show if lead popup is not already showing
           if (!showLeadPopup) {
