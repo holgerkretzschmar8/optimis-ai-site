@@ -8,10 +8,9 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog";
 
-const SURVEY_LINK = "https://de.surveymonkey.com/r/7XG8BVN";
-
 const StudyInvitePopup = ({ isOpen, onClose }) => {
   const { t } = useTranslation();
+  const SURVEY_LINK = t('studyPopup.surveyLink');
 
   return (
     <Dialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
