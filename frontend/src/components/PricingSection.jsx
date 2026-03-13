@@ -73,7 +73,7 @@ export default function PricingSection({ onContactClick }) {
                       {plan.originalPrice}
                     </span>
                     <span className="inline-block bg-red-500/20 text-red-400 text-xs font-bold px-2 py-1 rounded-full">
-                      -{Math.round(((parseFloat(plan.originalPrice.replace(/[^\d,.-]/g, '').replace(',', '.')) - parseFloat(plan.price.replace(/[^\d,.-]/g, '').replace(',', '.'))) / parseFloat(plan.originalPrice.replace(/[^\d,.-]/g, '').replace(',', '.'))) * 100)}%
+                      -80%
                     </span>
                   </div>
                 )}

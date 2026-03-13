@@ -206,7 +206,7 @@
     "plans": {
       "starter": {
         "name": "Starter",
-        "price": "14,99 €",
+        "price": "13,99 €",
         "originalPrice": "69,99 €",
         "trial": "3 Monate kostenlos",
         "description": "Ideal für kleine Unternehmen mit bis zu 30 Anrufen/Tag",
@@ -221,7 +221,7 @@
       },
       "growth": {
         "name": "Growth",
-        "price": "79 €",
+        "price": "49,99 €",
         "originalPrice": "249,99 €",
         "trial": "3 Monate kostenlos",
         "description": "Für wachsende Unternehmen mit 30-150 Anrufen/Tag",
