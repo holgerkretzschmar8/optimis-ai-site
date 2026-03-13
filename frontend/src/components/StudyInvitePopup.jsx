@@ -1,4 +1,4 @@
-import { ClipboardList, ExternalLink, Timer, Trophy } from "lucide-react";
+import { ClipboardList, ExternalLink, Timer, Trophy, Zap } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import {
   Dialog,
@@ -44,9 +44,12 @@ const StudyInvitePopup = ({ isOpen, onClose }) => {
               {t('studyPopup.rewardTitle')}
             </h4>
             <ul className="space-y-3">
-              <li className="flex items-start gap-3 text-slate-300 text-sm">
-                <div className="mt-1 w-1.5 h-1.5 rounded-full bg-cyan-500 flex-shrink-0" />
-                <span>{t('studyPopup.reward1')}</span>
+              <li className="flex items-start gap-3 bg-gradient-to-r from-cyan-500/15 to-blue-600/10 border border-cyan-500/30 rounded-lg p-3 text-sm">
+                <Zap size={18} className="text-yellow-400 flex-shrink-0 mt-0.5" />
+                <div className="flex flex-col gap-1">
+                  <span className="text-white font-semibold">{t('studyPopup.reward1')}</span>
+                  <span className="text-cyan-300 text-xs font-medium">Huge Value!</span>
+                </div>
               </li>
               <li className="flex items-start gap-3 text-slate-300 text-sm">
                 <div className="mt-1 w-1.5 h-1.5 rounded-full bg-cyan-500 flex-shrink-0" />
