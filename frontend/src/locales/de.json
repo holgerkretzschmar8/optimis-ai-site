@@ -1,10 +1,10 @@
 {
   "common": {
-    "siteTitle": "Optimis AI | Enterprise KI-Automatisierungsagentur",
-    "siteDescription": "Optimis AI hilft Unternehmen mit maßgeschneiderten KI-Voice-Agents, Chatbots und Workflow-Automatisierung zu skalieren.",
+    "siteTitle": "KI-Automatisierungsagentur | Voice Agents, Chatbots & Workflow-KI",
+    "siteDescription": "Enterprise-KI-Automatisierungsagentur für die Entwicklung von Voice Agents, KI-Chatbots und Workflow-Automatisierung für moderne Unternehmen. Automatisieren Sie Support, Vertrieb und Geschäftsprozesse mit KI.",
     "keywords": "KI-Automatisierung, KI-Voice-Agents, Chatbots, Workflow-Automatisierung, KI-Agentur, Business-Optimierung",
-    "ogTitle": "Optimis AI | Enterprise KI-Automatisierungsagentur",
-    "ogDescription": "Optimis AI hilft Unternehmen mit maßgeschneiderten KI-Voice-Agents, Chatbots und Workflow-Automatisierung zu skalieren.",
+    "ogTitle": "KI-Automatisierungsagentur | Voice Agents, Chatbots & Workflow-KI",
+    "ogDescription": "Enterprise-KI-Automatisierungsagentur für die Entwicklung von Voice Agents, KI-Chatbots und Workflow-Automatisierung für moderne Unternehmen. Automatisieren Sie Support, Vertrieb und Geschäftsprozesse mit KI.",
     "bookCall": "Strategiegespräch buchen",
     "strategyCall": "Strategiegespräch",
     "freeDemo": "Kostenlose Demo",
@@ -206,7 +206,9 @@
     "plans": {
       "starter": {
         "name": "Starter",
-        "price": "69,99 €",
+        "price": "13,99 €",
+        "originalPrice": "69,99 €",
+        "trial": "3 Monate kostenlose Testphase",
         "description": "Ideal für kleine Unternehmen mit bis zu 30 Anrufen/Tag",
         "features": [
           "800 Minuten (0,10 €/Min. Nachfüllung)",
@@ -219,7 +221,9 @@
       },
       "growth": {
         "name": "Growth",
-        "price": "249,99 €",
+        "price": "49,99 €",
+        "originalPrice": "249,99 €",
+        "trial": "3 Monate kostenlose Testphase",
         "description": "Für wachsende Unternehmen mit 30-150 Anrufen/Tag",
         "features": [
           "2500 Minuten (0,1 €/Min. Nachfüllung)",
@@ -329,8 +333,8 @@
     "title": "Einladung zu unserer KI-Sprachagenten Studie",
     "description": "Wir führen eine Studie zur Nutzung von KI-Sprachagenten durch. Nehmen Sie teil und helfen Sie uns, die Zukunft der KI-Kommunikation zu gestalten.",
     "rewardTitle": "Ihre Belohnung für die Teilnahme:",
-    "reward1": "Kostenlose Premium-Responsive-Webseite im Wert von 5.000 € bis 10.000 € (nur Domain- & Hostingkosten fallen an).",
-    "reward2": "KI-Sprachagent einen Monat lang kostenlos testen.",
+    "reward1": "Vollständig individuelle Premium-Website (5.000–10.000 € Wert) – fertig gebaut und sofort einsatzbereit!",
+    "reward2": "KI-Sprachagent drei Monate lang kostenlos testen.",
     "limitation": "Limitiert auf die ersten 50 Nutzer!",
     "surveyLink": "https://de.surveymonkey.com/r/7XG8BVN",
     "cta": "Jetzt an der Studie teilnehmen",

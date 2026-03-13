@@ -7,6 +7,8 @@ export default function PricingSection({ onContactClick }) {
     {
       name: t('pricing.plans.starter.name'),
       price: t('pricing.plans.starter.price'),
+      originalPrice: t('pricing.plans.starter.originalPrice'),
+      trial: t('pricing.plans.starter.trial'),
       period: t('pricing.period'),
       description: t('pricing.plans.starter.description'),
       features: t('pricing.plans.starter.features', { returnObjects: true }),
@@ -15,6 +17,8 @@ export default function PricingSection({ onContactClick }) {
     {
       name: t('pricing.plans.growth.name'),
       price: t('pricing.plans.growth.price'),
+      originalPrice: t('pricing.plans.growth.originalPrice'),
+      trial: t('pricing.plans.growth.trial'),
       period: t('pricing.period'),
       description: t('pricing.plans.growth.description'),
       features: t('pricing.plans.growth.features', { returnObjects: true }),
@@ -63,10 +67,27 @@ export default function PricingSection({ onContactClick }) {
               <p className="text-sm text-slate-500 mb-6">{plan.description}</p>
 
               <div className="mb-8">
+                {plan.originalPrice && (
+                  <div className="flex items-center gap-3 mb-2">
+                    <span className="text-lg text-slate-500 line-through">
+                      {plan.originalPrice}
+                    </span>
+                    <span className="inline-block bg-red-500/20 text-red-400 text-xs font-bold px-2 py-1 rounded-full">
+                      -80%
+                    </span>
+                  </div>
+                )}
                 <span className="text-4xl font-bold text-white">
                   {plan.price}
                 </span>
                 <span className="text-slate-500">{plan.period}</span>
+                {plan.trial && (
+                  <div className="mt-3 pt-3 border-t border-slate-700">
+                    <p className="text-sm font-semibold text-cyan-400 ml-px">
+                      + {plan.trial}
+                    </p>
+                  </div>
+                )}
               </div>
 
               <ul className="space-y-4 mb-8">
