@@ -83,8 +83,8 @@ export default function PricingSection({ onContactClick }) {
                 <span className="text-slate-500">{plan.period}</span>
                 {plan.trial && (
                   <div className="mt-3 pt-3 border-t border-slate-700">
-                    <p className="text-sm font-semibold text-cyan-400">
-                      + {plan.trial}
+                    <p className="text-sm font-semibold text-cyan-400 ml-px">
+                      + {plan.trial} testing
                     </p>
                   </div>
                 )}
