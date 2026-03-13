@@ -208,7 +208,7 @@
         "name": "Starter",
         "price": "13,99 €",
         "originalPrice": "69,99 €",
-        "trial": "3 Monate kostenlos",
+        "trial": "3 Monate kostenlose Testphase",
         "description": "Ideal für kleine Unternehmen mit bis zu 30 Anrufen/Tag",
         "features": [
           "800 Minuten (0,10 €/Min. Nachfüllung)",
@@ -223,7 +223,7 @@
         "name": "Growth",
         "price": "49,99 €",
         "originalPrice": "249,99 €",
-        "trial": "3 Monate kostenlos",
+        "trial": "3 Monate kostenlose Testphase",
         "description": "Für wachsende Unternehmen mit 30-150 Anrufen/Tag",
         "features": [
           "2500 Minuten (0,1 €/Min. Nachfüllung)",
