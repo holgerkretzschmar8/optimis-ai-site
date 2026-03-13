@@ -206,7 +206,9 @@
     "plans": {
       "starter": {
         "name": "Starter",
-        "price": "69,99 €",
+        "price": "14,99 €",
+        "originalPrice": "69,99 €",
+        "trial": "3 months free",
         "description": "Perfect for small-scale businesses with up to 30 calls/day",
         "features": [
           "800 minutes (0.10 €/min top-up)",
@@ -219,7 +221,9 @@
       },
       "growth": {
         "name": "Growth",
-        "price": "249,99 €",
+        "price": "79 €",
+        "originalPrice": "249,99 €",
+        "trial": "3 months free",
         "description": "For growing businesses ready to scale their AI infrastructure with 30-150 calls/day",
         "features": [
           "2500 minutes (0,1 €/min top-up)",
