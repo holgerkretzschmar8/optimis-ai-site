@@ -84,7 +84,7 @@ export default function PricingSection({ onContactClick }) {
                 {plan.trial && (
                   <div className="mt-3 pt-3 border-t border-slate-700">
                     <p className="text-sm font-semibold text-cyan-400 ml-px">
-                      + {plan.trial} testing
+                      + {plan.trial}
                     </p>
                   </div>
                 )}
