@@ -198,17 +198,20 @@
   },
   "pricing": {
     "badge": "Pricing",
-    "titleMain": "Simple transparent",
-    "titleGradient": "pricing",
+    "titleMain": "Simple transparent pricing for",
+    "titleGradient": "voice agents",
     "description": "Start free. Scale as you grow. Up to 95% cheaper than competitors.",
+    "monthlyBilling": "Billed monthly",
     "annualBilling": "Annual billing (Save 20%)",
     "period": "/ per month",
     "plans": {
       "starter": {
         "name": "Starter",
-        "price": "0 €",
+        "monthlyPrice": "0 €",
+        "annualPrice": "0 €",
         "period": "",
         "billing": "Billed monthly",
+        "annualBilling": "Billed annually",
         "cta": "Get Started",
         "note": "Perfect for testing and small projects",
         "features": [
@@ -221,13 +224,15 @@
       },
       "professional": {
         "name": "Professional",
-        "price": "49 €",
+        "monthlyPrice": "49 €",
+        "annualPrice": "39 €",
         "period": "/ per month",
         "billing": "Billed monthly",
+        "annualBilling": "Billed annually",
         "cta": "Get Started",
         "note": "For growing businesses",
         "features": [
-          "1000 minutes/month",
+          "1,000 minutes/month",
           "5 AI assistants",
           "Priority support",
           "Advanced analytics",
@@ -238,9 +243,11 @@
       },
       "enterprise": {
         "name": "Enterprise",
-        "price": "199 €",
+        "monthlyPrice": "199 €",
+        "annualPrice": "159 €",
         "period": "/ per month",
         "billing": "Billed monthly",
+        "annualBilling": "Billed annually",
         "cta": "Contact Sales",
         "note": "For large organizations",
         "features": [

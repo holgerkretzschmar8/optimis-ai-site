@@ -198,17 +198,20 @@
   },
   "pricing": {
     "badge": "Preise",
-    "titleMain": "Einfache, transparente",
-    "titleGradient": "Preise",
+    "titleMain": "Einfache, transparente Preise für",
+    "titleGradient": "Voice Agents",
     "description": "Kostenlos starten. Mit Ihrem Wachstum skalieren. Bis zu 95 % günstiger als Wettbewerber.",
+    "monthlyBilling": "Monatliche Abrechnung",
     "annualBilling": "Jährliche Abrechnung (20 % sparen)",
     "period": "/ pro Monat",
     "plans": {
       "starter": {
         "name": "Starter",
-        "price": "0 €",
+        "monthlyPrice": "0 €",
+        "annualPrice": "0 €",
         "period": "",
         "billing": "Monatliche Abrechnung",
+        "annualBilling": "Jährliche Abrechnung",
         "cta": "Los geht's",
         "note": "Ideal zum Testen und für kleine Projekte",
         "features": [
@@ -221,13 +224,15 @@
       },
       "professional": {
         "name": "Professional",
-        "price": "49 €",
+        "monthlyPrice": "49 €",
+        "annualPrice": "39 €",
         "period": "/ pro Monat",
         "billing": "Monatliche Abrechnung",
+        "annualBilling": "Jährliche Abrechnung",
         "cta": "Los geht's",
         "note": "Für wachsende Unternehmen",
         "features": [
-          "1000 Minuten/Monat",
+          "1.000 Minuten/Monat",
           "5 KI-Assistenten",
           "Prioritäts-Support",
           "Erweiterte Analysen",
@@ -238,9 +243,11 @@
       },
       "enterprise": {
         "name": "Enterprise",
-        "price": "199 €",
+        "monthlyPrice": "199 €",
+        "annualPrice": "159 €",
         "period": "/ pro Monat",
         "billing": "Monatliche Abrechnung",
+        "annualBilling": "Jährliche Abrechnung",
         "cta": "Vertrieb kontaktieren",
         "note": "Für größere Organisationen",
         "features": [

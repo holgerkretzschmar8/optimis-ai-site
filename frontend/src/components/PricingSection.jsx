@@ -1,14 +1,19 @@
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { ArrowRight, Check } from "lucide-react";
 
 export default function PricingSection({ onContactClick }) {
   const { t } = useTranslation();
+  const [isAnnualBilling, setIsAnnualBilling] = useState(true);
+
   const plans = [
     {
       name: t('pricing.plans.starter.name'),
-      price: t('pricing.plans.starter.price'),
+      monthlyPrice: t('pricing.plans.starter.monthlyPrice'),
+      annualPrice: t('pricing.plans.starter.annualPrice'),
       period: t('pricing.plans.starter.period'),
       billing: t('pricing.plans.starter.billing'),
+      annualBilling: t('pricing.plans.starter.annualBilling'),
       features: t('pricing.plans.starter.features', { returnObjects: true }),
       cta: t('pricing.plans.starter.cta'),
       note: t('pricing.plans.starter.note'),
@@ -16,9 +21,11 @@ export default function PricingSection({ onContactClick }) {
     },
     {
       name: t('pricing.plans.professional.name'),
-      price: t('pricing.plans.professional.price'),
+      monthlyPrice: t('pricing.plans.professional.monthlyPrice'),
+      annualPrice: t('pricing.plans.professional.annualPrice'),
       period: t('pricing.plans.professional.period'),
       billing: t('pricing.plans.professional.billing'),
+      annualBilling: t('pricing.plans.professional.annualBilling'),
       features: t('pricing.plans.professional.features', { returnObjects: true }),
       cta: t('pricing.plans.professional.cta'),
       note: t('pricing.plans.professional.note'),
@@ -26,9 +33,11 @@ export default function PricingSection({ onContactClick }) {
     },
     {
       name: t('pricing.plans.enterprise.name'),
-      price: t('pricing.plans.enterprise.price'),
+      monthlyPrice: t('pricing.plans.enterprise.monthlyPrice'),
+      annualPrice: t('pricing.plans.enterprise.annualPrice'),
       period: t('pricing.plans.enterprise.period'),
       billing: t('pricing.plans.enterprise.billing'),
+      annualBilling: t('pricing.plans.enterprise.annualBilling'),
       features: t('pricing.plans.enterprise.features', { returnObjects: true }),
       cta: t('pricing.plans.enterprise.cta'),
       note: t('pricing.plans.enterprise.note'),
@@ -37,11 +46,7 @@ export default function PricingSection({ onContactClick }) {
   ];
 
   return (
-    <section
-      id="pricing"
-      data-testid="pricing-section"
-      className="section bg-[#0f172a]/30"
-    >
+    <section id="pricing" data-testid="pricing-section" className="section bg-[#0f172a]/30">
       <div className="container-custom">
         <div className="text-center mb-16">
           <p className="text-cyan-400 font-medium mb-4 uppercase tracking-wider text-sm">
@@ -57,15 +62,22 @@ export default function PricingSection({ onContactClick }) {
           </p>
 
           <div className="mt-8 flex items-center justify-center gap-3">
+            <span className={`text-sm font-medium ${!isAnnualBilling ? 'text-white' : 'text-slate-300'}`}>
+              {t('pricing.monthlyBilling')}
+            </span>
             <button
               type="button"
-              aria-hidden="true"
-              tabIndex={-1}
-              className="relative flex h-5 w-10 items-center rounded-full bg-white/10 p-0.5 shadow-inner"
+              role="switch"
+              aria-checked={isAnnualBilling}
+              aria-label={t('pricing.annualBilling')}
+              onClick={() => setIsAnnualBilling(!isAnnualBilling)}
+              className={`relative flex h-6 w-11 items-center rounded-full p-0.5 shadow-inner transition-colors ${isAnnualBilling ? 'bg-cyan-500' : 'bg-white/10'}`}
             >
-              <span className="h-4 w-4 rounded-full bg-white" />
+              <span className={`h-5 w-5 rounded-full bg-white transition-transform ${isAnnualBilling ? 'translate-x-5' : 'translate-x-0'}`} />
             </button>
-            <span className="text-sm text-slate-300">{t('pricing.annualBilling')}</span>
+            <span className={`text-sm font-medium ${isAnnualBilling ? 'text-white' : 'text-slate-300'}`}>
+              {t('pricing.annualBilling')}
+            </span>
           </div>
         </div>
 
@@ -73,20 +85,20 @@ export default function PricingSection({ onContactClick }) {
           {plans.map((plan) => (
             <div
               key={plan.name}
-              className={`glass-card p-8 relative ${
-                plan.popular ? "pricing-popular lg:scale-105" : ""
-              }`}
+              className={`glass-card p-8 relative ${plan.popular ? 'pricing-popular lg:scale-105' : ''}`}
             >
               <h3 className="text-xl font-bold text-white mb-2">{plan.name}</h3>
 
               <div className="mb-8">
-                <div className="mb-3">
+                <div className="mb-3 flex items-end gap-2">
                   <span className="text-4xl font-bold text-white">
-                    {plan.price}
+                    {isAnnualBilling ? plan.annualPrice : plan.monthlyPrice}
                   </span>
                   <span className="text-slate-500">{plan.period}</span>
                 </div>
-                <p className="text-sm text-cyan-400 font-medium">{plan.billing}</p>
+                <p className="text-sm text-cyan-400 font-medium">
+                  {isAnnualBilling ? plan.annualBilling : plan.billing}
+                </p>
               </div>
 
               <ul className="space-y-4 mb-8">
@@ -102,9 +114,7 @@ export default function PricingSection({ onContactClick }) {
 
               <button
                 onClick={onContactClick}
-                className={`w-full py-3 rounded-full font-semibold text-sm flex items-center justify-center gap-2 transition-all ${
-                  plan.popular ? "btn-primary" : "btn-secondary"
-                }`}
+                className={`w-full py-3 rounded-full font-semibold text-sm flex items-center justify-center gap-2 transition-all ${plan.popular ? 'btn-primary' : 'btn-secondary'}`}
               >
                 {plan.cta}
                 <ArrowRight size={16} />
