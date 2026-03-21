@@ -21,7 +21,7 @@
 }
 
 .pricing-popular::before {
-  content: 'Most Popular';
+  content: 'Popular';
   position: absolute;
   top: -14px;
   left: 50%;

@@ -197,58 +197,68 @@
     }
   },
   "pricing": {
-    "badge": "Preismodelle",
-    "titleMain": "Investieren Sie in",
-    "titleGradient": "Ihr Wachstum",
-    "description": "Transparente Preise ohne versteckte Gebühren. Wählen Sie das passende Modell für Ihr Unternehmen.",
-    "guarantee": "Alle Pläne beinhalten eine 30-Tage-Geld-zurück-Garantie. Individuelle Enterprise-Lösungen verfügbar.",
-    "period": "/Monat",
+    "badge": "Preise",
+    "titleMain": "Einfache, transparente Preise für",
+    "titleGradient": "Voice Agents",
+    "description": "Kostenlos starten. Mit Ihrem Wachstum skalieren. Bis zu 95 % günstiger als Wettbewerber.",
+    "monthlyBilling": "Monatliche Abrechnung",
+    "annualBilling": "Jährliche Abrechnung (20 % sparen)",
+    "period": "/ pro Monat",
     "plans": {
       "starter": {
         "name": "Starter",
-        "price": "13,99 €",
-        "originalPrice": "69,99 €",
-        "trial": "3 Monate kostenlose Testphase",
-        "description": "Ideal für kleine Unternehmen mit bis zu 30 Anrufen/Tag",
+        "monthlyPrice": "0 €",
+        "annualPrice": "0 €",
+        "period": "",
+        "billing": "Monatliche Abrechnung",
+        "annualBilling": "Jährliche Abrechnung",
+        "cta": "Los geht's",
+        "note": "Ideal zum Testen und für kleine Projekte",
         "features": [
-          "800 Minuten (0,10 €/Min. Nachfüllung)",
-          "1 Telefonnummer",
-          "1 Benutzerlizenz",
+          "50 Minuten/Monat",
+          "1 KI-Assistent",
           "E-Mail-Support",
-          "Monatliche Performance-Berichte",
-          "Standard-Analyse-Dashboard"
+          "Einfache Analysen",
+          "Community-Support"
         ]
       },
-      "growth": {
-        "name": "Growth",
-        "price": "49,99 €",
-        "originalPrice": "249,99 €",
-        "trial": "3 Monate kostenlose Testphase",
-        "description": "Für wachsende Unternehmen mit 30-150 Anrufen/Tag",
+      "professional": {
+        "name": "Professional",
+        "monthlyPrice": "49 €",
+        "annualPrice": "39 €",
+        "period": "/ pro Monat",
+        "billing": "Monatliche Abrechnung",
+        "annualBilling": "Jährliche Abrechnung",
+        "cta": "Los geht's",
+        "note": "Für wachsende Unternehmen",
         "features": [
-          "2500 Minuten (0,1 €/Min. Nachfüllung)",
-          "3 Telefonnummern",
-          "3 gleichzeitige Anrufe",
-          "Prioritäts-Support (24/7)",
-          "Eigene Sprach-Parametrisierung",
-          "Erweiterte Analysen & Reporting",
-          "GRATIS Website-Erstellung & Optimierung",
-          "Mehrsprachiger Voice-Assistant"
+          "1.000 Minuten/Monat",
+          "5 KI-Assistenten",
+          "Prioritäts-Support",
+          "Erweiterte Analysen",
+          "CRM-Integrationen",
+          "Eigene Stimmen",
+          "Team-Zusammenarbeit"
         ]
       },
       "enterprise": {
         "name": "Enterprise",
-        "price": "Individuell",
-        "description": "Umfassende KI-Voice-Agent-Lösungen (>100 Anrufe/Tag) und weitere KI-Automatisierung",
+        "monthlyPrice": "199 €",
+        "annualPrice": "159 €",
+        "period": "/ pro Monat",
+        "billing": "Monatliche Abrechnung",
+        "annualBilling": "Jährliche Abrechnung",
+        "cta": "Vertrieb kontaktieren",
+        "note": "Für größere Organisationen",
         "features": [
-          "Individuelle Minutenpakete",
-          "Unbegrenzte Telefonnummern",
-          "Unbegrenzte gleichzeitige Anrufe",
-          "Prioritäts-Support",
-          "Eigene Sprach-Parametrisierung",
-          "Erweiterte Analysen & Reporting",
-          "GRATIS Website-Erstellung & Optimierung",
-          "GRATIS individueller KI-Implementierungsplan"
+          "Alles aus Professional",
+          "Individuelle Lösungen",
+          "Dedizierter Account Manager",
+          "1-stündige Support-Antwortzeit",
+          "SSO-Authentifizierung",
+          "Erweiterte Sicherheit",
+          "SLA-Garantie",
+          "On-Premise-Option"
         ]
       }
     }
@@ -281,7 +291,7 @@
       },
       "q6": {
         "q": "Welche Art von Support bieten Sie an?",
-        "a": "Alle Pläne beinhalten engagierten Support. Starter-Pläne erhalten E-Mail-Support, Growth-Pläne 24/7 Prioritäts-Support und Enterprise-Kunden einen persönlichen Success Manager."
+        "a": "Alle Pläne beinhalten engagierten Support. Starter-Pläne erhalten E-Mail-Support, Professional-Pläne Prioritäts-Support und Optimierungsgespräche und Enterprise-Kunden einen persönlichen Success Manager."
       }
     }
   },

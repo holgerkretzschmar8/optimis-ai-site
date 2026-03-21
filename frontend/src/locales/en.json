@@ -197,58 +197,68 @@
     }
   },
   "pricing": {
-    "badge": "Pricing Plans",
-    "titleMain": "Invest in",
-    "titleGradient": "Your Growth",
-    "description": "Transparent pricing with no hidden fees. Choose the plan that fits your business needs.",
-    "guarantee": "All plans include a 30-day money-back guarantee. Custom enterprise solutions available.",
-    "period": "/month",
+    "badge": "Pricing",
+    "titleMain": "Simple transparent pricing for",
+    "titleGradient": "voice agents",
+    "description": "Start free. Scale as you grow. Up to 95% cheaper than competitors.",
+    "monthlyBilling": "Billed monthly",
+    "annualBilling": "Annual billing (Save 20%)",
+    "period": "/ per month",
     "plans": {
       "starter": {
         "name": "Starter",
-        "price": "13,99 €",
-        "originalPrice": "69,99 €",
-        "trial": "3 months free",
-        "description": "Perfect for small-scale businesses with up to 30 calls/day",
+        "monthlyPrice": "0 €",
+        "annualPrice": "0 €",
+        "period": "",
+        "billing": "Billed monthly",
+        "annualBilling": "Billed annually",
+        "cta": "Get Started",
+        "note": "Perfect for testing and small projects",
         "features": [
-          "800 minutes (0.10 €/min top-up)",
-          "1 phone number",
-          "1 user license",
+          "50 minutes/month",
+          "1 AI assistant",
           "Email support",
-          "Monthly performance reports",
-          "Standard analytics dashboard"
+          "Basic analytics",
+          "Community support"
         ]
       },
-      "growth": {
-        "name": "Growth",
-        "price": "49,99 €",
-        "originalPrice": "249,99 €",
-        "trial": "3 months free",
-        "description": "For growing businesses ready to scale their AI infrastructure with 30-150 calls/day",
+      "professional": {
+        "name": "Professional",
+        "monthlyPrice": "49 €",
+        "annualPrice": "39 €",
+        "period": "/ per month",
+        "billing": "Billed monthly",
+        "annualBilling": "Billed annually",
+        "cta": "Get Started",
+        "note": "For growing businesses",
         "features": [
-          "2500 minutes (0,1 €/min top-up)",
-          "3 phone numbers",
-          "3 concurrent calls",
-          "Priority support (24/7)",
-          "Custom voice parameterisation",
-          "Advanced analytics & reporting",
-          "FREE Website Build and Optimisation",
-          "Multi-Lingual Voice Assistant"
+          "1,000 minutes/month",
+          "5 AI assistants",
+          "Priority support",
+          "Advanced analytics",
+          "CRM integrations",
+          "Custom voices",
+          "Team collaboration"
         ]
       },
       "enterprise": {
         "name": "Enterprise",
-        "price": "Custom",
-        "description": "Full-scale costumized AI voice agent setup (more than 100 calls/day) and further AI Automation Assistance",
+        "monthlyPrice": "199 €",
+        "annualPrice": "159 €",
+        "period": "/ per month",
+        "billing": "Billed monthly",
+        "annualBilling": "Billed annually",
+        "cta": "Contact Sales",
+        "note": "For large organizations",
         "features": [
-          "Custom minutes",
-          "Unlimited phone numbers",
-          "unlimited concurrent calls",
-          "Priority support",
-          "Custom voice parameterisation",
-          "Advanced analytics & reporting",
-          "FREE Website Build and Optimisation",
-          "FREE customized AI Implementation Roadmap Plan"
+          "Everything in Professional",
+          "Custom solutions",
+          "Dedicated account manager",
+          "1-hour support response time",
+          "SSO Authentication",
+          "Advanced security",
+          "SLA guarantee",
+          "On-premise option"
         ]
       }
     }
@@ -281,7 +291,7 @@
       },
       "q6": {
         "q": "What kind of support do you provide?",
-        "a": "All plans include dedicated support. Starter plans receive email support with 24-hour response times. Growth plans include 24/7 priority support and weekly optimization calls. Enterprise clients get a dedicated success manager and on-call support. We're committed to your success."
+        "a": "All plans include dedicated support. Starter plans receive email support with 24-hour response times. Professional plans include priority support and optimization calls. Enterprise clients get a dedicated success manager and on-call support. We're committed to your success."
       }
     }
   },
