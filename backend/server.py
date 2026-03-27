@@ -13,6 +13,10 @@ from datetime import datetime, timezone, timedelta
 import jwt
 import bcrypt
 
+# ── New imports for chatbot ──────────────────────────────────
+import anthropic
+from supabase import create_client, Client
+
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
 
@@ -25,6 +29,20 @@ db = client[os.environ['DB_NAME']]
 SECRET_KEY = os.environ.get('JWT_SECRET', 'optimis-ai-secret-key-2024')
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_HOURS = 24
+
+# ── Chatbot clients ──────────────────────────────────────────
+anthropic_client = anthropic.Anthropic(api_key=os.environ.get("ANTHROPIC_API_KEY"))
+
+supabase: Client = create_client(
+    os.environ.get("SUPABASE_URL", ""),
+    os.environ.get("SUPABASE_SERVICE_ROLE_KEY", ""),
+)
+
+CHAT_SYSTEM_PROMPT = """You are a helpful assistant for Optimis AI.
+You help visitors understand our AI consulting services, answer questions
+about pricing and capabilities, and guide them toward booking a discovery call.
+Be concise, friendly, and professional. If unsure about something specific,
+offer to connect the visitor with a team member."""
 
 # Create the main app
 app = FastAPI(title="Optimis AI API")
@@ -81,6 +99,19 @@ class TokenResponse(BaseModel):
     token_type: str = "bearer"
     admin: dict
 
+# ── Chatbot models ───────────────────────────────────────────
+class ChatMessage(BaseModel):
+    role: str        # "user" or "assistant"
+    content: str
+
+class ChatRequest(BaseModel):
+    messages: List[ChatMessage]
+    sessionId: Optional[str] = None
+    visitorName: Optional[str] = None
+
+class ChatResponse(BaseModel):
+    message: str
+
 # ============== Auth Helpers ==============
 
 def hash_password(password: str) -> str:
@@ -129,11 +160,62 @@ async def create_lead(lead_data: LeadCreate):
     await db.leads.insert_one(doc)
     return lead
 
+# ── Chat endpoint ────────────────────────────────────────────
+@api_router.post("/chat", response_model=ChatResponse)
+async def chat(request: ChatRequest):
+    if not request.messages:
+        raise HTTPException(status_code=400, detail="messages array is required")
+
+    session_id = request.sessionId or f"anon_{uuid.uuid4().hex[:8]}"
+
+    # Call Claude
+    try:
+        response = anthropic_client.messages.create(
+            model="claude-sonnet-4-20250514",
+            max_tokens=1024,
+            system=CHAT_SYSTEM_PROMPT,
+            messages=[{"role": m.role, "content": m.content} for m in request.messages],
+        )
+        assistant_message = response.content[0].text
+    except Exception as e:
+        logger.error(f"Claude API error: {e}")
+        raise HTTPException(status_code=502, detail="Failed to get response from Claude")
+
+    # Log to Supabase (non-blocking — failure won't break the chat)
+    user_message = request.messages[-1].content if request.messages else ""
+    try:
+        supabase.table("chat_transcripts").insert({
+            "session_id":        session_id,
+            "visitor_name":      request.visitorName,
+            "user_message":      user_message,
+            "assistant_message": assistant_message,
+            "page_url":          None,   # Builder.io widget sends this via JS headers
+            "created_at":        datetime.now(timezone.utc).isoformat(),
+        }).execute()
+    except Exception as e:
+        logger.warning(f"Supabase logging error (non-fatal): {e}")
+
+    return ChatResponse(message=assistant_message)
+
+# ── Admin: view chat transcripts ─────────────────────────────
+@api_router.get("/admin/chat-transcripts")
+async def get_chat_transcripts(admin: dict = Depends(get_current_admin)):
+    """Returns the 200 most recent chat transcripts from Supabase."""
+    try:
+        result = supabase.table("chat_transcripts") \
+            .select("*") \
+            .order("created_at", desc=True) \
+            .limit(200) \
+            .execute()
+        return result.data
+    except Exception as e:
+        logger.error(f"Failed to fetch transcripts: {e}")
+        raise HTTPException(status_code=500, detail="Could not fetch transcripts")
+
 # ============== Admin Auth Routes ==============
 
 @api_router.post("/admin/register", response_model=TokenResponse)
 async def register_admin(data: AdminRegister):
-    # Check if admin exists
     existing = await db.admins.find_one({"email": data.email})
     if existing:
         raise HTTPException(status_code=400, detail="Email already registered")
@@ -229,7 +311,6 @@ async def get_stats(admin: dict = Depends(get_current_admin)):
     qualified_leads = await db.leads.count_documents({"status": "qualified"})
     converted_leads = await db.leads.count_documents({"status": "converted"})
     
-    # Get leads from last 7 days
     week_ago = (datetime.now(timezone.utc) - timedelta(days=7)).isoformat()
     recent_leads = await db.leads.count_documents({
         "created_at": {"$gte": week_ago}
