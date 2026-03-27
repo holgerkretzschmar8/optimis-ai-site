@@ -1,6 +1,5 @@
 // frontend/api/chat.js
-// Vercel will automatically serve this as /api/chat
-// No Python needed — runs natively on Vercel
+// Vercel serverless function — runs natively, no Python needed
 
 export default async function handler(req, res) {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -16,7 +15,6 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: "messages array required" });
   }
 
-  // ── Call Anthropic API ───────────────────────────────────────
   let assistantMessage = "";
   try {
     const anthropicRes = await fetch("https://api.anthropic.com/v1/messages", {
@@ -27,7 +25,7 @@ export default async function handler(req, res) {
         "anthropic-version": "2023-06-01",
       },
       body: JSON.stringify({
-        model: "claude-sonnet-4-20250514",
+        model: "claude-sonnet-4-6",
         max_tokens: 1024,
         system: `You are a helpful assistant for Optimis AI. You help visitors understand 
 our AI consulting services, answer questions about pricing and capabilities, 
@@ -37,13 +35,28 @@ and guide them toward booking a discovery call. Be concise, friendly, and profes
     });
 
     const data = await anthropicRes.json();
-    assistantMessage = data.content?.[0]?.text || "Sorry, I could not respond.";
+
+    // Log full response for debugging
+    console.log("Anthropic response:", JSON.stringify(data));
+
+    if (data.error) {
+      console.error("Anthropic API error:", data.error);
+      return res.status(502).json({ error: data.error.message });
+    }
+
+    assistantMessage = data.content?.[0]?.text || "";
+
+    if (!assistantMessage) {
+      console.error("Empty response from Claude:", JSON.stringify(data));
+      return res.status(502).json({ error: "Empty response from Claude" });
+    }
+
   } catch (err) {
-    console.error("Anthropic error:", err);
+    console.error("Fetch error:", err);
     return res.status(502).json({ error: "Failed to reach Claude" });
   }
 
-  // ── Log to Supabase ──────────────────────────────────────────
+  // Log to Supabase (non-blocking)
   const userMessage = messages[messages.length - 1]?.content || "";
   try {
     await fetch(`${process.env.SUPABASE_URL}/rest/v1/chat_transcripts`, {
