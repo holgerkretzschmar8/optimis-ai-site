@@ -74,13 +74,13 @@
       "voice": {
         "title": "KI-Voice-Agents",
         "description": "Übernehmen eingehende Anrufe, Buchungen und Support, ohne dass Ihr Team jede Anfrage selbst bearbeiten muss.",
-        "linkHint": "Klicken Sie HIER, um den Voice Agent LIVE selbst zu testen. Geben Sie einfach Ihre Telefonnummer ein und erhalten Sie sofort einen Anruf vom Voice Agent.",
+        "linkHint": "Klicken Sie HIER, um den Voice Agent LIVE JETZT zu testen. Geben Sie einfach Ihre Telefonnummer ein und erhalten Sie sofort einen Anruf vom Voice Agent.",
         "features": ["Inbound-Anrufe bearbeiten", "Buchungen und Follow-ups", "Übergabe an Menschen bei Bedarf"]
       },
       "chatbots": {
         "title": "KI-Chatbot-Agents",
         "description": "Automatisieren Kundengespräche, beantworten FAQs und qualifizieren Leads rund um die Uhr auf Ihrer Website.",
-        "linkHint": "Klicken Sie HIER, um den Chatbot LIVE selbst zu testen. Öffnen Sie die Chat-Blase unten rechts und starten Sie ein Gespräch mit ihm.",
+        "linkHint": "Klicken Sie auf die Widget-Blase unten rechts auf dieser Seite, um jetzt mit unserem Chatbot-Agenten zu sprechen.",
         "features": ["24/7 Website-Chat", "Lead-Qualifizierung", "Sofortige FAQ-Antworten"]
       },
       "appointment": {

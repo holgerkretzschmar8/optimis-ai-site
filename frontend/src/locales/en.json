@@ -74,13 +74,13 @@
       "voice": {
         "title": "AI Voice Agents",
         "description": "Handle inbound calls, bookings, and support without relying on a human agent for every interaction.",
-        "linkHint": "Click HERE to test the voice agent LIVE for yourself. Just enter your phone number, and receive an immediate call from the voice agent.",
+        "linkHint": "Click HERE to test the voice agent LIVE NOW. Just enter your phone number, and receive an immediate call from the voice agent.",
         "features": ["Inbound call handling", "Booking and follow-up", "Human handoff when needed"]
       },
       "chatbots": {
         "title": "AI Chatbot Agents",
         "description": "Automate customer conversations, answer FAQs, and qualify leads on your website 24/7.",
-        "linkHint": "Click HERE to test the chatbot LIVE for yourself. Open the chat bubble in the bottom-right corner and start a conversation with it.",
+        "linkHint": "Click on the widget bubble on the bottom right of this page to start a conversation our chatbot agent RIGHT NOW.",
         "features": ["24/7 website chat", "Lead qualification", "Instant FAQ support"]
       },
       "appointment": {
