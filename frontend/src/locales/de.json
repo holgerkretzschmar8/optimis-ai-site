@@ -1,11 +1,11 @@
 {
   "common": {
-    "siteTitle": "KI-Automatisierungsagentur | Voice Agents, Chatbots & Workflow-KI",
-    "siteDescription": "Enterprise-KI-Automatisierungsagentur für die Entwicklung von Voice Agents, KI-Chatbots und Workflow-Automatisierung für moderne Unternehmen. Automatisieren Sie Support, Vertrieb und Geschäftsprozesse mit KI.",
-    "keywords": "KI-Automatisierung, KI-Voice-Agents, Chatbots, Workflow-Automatisierung, KI-Agentur, Business-Optimierung",
-    "ogTitle": "KI-Automatisierungsagentur | Voice Agents, Chatbots & Workflow-KI",
-    "ogDescription": "Enterprise-KI-Automatisierungsagentur für die Entwicklung von Voice Agents, KI-Chatbots und Workflow-Automatisierung für moderne Unternehmen. Automatisieren Sie Support, Vertrieb und Geschäftsprozesse mit KI.",
-    "bookCall": "Strategiegespräch buchen",
+    "siteTitle": "Optimis AI | Voice Agents, Chatbots & Automations-Workflows",
+    "siteDescription": "Optimis AI unterstützt Unternehmen dabei, KI-Voice-Agents, Chatbot-Agents und Automations-Workflows im Rahmen eines risikofreien Partnermodells zu prüfen, aufzubauen und zu testen. Starten Sie mit einer kostenlosen Beratung und investieren Sie erst nach nachgewiesenem Mehrwert.",
+    "keywords": "Optimis AI, KI Voice Agents, KI Chatbot Agents, Automations Workflows, KI Agentur, Business Automatisierung",
+    "ogTitle": "Optimis AI | Voice Agents, Chatbots & Automations-Workflows",
+    "ogDescription": "Optimis AI unterstützt Unternehmen dabei, KI-Voice-Agents, Chatbot-Agents und Automations-Workflows mit einem risikofreien Partnermodell zu prüfen, aufzubauen und zu testen.",
+    "bookCall": "Kostenlose Beratung buchen",
     "strategyCall": "Strategiegespräch",
     "freeDemo": "Kostenlose Demo",
     "getStarted": "Jetzt starten",
@@ -34,26 +34,26 @@
     "howItWorks": "Ablauf",
     "industries": "Branchen",
     "caseStudies": "Fallstudien",
-    "whyUs": "Vorteile",
+    "whyUs": "Warum Optimis AI",
     "pricing": "Preise",
     "faq": "FAQ"
   },
   "hero": {
-    "badge": "KI-Automatisierungsagentur",
+    "badge": "Risikofreie KI-Partnerschaft",
     "headline": {
-      "line1": "Moderne KI-Systeme,",
-      "line2": "Umsatz & Effizienz",
-      "line3": "optimieren",
-      "that": "die"
+      "line1": "Wir beweisen unseren Wert",
+      "line2": "Sie etwas",
+      "line3": "bezahlen",
+      "that": "Bevor"
     },
-    "subheadline": "Wir entwickeln intelligente Automatisierungen für moderne Unternehmen.",
-    "description": "Setzen Sie KI-Voice-Agents, Chatbots und Workflow-Automatisierungen ein, die Ihr Unternehmen rund um die Uhr skalieren – ohne Fixkosten zu erhöhen.",
-    "primaryCTA": "Kostenloses Strategiegespräch buchen",
+    "subheadline": "Wir arbeiten mit Unternehmen zusammen, um KI-Systeme zu prüfen, aufzubauen und einzuführen — und starten komplett kostenlos.",
+    "description": "Sie investieren erst dann, wenn Voice Agents, Chatbot-Agents und Automations-Workflows ihren Mehrwert in der Praxis gezeigt haben.",
+    "primaryCTA": "Kostenlose Beratung buchen",
     "secondaryCTA": "So funktioniert es",
     "trust": {
-      "security": "Sicherheit auf Enterprise-Niveau",
-      "automation": "24/7 KI-Automatisierung",
-      "deployment": "Implementierung in einer Woche"
+      "security": "Kostenlose Erstberatung",
+      "automation": "Kostenlose Pilotphase",
+      "deployment": "Zahlung erst nach bewiesenem Mehrwert"
     }
   },
   "socialProof": {
@@ -66,20 +66,20 @@
     "trustedBy": "Vertraut von innovativen Unternehmen"
   },
   "services": {
-    "badge": "Unsere Leistungen",
-    "titleMain": "KI-Lösungen, die",
-    "titleGradient": "Ergebnisse liefern",
-    "description": "Von Voice-Agents bis hin zur kompletten Workflow-Automatisierung bauen und implementieren wir KI-Systeme, die rund um die Uhr für Sie arbeiten.",
+    "badge": "Was wir anbieten",
+    "titleMain": "KI-Systeme für",
+    "titleGradient": "echte Arbeit",
+    "description": "Wir konzentrieren uns auf praktische KI-Systeme, die repetitive Arbeit reduzieren und messbaren Mehrwert schaffen.",
     "items": {
       "voice": {
         "title": "KI-Voice-Agents",
-        "description": "Menschlich klingende Inbound- & Outbound-KI-Anrufer, die Leads rund um die Uhr qualifizieren und abschließen.",
-        "features": ["Natürliche Gespräche", "Mehrsprachiger Support", "CRM-Integration"]
+        "description": "Übernehmen eingehende Anrufe, Buchungen und Support, ohne dass Ihr Team jede Anfrage selbst bearbeiten muss.",
+        "features": ["Inbound-Anrufe bearbeiten", "Buchungen und Follow-ups", "Übergabe an Menschen bei Bedarf"]
       },
       "chatbots": {
-        "title": "KI-Chatbots",
-        "description": "24/7 intelligente Chat-Automatisierung für Ihre Website, die Besucher anspricht und in Kunden verwandelt.",
-        "features": ["Sofortige Antworten", "Lead-Qualifizierung", "Nahtlose Übergabe"]
+        "title": "KI-Chatbot-Agents",
+        "description": "Automatisieren Kundengespräche, beantworten FAQs und qualifizieren Leads rund um die Uhr auf Ihrer Website.",
+        "features": ["24/7 Website-Chat", "Lead-Qualifizierung", "Sofortige FAQ-Antworten"]
       },
       "appointment": {
         "title": "KI-Terminplaner",
@@ -87,9 +87,9 @@
         "features": ["Intelligente Planung", "Zeitzonen-Berücksichtigung", "Kalender-Synchronisierung"]
       },
       "workflow": {
-        "title": "Workflow-Automatisierung",
-        "description": "Integrieren Sie KI in CRMs, Pipelines und interne Systeme, um manuelle Aufgaben zu eliminieren.",
-        "features": ["Prozessautomatisierung", "Datensynchronisation", "Eigene Trigger"]
+        "title": "Automations-Workflows",
+        "description": "Verbinden Ihre Tools und Prozesse, damit sich Ihr Team auf die wirklich wichtigen Aufgaben konzentrieren kann.",
+        "features": ["CRM- und Tool-Sync", "Aufgaben automatisieren", "Individuelle Workflow-Logik"]
       },
       "custom": {
         "title": "Individuelle KI-Systeme",
@@ -100,21 +100,21 @@
   },
   "howItWorks": {
     "badge": "Ablauf",
-    "titleMain": "Ihr Weg zur",
-    "titleGradient": "KI-Automatisierung",
-    "description": "Ein bewährter 3-Stufen-Prozess, der Ihre Geschäftsprozesse transformiert.",
+    "titleMain": "Ein risikofreier",
+    "titleGradient": "Startpfad",
+    "description": "Wir verstehen zuerst Ihr Setup, bauen dann einen kostenlosen Pilot und sprechen erst danach über ein kommerzielles Modell.",
     "steps": {
       "step1": {
-        "title": "Strategie & System-Mapping",
-        "description": "Wir analysieren Ihre Geschäftsprozesse, identifizieren Automatisierungspotenziale und entwerfen eine maßgeschneiderte KI-Roadmap."
+        "title": "Foundation Check (Kostenlos)",
+        "description": "Wir prüfen Ihr aktuelles digitales Setup. Wenn die Basis fehlt, bauen oder überarbeiten wir Ihre Website und Sie übernehmen nur die Hosting-Kosten."
       },
       "step2": {
-        "title": "Entwicklung & Integration",
-        "description": "Unser Team entwickelt und integriert KI-Systeme nahtlos in Ihre bestehenden Tools, CRMs und Workflows – ohne Betriebsunterbrechung."
+        "title": "Pilotphase (Kostenlos)",
+        "description": "Wir implementieren und testen KI-Agents für Ihr Unternehmen — beginnend mit einem Voice Agent und einem Chatbot — und bewerten die Ergebnisse gemeinsam."
       },
       "step3": {
-        "title": "Launch, Optimierung & Skalierung",
-        "description": "Wir implementieren Ihre KI-Systeme, überwachen die Performance und optimieren kontinuierlich, um den ROI zu maximieren."
+        "title": "Bewiesene Resultate → Langfristige Partnerschaft",
+        "description": "Sobald die Agents messbaren Mehrwert schaffen, formalisieren wir die Zusammenarbeit. Sie wachsen, und wir wachsen mit Ihnen."
       }
     }
   },
@@ -178,22 +178,22 @@
     }
   },
   "whyUs": {
-    "badge": "Warum Wir",
-    "titleMain": "Der Optimis",
-    "titleGradient": "Vorteil",
-    "description": "Wir sind nicht nur eine weitere KI-Agentur. Wir sind Ihr strategischer Partner für den Aufbau intelligenter Systeme, die messbares Unternehmenswachstum fördern.",
+    "badge": "Warum Optimis AI",
+    "titleMain": "Wir bauen, testen",
+    "titleGradient": "und verdienen Vertrauen",
+    "description": "Wir glauben nicht daran, Systeme zu verkaufen, die nicht funktionieren.",
+    "statement": "Deshalb hören wir zuerst zu, bauen dann und beweisen den Mehrwert — in genau dieser Reihenfolge. Keine Verträge, kein Druck, keine Vorabkosten. Nur Resultate.",
     "stats": {
       "deployed": "KI-Systeme implementiert",
       "retention": "Kundenbindung",
       "roi": "Durchschnittlicher ROI"
     },
     "items": {
-      "models": { "title": "Enterprise-KI-Modelle", "description": "Wir nutzen die neuesten GPT, Claude und individuell trainierten Modelle für höchste Performance." },
-      "custom": { "title": "Maßgeschneiderte Systeme", "description": "Keine Standardvorlagen. Jede Lösung wird speziell für Ihre Bedürfnisse entwickelt." },
-      "deployment": { "title": "Schnelle Implementierung", "description": "In Tagen einsatzbereit, nicht Monaten. Unser optimierter Prozess liefert schnelle Ergebnisse." },
-      "optimization": { "title": "Kontinuierliche Optimierung", "description": "Wir überwachen und verbessern Ihre KI-Systeme kontinuierlich für Spitzenleistung." },
-      "support": { "title": "Engagiertes Support-Team", "description": "Ihr Erfolg ist unsere Priorität. Erhalten Sie Experten-Support, wann immer Sie ihn brauchen." },
-      "performance": { "title": "Datenbasierte Performance", "description": "Echtzeit-Analysen und Reporting, damit Sie Ihren ROI jederzeit im Blick haben." }
+      "consultation": { "title": "Kostenlose Erstberatung", "description": "Wir starten damit, Ihr Unternehmen, Ihre Tools und realistische Einsatzfelder für KI zu verstehen." },
+      "website": { "title": "Kostenloser Website-Aufbau bei Bedarf", "description": "Wenn zuerst das digitale Fundament fehlt, bauen oder optimieren wir es und Sie zahlen nur das Hosting." },
+      "pilot": { "title": "Kostenloser Pilot für Voice- und Chatbot-Agents", "description": "Wir testen praktische KI-Systeme in Ihrem Unternehmen, bevor wir eine Verpflichtung erwarten." },
+      "commercial": { "title": "Kommerzielles Modell erst nach bewiesenem Mehrwert", "description": "Eine bezahlte Zusammenarbeit startet erst, wenn der Pilot klaren geschäftlichen Mehrwert zeigt." },
+      "partner": { "title": "Auf langfristige Partnerschaft ausgelegt", "description": "Unser Ziel ist es, Ihr KI-Partner zu werden — nicht ein einmaliger Anbieter von Software." }
     }
   },
   "pricing": {
@@ -296,15 +296,15 @@
     }
   },
   "cta": {
-    "badge": "Begrenzte Plätze verfügbar",
-    "titleMain": "Bereit, Ihren",
-    "titleGradient": "Umsatz mit KI zu optimieren?",
-    "description": "Schließen Sie sich den Unternehmen an, die bereits KI nutzen, um schneller zu skalieren, Kosten zu senken und mehr Abschlüsse zu erzielen.",
-    "button": "Kostenlose Voice-Agent-Demo buchen",
-    "urgency": "Begrenzte Onboarding-Plätze pro Monat verfügbar. Sichern Sie sich Ihren Platz heute."
+    "badge": "Kostenlose Beratung",
+    "titleMain": "Bereit zu sehen, was KI",
+    "titleGradient": "für Ihr Unternehmen leisten kann?",
+    "description": "Starten Sie mit einer kostenlosen Beratung. Ganz ohne Verpflichtung.",
+    "button": "Kostenlose Beratung buchen",
+    "urgency": ""
   },
   "footer": {
-    "description": "Moderne KI-Automatisierungssysteme, die Umsatz und Effizienz für moderne Unternehmen optimieren.",
+    "description": "Voice Agents, Chatbot-Agents und Automations-Workflows in einem risikofreien Partnermodell.",
     "location": "München, Deutschland",
     "servicesTitle": "Leistungen",
     "companyTitle": "Unternehmen",
@@ -312,8 +312,8 @@
     "copyright": "© {{year}} Optimis AI. Alle Rechte vorbehalten."
   },
   "contactModal": {
-    "title": "Strategiegespräch buchen",
-    "description": "Füllen Sie das Formular aus und wir melden uns innerhalb von 24 Stunden bei Ihnen.",
+    "title": "Kostenlose Beratung buchen",
+    "description": "Erzählen Sie uns von Ihrem Unternehmen und wo KI helfen könnte. Wir prüfen Ihr Setup und empfehlen den sinnvollsten nächsten Schritt.",
     "labels": {
       "name": "Name *",
       "email": "E-Mail *",
@@ -329,8 +329,8 @@
       "message": "Erzählen Sie uns von Ihrem Unternehmen und was Sie mit KI erreichen wollen..."
     },
     "gdpr": "Ich stimme zu, dass meine Angaben aus dem Kontaktformular zur Beantwortung meiner Anfrage erhoben und verarbeitet werden. Die Daten werden nach abgeschlossener Bearbeitung Ihrer Anfrage gelöscht. Hinweis: Sie können Ihre Einwilligung jederzeit für die Zukunft per E-Mail an info@optimis-ai.com widerrufen. Detaillierte Informationen zum Umgang mit Nutzerdaten finden Sie in unserer",
-    "submit": "Jetzt Strategiegespräch buchen",
-    "footer": "Wir antworten in der Regel innerhalb von 2 Stunden während der Geschäftszeiten."
+    "submit": "Meine kostenlose Beratung buchen",
+    "footer": "Wir antworten in der Regel innerhalb von 24 Stunden."
   },
   "leadPopup": {
     "title": "Holen Sie sich Ihre KI-Voice-Agent-Demo",

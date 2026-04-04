@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Globe } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
@@ -7,23 +7,20 @@ const LOGO_URL = "https://customer-assets.emergentagent.com/job_7f9de4cc-23e2-4d
 
 const LanguageToggle = () => {
   const { i18n } = useTranslation();
-  const currentLang = i18n.language || 'en';
+  const currentLang = i18n.language || "en";
   const location = useLocation();
   const navigate = useNavigate();
 
   const toggleLanguage = () => {
-    const nextLang = currentLang === 'en' ? 'de' : 'en';
-
+    const nextLang = currentLang === "en" ? "de" : "en";
     let nextPath = location.pathname;
 
-    if (nextLang === 'de') {
-      if (!nextPath.startsWith('/de')) {
-        nextPath = `/de${nextPath === '/' ? '' : nextPath}`;
+    if (nextLang === "de") {
+      if (!nextPath.startsWith("/de")) {
+        nextPath = `/de${nextPath === "/" ? "" : nextPath}`;
       }
-    } else {
-      if (nextPath.startsWith('/de')) {
-        nextPath = nextPath.replace(/^\/de/, '') || '/';
-      }
+    } else if (nextPath.startsWith("/de")) {
+      nextPath = nextPath.replace(/^\/de/, "") || "/";
     }
 
     i18n.changeLanguage(nextLang);
@@ -37,7 +34,7 @@ const LanguageToggle = () => {
       aria-label="Toggle Language"
     >
       <img
-        src={currentLang === 'en' ? "https://flagcdn.com/w20/us.png" : "https://flagcdn.com/w20/de.png"}
+        src={currentLang === "en" ? "https://flagcdn.com/w20/us.png" : "https://flagcdn.com/w20/de.png"}
         alt={currentLang.toUpperCase()}
         className="w-5 h-auto rounded-sm object-cover"
       />
@@ -54,13 +51,15 @@ const Navigation = ({ onContactClick }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+  const homePath = location.pathname.startsWith("/de") ? "/de" : "/";
+  const sectionBasePath = homePath === "/de" ? "/de" : "";
 
   const handleLogoClick = (e) => {
     e.preventDefault();
-    if (location.pathname === "/") {
+    if (location.pathname === homePath) {
       window.scrollTo({ top: 0, behavior: "smooth" });
     } else {
-      navigate("/");
+      navigate(homePath);
       setTimeout(() => {
         window.scrollTo({ top: 0, behavior: "smooth" });
       }, 0);
@@ -72,17 +71,15 @@ const Navigation = ({ onContactClick }) => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navLinks = [
-    { label: t('nav.services'), href: "/#services" },
-    { label: t('nav.howItWorks'), href: "/#how-it-works" },
-    { label: t('nav.industries'), href: "/#industries" },
-    { label: t('nav.whyUs'), href: "/#why-us" },
-    { label: t('nav.pricing'), href: "/#pricing" },
-    { label: t('nav.faq'), href: "/#faq" },
+    { label: t('nav.services'), href: `${sectionBasePath}/#services` },
+    { label: t('nav.howItWorks'), href: `${sectionBasePath}/#how-it-works` },
+    { label: t('nav.whyUs'), href: `${sectionBasePath}/#why-us` },
   ];
 
   return (
@@ -96,9 +93,8 @@ const Navigation = ({ onContactClick }) => {
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="flex items-center justify-between h-20">
-          {/* Logo */}
           <Link
-            to="/"
+            to={homePath}
             onClick={handleLogoClick}
             data-testid="logo"
             className="flex items-center"
@@ -110,7 +106,6 @@ const Navigation = ({ onContactClick }) => {
             />
           </Link>
 
-          {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
               <a
@@ -126,7 +121,6 @@ const Navigation = ({ onContactClick }) => {
 
           <div className="hidden lg:flex items-center gap-6">
             <LanguageToggle />
-            {/* CTA Button */}
             <button
               data-testid="nav-cta-button"
               onClick={onContactClick}
@@ -136,7 +130,6 @@ const Navigation = ({ onContactClick }) => {
             </button>
           </div>
 
-          {/* Mobile Menu Button */}
           <div className="lg:hidden flex items-center gap-4">
             <LanguageToggle />
             <button
@@ -150,7 +143,6 @@ const Navigation = ({ onContactClick }) => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div
           data-testid="mobile-menu"
