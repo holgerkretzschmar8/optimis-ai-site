@@ -99,11 +99,13 @@ const Navigation = ({ onContactClick }) => {
             data-testid="logo"
             className="flex items-center"
           >
-            <img
-              src={LOGO_URL}
-              alt="Optimis AI"
-              className="h-12 w-auto object-contain"
-            />
+            <div className="h-12 w-[170px] shrink-0 overflow-hidden lg:h-14 lg:w-[190px]">
+              <img
+                src={LOGO_URL}
+                alt="Optimis AI"
+                className="h-full w-full scale-[1.16] object-cover object-center"
+              />
+            </div>
           </Link>
 
           <div className="hidden lg:flex items-center gap-8">
