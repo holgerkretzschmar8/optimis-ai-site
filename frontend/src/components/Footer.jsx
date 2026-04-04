@@ -1,8 +1,10 @@
 import { Mail, Phone, MapPin, Linkedin, Twitter } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, Twitter } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 const LOGO_URL = "https://customer-assets.emergentagent.com/job_7f9de4cc-23e2-4dee-b34f-6c95288f12e2/artifacts/5siww960_Screenshot%202026-02-17%20at%2022.30.43.png";
+const VOXALIO_URL = "https://voxalio.de/";
 
 const Footer = ({ onContactClick }) => {
   const { t } = useTranslation();
@@ -12,7 +14,7 @@ const Footer = ({ onContactClick }) => {
   const links = {
     services: [
       { label: t('services.items.chatbots.title'), href: `${sectionBasePath}/#services` },
-      { label: t('services.items.voice.title'), href: `${sectionBasePath}/#services` },
+      { label: t('services.items.voice.title'), href: VOXALIO_URL, external: true },
       { label: t('services.items.workflow.title'), href: `${sectionBasePath}/#services` },
     ],
     company: [
@@ -73,6 +75,8 @@ const Footer = ({ onContactClick }) => {
                   <li key={link.label}>
                     <a
                       href={link.href}
+                      target={link.external ? "_blank" : undefined}
+                      rel={link.external ? "noreferrer" : undefined}
                       className="text-sm text-slate-400 hover:text-white transition-colors"
                     >
                       {link.label}

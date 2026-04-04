@@ -1,5 +1,8 @@
-import { Phone, MessageSquare, Workflow } from "lucide-react";
+import { Phone, MessageSquare, Workflow, ArrowUpRight } from "lucide-react";
+import { Phone, MessageSquare, Workflow, ArrowUpRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
+
+const VOXALIO_URL = "https://voxalio.de/";
 
 const ServicesSection = () => {
   const { t } = useTranslation();
@@ -15,6 +18,7 @@ const ServicesSection = () => {
       title: t('services.items.voice.title'),
       description: t('services.items.voice.description'),
       features: t('services.items.voice.features', { returnObjects: true }),
+      href: VOXALIO_URL,
     },
     {
       icon: Workflow,
@@ -47,33 +51,39 @@ const ServicesSection = () => {
         </div>
 
         <div className="grid md:grid-cols-3 gap-6">
-          {services.map((service, index) => (
-            <div
-              key={service.title}
-              data-testid={`service-card-${index}`}
-              className="service-card glass-card p-8 h-full"
-            >
-              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-500/20 to-blue-600/20 flex items-center justify-center mb-6">
-                <service.icon className="text-cyan-400" size={28} />
-              </div>
+          {services.map((service, index) => {
+            const CardComponent = service.href ? "a" : "div";
 
-              <h3 className="text-xl font-bold text-white mb-3">
-                {service.title}
-              </h3>
-              <p className="text-slate-400 mb-6 text-sm leading-relaxed">
-                {service.description}
-              </p>
+            return (
+              <CardComponent
+                key={service.title}
+                data-testid={`service-card-${index}`}
+                className="service-card glass-card p-8 h-full"
+                {...(service.href ? { href: service.href, target: "_blank", rel: "noreferrer" } : {})}
+              >
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-500/20 to-blue-600/20 flex items-center justify-center mb-6">
+                  <service.icon className="text-cyan-400" size={28} />
+                </div>
 
-              <ul className="space-y-2">
-                {service.features.map((feature) => (
-                  <li key={feature} className="flex items-center gap-2 text-sm text-slate-500">
-                    <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+                <h3 className="text-xl font-bold text-white mb-3 flex items-center gap-2">
+                  {service.title}
+                  {service.href && <ArrowUpRight size={18} className="text-cyan-400" />}
+                </h3>
+                <p className="text-slate-400 mb-6 text-sm leading-relaxed">
+                  {service.description}
+                </p>
+
+                <ul className="space-y-2">
+                  {service.features.map((feature) => (
+                    <li key={feature} className="flex items-center gap-2 text-sm text-slate-500">
+                      <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </CardComponent>
+            );
+          })}
         </div>
       </div>
     </section>
