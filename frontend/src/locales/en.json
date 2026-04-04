@@ -76,7 +76,7 @@
       "voice": {
         "title": "AI Voice Agents",
         "description": "Handle inbound calls, bookings, and support without relying on a human agent for every interaction.",
-        "linkHint": "Click the Voxalio logo to open the demo, enter your phone number, and receive an immediate call from the voice agent.",
+        "linkHint": "Click HERE to test the voice agent LIVE for yourself. Just enter your phone number, and receive an immediate call from the voice agent.",
         "features": ["Inbound call handling", "Booking and follow-up", "Human handoff when needed"]
       },
       "chatbots": {

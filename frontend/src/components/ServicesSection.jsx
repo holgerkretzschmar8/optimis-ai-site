@@ -2,7 +2,6 @@ import { Phone, MessageSquare, Workflow, ArrowUpRight, ArrowDownRight } from "lu
 import { useTranslation } from "react-i18next";
 
 const VOXALIO_URL = "https://voxalio.de/";
-const VOXALIO_LOGO_URL = "https://cdn.builder.io/api/v1/image/assets%2Fb6ada3fcbf6a4608a81d82bb64ba566b%2F731b8b9e1de94e0fa93e0fe77910d506?format=webp&width=800&height=1200";
 
 const ServicesSection = () => {
   const { t } = useTranslation();
@@ -59,20 +58,11 @@ const ServicesSection = () => {
                   <service.icon className="text-cyan-400" size={28} />
                 </div>
 
-                <div className="mb-4 flex items-start justify-between gap-4">
+                <div className="mb-4 flex items-center justify-between gap-4">
                   <h3 className="text-xl font-bold text-white flex items-center gap-2">
                     {service.title}
                     {service.href && <ArrowUpRight size={18} className="text-cyan-400" />}
                   </h3>
-
-                  {service.href && (
-                    <img
-                      src={VOXALIO_LOGO_URL}
-                      alt="Voxalio"
-                      className="h-10 w-auto shrink-0 object-contain"
-                      loading="lazy"
-                    />
-                  )}
                 </div>
 
                 <p className="text-slate-400 mb-4 text-sm leading-relaxed">

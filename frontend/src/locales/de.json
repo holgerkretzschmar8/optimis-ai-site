@@ -76,7 +76,7 @@
       "voice": {
         "title": "KI-Voice-Agents",
         "description": "Übernehmen eingehende Anrufe, Buchungen und Support, ohne dass Ihr Team jede Anfrage selbst bearbeiten muss.",
-        "linkHint": "Klicken Sie auf das Voxalio-Logo, öffnen Sie die Demo, geben Sie Ihre Telefonnummer ein und erhalten Sie sofort einen Anruf vom Voice Agent.",
+        "linkHint": "Klicken Sie HIER, um den Voice Agent LIVE selbst zu testen. Geben Sie einfach Ihre Telefonnummer ein und erhalten Sie sofort einen Anruf vom Voice Agent.",
         "features": ["Inbound-Anrufe bearbeiten", "Buchungen und Follow-ups", "Übergabe an Menschen bei Bedarf"]
       },
       "chatbots": {
