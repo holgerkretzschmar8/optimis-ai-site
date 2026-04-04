@@ -82,6 +82,8 @@
       "chatbots": {
         "title": "AI Chatbot Agents",
         "description": "Automate customer conversations, answer FAQs, and qualify leads on your website 24/7.",
+        "previewNote": "Try the chatbot in the bottom-right corner and have a real conversation with it.",
+        "previewAlt": "Guide showing the chatbot bubble and how to start a conversation",
         "features": ["24/7 website chat", "Lead qualification", "Instant FAQ support"]
       },
       "appointment": {

@@ -82,6 +82,8 @@
       "chatbots": {
         "title": "KI-Chatbot-Agents",
         "description": "Automatisieren Kundengespräche, beantworten FAQs und qualifizieren Leads rund um die Uhr auf Ihrer Website.",
+        "previewNote": "Testen Sie den Chatbot unten rechts und führen Sie direkt ein echtes Gespräch.",
+        "previewAlt": "Hinweisgrafik zur Chat-Blase und zum Starten eines Gesprächs",
         "features": ["24/7 Website-Chat", "Lead-Qualifizierung", "Sofortige FAQ-Antworten"]
       },
       "appointment": {

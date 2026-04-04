@@ -1,7 +1,8 @@
-import { Phone, MessageSquare, Workflow, ArrowUpRight } from "lucide-react";
+import { Phone, MessageSquare, Workflow, ArrowUpRight, ArrowDownRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 const VOXALIO_URL = "https://voxalio.de/";
+const CHATBOT_GUIDE_IMAGE = "https://cdn.builder.io/api/v1/image/assets%2Fb6ada3fcbf6a4608a81d82bb64ba566b%2F3f9d6227580d4ff1ae6139e226e9a6c7?format=webp&width=800&height=1200";
 
 const ServicesSection = () => {
   const { t } = useTranslation();
@@ -10,6 +11,8 @@ const ServicesSection = () => {
       icon: MessageSquare,
       title: t('services.items.chatbots.title'),
       description: t('services.items.chatbots.description'),
+      previewNote: t('services.items.chatbots.previewNote'),
+      previewAlt: t('services.items.chatbots.previewAlt'),
       features: t('services.items.chatbots.features', { returnObjects: true }),
     },
     {
@@ -65,6 +68,25 @@ const ServicesSection = () => {
                 <p className="text-slate-400 mb-4 text-sm leading-relaxed">
                   {service.description}
                 </p>
+
+                {service.previewNote && (
+                  <div className="mb-6 rounded-2xl border border-cyan-500/20 bg-cyan-500/10 px-4 py-3">
+                    <div className="flex items-start gap-3">
+                      <ArrowDownRight size={18} className="mt-0.5 shrink-0 text-cyan-400 animate-bounce" />
+                      <p className="text-sm leading-relaxed text-cyan-100">
+                        {service.previewNote}
+                      </p>
+                    </div>
+                    <div className="mt-4 overflow-hidden rounded-xl border border-white/10 bg-slate-950/80">
+                      <img
+                        src={CHATBOT_GUIDE_IMAGE}
+                        alt={service.previewAlt}
+                        className="h-auto w-full object-contain"
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
+                )}
 
                 {service.note && (
                   <p className="mb-6 rounded-2xl border border-cyan-500/20 bg-cyan-500/10 px-4 py-3 text-sm leading-relaxed text-cyan-100">
