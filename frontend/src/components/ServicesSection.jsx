@@ -66,14 +66,12 @@ const ServicesSection = () => {
                   </h3>
 
                   {service.href && (
-                    <div className="shrink-0 rounded-2xl border border-white/10 bg-white px-3 py-2 shadow-sm">
-                      <img
-                        src={VOXALIO_LOGO_URL}
-                        alt="Voxalio"
-                        className="h-9 w-auto object-contain"
-                        loading="lazy"
-                      />
-                    </div>
+                    <img
+                      src={VOXALIO_LOGO_URL}
+                      alt="Voxalio"
+                      className="h-10 w-auto shrink-0 object-contain"
+                      loading="lazy"
+                    />
                   )}
                 </div>
 
