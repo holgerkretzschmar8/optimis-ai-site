@@ -1,5 +1,4 @@
 import { Phone, MessageSquare, Workflow, ArrowUpRight } from "lucide-react";
-import { Phone, MessageSquare, Workflow, ArrowUpRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 const VOXALIO_URL = "https://voxalio.de/";
@@ -29,20 +28,13 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section
-      id="services"
-      data-testid="services-section"
-      className="section"
-    >
+    <section id="services" data-testid="services-section" className="section">
       <div className="container-custom">
         <div className="text-center mb-16">
           <p className="text-cyan-400 font-medium mb-4 uppercase tracking-wider text-sm">
             {t('services.badge')}
           </p>
-          <h2
-            data-testid="services-title"
-            className="text-3xl lg:text-4xl font-bold mb-6"
-          >
+          <h2 data-testid="services-title" className="text-3xl lg:text-4xl font-bold mb-6">
             {t('services.titleMain')} <span className="gradient-text">{t('services.titleGradient')}</span>
           </h2>
           <p className="text-slate-400 max-w-2xl mx-auto text-base lg:text-lg">

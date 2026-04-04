@@ -1,5 +1,4 @@
 import { Mail, Phone, MapPin, Linkedin, Twitter } from "lucide-react";
-import { Mail, Phone, MapPin, Linkedin, Twitter } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
@@ -30,10 +29,7 @@ const Footer = ({ onContactClick }) => {
   };
 
   return (
-    <footer
-      data-testid="footer"
-      className="bg-[#020617] border-t border-white/5"
-    >
+    <footer data-testid="footer" className="bg-[#020617] border-t border-white/5">
       <div className="container-custom pt-20 pb-10">
         <div className="grid md:grid-cols-2 lg:grid-cols-12 gap-12 mb-16">
           <div className="lg:col-span-4">
