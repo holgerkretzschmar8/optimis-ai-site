@@ -16,6 +16,7 @@ const ServicesSection = () => {
       icon: Phone,
       title: t('services.items.voice.title'),
       description: t('services.items.voice.description'),
+      note: t('services.items.voice.testNote'),
       features: t('services.items.voice.features', { returnObjects: true }),
       href: VOXALIO_URL,
     },
@@ -61,9 +62,15 @@ const ServicesSection = () => {
                   {service.title}
                   {service.href && <ArrowUpRight size={18} className="text-cyan-400" />}
                 </h3>
-                <p className="text-slate-400 mb-6 text-sm leading-relaxed">
+                <p className="text-slate-400 mb-4 text-sm leading-relaxed">
                   {service.description}
                 </p>
+
+                {service.note && (
+                  <p className="mb-6 rounded-2xl border border-cyan-500/20 bg-cyan-500/10 px-4 py-3 text-sm leading-relaxed text-cyan-100">
+                    {service.note}
+                  </p>
+                )}
 
                 <ul className="space-y-2">
                   {service.features.map((feature) => (
