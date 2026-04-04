@@ -1,4 +1,4 @@
-import { ArrowRight, ArrowDownRight, Play, Shield, Zap, Clock } from "lucide-react";
+import { ArrowRight, Play, Shield, Zap, Clock } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 const HeroSection = ({ onContactClick }) => {
@@ -141,18 +141,6 @@ const HeroSection = ({ onContactClick }) => {
             </a>
           </div>
 
-          {/* Chatbot Test Callout */}
-          <div className="flex justify-center lg:justify-end mb-10 animate-fade-in-up" style={{ animationDelay: "0.5s" }}>
-            <div className="flex max-w-xl items-start gap-4 rounded-2xl border border-cyan-500/20 bg-slate-900/70 px-5 py-4 text-left shadow-[0_0_30px_rgba(6,182,212,0.08)] backdrop-blur-sm">
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-cyan-500/10">
-                <ArrowDownRight size={24} className="text-cyan-400 animate-bounce" />
-              </div>
-              <div>
-                <p className="text-sm font-medium text-white">{t('hero.chatbotHintTitle')}</p>
-                <p className="text-sm leading-relaxed text-slate-400">{t('hero.chatbotHint')}</p>
-              </div>
-            </div>
-          </div>
 
           {/* Trust Indicators */}
           <div

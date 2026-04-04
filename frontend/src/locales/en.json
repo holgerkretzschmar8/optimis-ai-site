@@ -50,8 +50,6 @@
     "description": "You only invest once the results speak for themselves through practical voice agents, chatbot agents, and automation workflows.",
     "primaryCTA": "Book Your Free Consultation",
     "secondaryCTA": "See How It Works",
-    "chatbotHintTitle": "Try the chatbot yourself",
-    "chatbotHint": "Click the chat bubble in the bottom-right corner, start a conversation, and test how it responds in real time.",
     "trust": {
       "security": "Free initial consultation",
       "automation": "Free pilot phase",
@@ -82,6 +80,7 @@
       "chatbots": {
         "title": "AI Chatbot Agents",
         "description": "Automate customer conversations, answer FAQs, and qualify leads on your website 24/7.",
+        "linkHint": "Click HERE to test the chatbot LIVE for yourself. Open the chat bubble in the bottom-right corner and start a conversation with it.",
         "features": ["24/7 website chat", "Lead qualification", "Instant FAQ support"]
       },
       "appointment": {

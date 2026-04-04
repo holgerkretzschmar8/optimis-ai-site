@@ -10,6 +10,7 @@ const ServicesSection = () => {
       icon: MessageSquare,
       title: t('services.items.chatbots.title'),
       description: t('services.items.chatbots.description'),
+      linkHint: t('services.items.chatbots.linkHint'),
       features: t('services.items.chatbots.features', { returnObjects: true }),
     },
     {

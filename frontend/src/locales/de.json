@@ -50,8 +50,6 @@
     "description": "Sie investieren erst dann, wenn Voice Agents, Chatbot-Agents und Automations-Workflows ihren Mehrwert in der Praxis gezeigt haben.",
     "primaryCTA": "Kostenlose Beratung buchen",
     "secondaryCTA": "So funktioniert es",
-    "chatbotHintTitle": "Testen Sie den Chatbot selbst",
-    "chatbotHint": "Klicken Sie auf die Chat-Blase unten rechts, starten Sie ein Gespräch und erleben Sie die Antwort in Echtzeit.",
     "trust": {
       "security": "Kostenlose Erstberatung",
       "automation": "Kostenlose Pilotphase",
@@ -82,6 +80,7 @@
       "chatbots": {
         "title": "KI-Chatbot-Agents",
         "description": "Automatisieren Kundengespräche, beantworten FAQs und qualifizieren Leads rund um die Uhr auf Ihrer Website.",
+        "linkHint": "Klicken Sie HIER, um den Chatbot LIVE selbst zu testen. Öffnen Sie die Chat-Blase unten rechts und starten Sie ein Gespräch mit ihm.",
         "features": ["24/7 Website-Chat", "Lead-Qualifizierung", "Sofortige FAQ-Antworten"]
       },
       "appointment": {
