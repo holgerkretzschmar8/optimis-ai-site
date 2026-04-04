@@ -50,6 +50,8 @@
     "description": "Sie investieren erst dann, wenn Voice Agents, Chatbot-Agents und Automations-Workflows ihren Mehrwert in der Praxis gezeigt haben.",
     "primaryCTA": "Kostenlose Beratung buchen",
     "secondaryCTA": "So funktioniert es",
+    "chatbotHintTitle": "Testen Sie den Chatbot selbst",
+    "chatbotHint": "Klicken Sie auf die Chat-Blase unten rechts, starten Sie ein Gespräch und erleben Sie die Antwort in Echtzeit.",
     "trust": {
       "security": "Kostenlose Erstberatung",
       "automation": "Kostenlose Pilotphase",

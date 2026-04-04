@@ -1,4 +1,4 @@
-import { ArrowRight, Play, Shield, Zap, Clock } from "lucide-react";
+import { ArrowRight, ArrowDownRight, Play, Shield, Zap, Clock } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 const HeroSection = ({ onContactClick }) => {
@@ -119,8 +119,8 @@ const HeroSection = ({ onContactClick }) => {
           </p>
 
           {/* CTA Buttons */}
-          <div 
-            className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-fade-in-up"
+          <div
+            className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-fade-in-up"
             style={{ animationDelay: "0.4s" }}
           >
             <button
@@ -141,10 +141,23 @@ const HeroSection = ({ onContactClick }) => {
             </a>
           </div>
 
+          {/* Chatbot Test Callout */}
+          <div className="flex justify-center lg:justify-end mb-10 animate-fade-in-up" style={{ animationDelay: "0.5s" }}>
+            <div className="flex max-w-xl items-start gap-4 rounded-2xl border border-cyan-500/20 bg-slate-900/70 px-5 py-4 text-left shadow-[0_0_30px_rgba(6,182,212,0.08)] backdrop-blur-sm">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-cyan-500/10">
+                <ArrowDownRight size={24} className="text-cyan-400 animate-bounce" />
+              </div>
+              <div>
+                <p className="text-sm font-medium text-white">{t('hero.chatbotHintTitle')}</p>
+                <p className="text-sm leading-relaxed text-slate-400">{t('hero.chatbotHint')}</p>
+              </div>
+            </div>
+          </div>
+
           {/* Trust Indicators */}
-          <div 
+          <div
             className="flex flex-wrap gap-8 justify-center animate-fade-in-up"
-            style={{ animationDelay: "0.5s" }}
+            style={{ animationDelay: "0.6s" }}
           >
             {trustIndicators.map((item) => (
               <div
@@ -160,7 +173,7 @@ const HeroSection = ({ onContactClick }) => {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-fade-in-up" style={{ animationDelay: "0.6s" }}>
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-fade-in-up" style={{ animationDelay: "0.7s" }}>
         <div className="w-6 h-10 border-2 border-white/20 rounded-full flex justify-center">
           <div className="w-1.5 h-3 bg-cyan-400 rounded-full mt-2 animate-bounce" />
         </div>

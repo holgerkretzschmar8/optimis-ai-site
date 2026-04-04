@@ -50,6 +50,8 @@
     "description": "You only invest once the results speak for themselves through practical voice agents, chatbot agents, and automation workflows.",
     "primaryCTA": "Book Your Free Consultation",
     "secondaryCTA": "See How It Works",
+    "chatbotHintTitle": "Try the chatbot yourself",
+    "chatbotHint": "Click the chat bubble in the bottom-right corner, start a conversation, and test how it responds in real time.",
     "trust": {
       "security": "Free initial consultation",
       "automation": "Free pilot phase",
