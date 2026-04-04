@@ -99,7 +99,7 @@ const HeroSection = ({ onContactClick }) => {
               {t('hero.headline.that')}{" "}
               <span className="gradient-text animate-gradient">{t('hero.headline.line2')}</span>
             </span>
-            <span className="block text-white mt-2">{t('hero.headline.line3')}</span>
+            <span className="block text-white ml-[-1px] mt-[-1px]">{t('hero.headline.line3')}</span>
           </h1>
 
           {/* Subheadline */}
