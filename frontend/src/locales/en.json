@@ -1,11 +1,11 @@
 {
   "common": {
-    "siteTitle": "AI Automation Agency | Voice Agents, Chatbots & Workflow AI",
-    "siteDescription": "Enterprise AI automation agency building voice agents, AI chatbots, and workflow automation for modern businesses. Automate support, sales, and operations with AI.",
-    "keywords": "AI Automation, AI Voice Agents, Chatbots, Workflow Automation, AI Agency, Business Optimization",
-    "ogTitle": "AI Automation Agency | Voice Agents, Chatbots & Workflow AI",
-    "ogDescription": "Enterprise AI automation agency building voice agents, AI chatbots, and workflow automation for modern businesses. Automate support, sales, and operations with AI.",
-    "bookCall": "Book Strategy Call",
+    "siteTitle": "Optimis AI | Voice Agents, Chatbots & Automation Workflows",
+    "siteDescription": "Optimis AI helps businesses assess, build, and pilot AI voice agents, chatbot agents, and automation workflows with a zero-risk partnership model. Start with a free consultation and only invest after proven value.",
+    "keywords": "Optimis AI, AI voice agents, AI chatbot agents, automation workflows, AI agency, business automation",
+    "ogTitle": "Optimis AI | Voice Agents, Chatbots & Automation Workflows",
+    "ogDescription": "Optimis AI helps businesses assess, build, and pilot AI voice agents, chatbot agents, and automation workflows with a zero-risk partnership model.",
+    "bookCall": "Book Your Free Consultation",
     "strategyCall": "Strategy Call",
     "freeDemo": "Free Demo",
     "getStarted": "Get Started",
@@ -30,30 +30,30 @@
     "errorOccurred": "Something went wrong. Please try again."
   },
   "nav": {
-    "services": "Services",
+    "services": "What We Offer",
     "howItWorks": "How It Works",
     "industries": "Industries",
     "caseStudies": "Case Studies",
-    "whyUs": "Why Us",
+    "whyUs": "Why Optimis AI",
     "pricing": "Pricing",
     "faq": "FAQ"
   },
   "hero": {
-    "badge": "AI Automation Agency",
+    "badge": "Zero-Risk AI Partnership",
     "headline": {
       "line1": "Advanced AI Systems",
       "line2": "Optimize Revenue",
       "line3": "& Efficiency",
       "that": "That"
     },
-    "subheadline": "We design intelligent automation for modern businesses.",
-    "description": "Deploy AI voice agents, chatbots, and workflow automation that scale your business 24/7 without increasing overhead.",
-    "primaryCTA": "Book a Free Strategy Call",
+    "subheadline": "We prove our value before you pay anything.",
+    "description": "We partner with businesses to assess, build, and implement AI systems like chatbots, voice agents and custom workflow automations - starting completely free",
+    "primaryCTA": "Book Your Free Consultation",
     "secondaryCTA": "See How It Works",
     "trust": {
-      "security": "Enterprise-Grade Security",
-      "automation": "24/7 AI Automation",
-      "deployment": "Same-Week Deployment"
+      "security": "Free initial consultation",
+      "automation": "Free pilot phase",
+      "deployment": "Pay only after proven value"
     }
   },
   "socialProof": {
@@ -66,20 +66,22 @@
     "trustedBy": "Trusted by innovative companies"
   },
   "services": {
-    "badge": "Our Services",
-    "titleMain": "AI Solutions That",
-    "titleGradient": "Drive Results",
-    "description": "From voice agents to complete workflow automation, we build and deploy AI systems that work 24/7.",
+    "badge": "What We Offer",
+    "titleMain": "AI Systems Built",
+    "titleGradient": "Around Real Work",
+    "description": "We focus on practical AI systems that remove repetitive work and create value you can actually measure.",
     "items": {
       "voice": {
         "title": "AI Voice Agents",
-        "description": "Human-like inbound & outbound AI callers that qualify and close leads around the clock.",
-        "features": ["Natural conversations", "Multi-language support", "CRM integration"]
+        "description": "Handle inbound calls, bookings, and support without relying on a human agent for every interaction.",
+        "linkHint": "Click HERE to test the voice agent LIVE NOW. Just enter your phone number, and receive an immediate call from the voice agent.",
+        "features": ["Inbound call handling", "Booking and follow-up", "Human handoff when needed"]
       },
       "chatbots": {
-        "title": "AI Chatbots",
-        "description": "24/7 intelligent website chat automation that engages visitors and converts them to customers.",
-        "features": ["Instant responses", "Lead qualification", "Seamless handoff"]
+        "title": "AI Chatbot Agents",
+        "description": "Automate customer conversations, answer FAQs, and qualify leads on your website 24/7.",
+        "linkHint": "Click on the widget bubble on the bottom right of this page to start a conversation our chatbot agent RIGHT NOW.",
+        "features": ["24/7 website chat", "Lead qualification", "Instant FAQ support"]
       },
       "appointment": {
         "title": "AI Appointment Setters",
@@ -87,9 +89,9 @@
         "features": ["Smart scheduling", "Timezone aware", "Calendar sync"]
       },
       "workflow": {
-        "title": "Workflow Automation",
-        "description": "Integrate AI into CRMs, pipelines, and internal systems to eliminate manual tasks.",
-        "features": ["Process automation", "Data sync", "Custom triggers"]
+        "title": "Automation Workflows",
+        "description": "Connect your tools and processes so your team can focus on the work that matters most.",
+        "features": ["CRM and tool sync", "Task automation", "Custom workflow logic"]
       },
       "custom": {
         "title": "Custom AI Systems",
@@ -100,21 +102,21 @@
   },
   "howItWorks": {
     "badge": "How It Works",
-    "titleMain": "Your Path to",
-    "titleGradient": "AI Automation",
-    "description": "A proven 3-step process that transforms your business operations.",
+    "titleMain": "A Zero-Risk",
+    "titleGradient": "Launch Path",
+    "description": "We start by understanding your setup, then build a free pilot, and only talk commercial terms after the value is clear.",
     "steps": {
       "step1": {
-        "title": "Strategy & System Mapping",
-        "description": "We analyze your business processes, identify automation opportunities, and design a custom AI roadmap tailored to your goals."
+        "title": "Foundation Check (Free)",
+        "description": "We assess your current digital setup. If the basics are missing, we build or fix your website and you only cover the hosting costs."
       },
       "step2": {
-        "title": "Build & Integration",
-        "description": "Our team develops and integrates AI systems seamlessly with your existing tools, CRM, and workflows with zero disruption."
+        "title": "Pilot Phase (Free)",
+        "description": "We deploy and test AI agents tailored to your business, starting with a voice agent and a chatbot, and review the results together."
       },
       "step3": {
-        "title": "Launch, Optimize & Scale",
-        "description": "We deploy your AI systems, monitor performance, and continuously optimize to maximize ROI and scale with your growth."
+        "title": "Proven Results → Long-Term Partnership",
+        "description": "Once the agents create measurable value, we formalize the relationship. You grow, and we grow with you."
       }
     }
   },
@@ -178,22 +180,22 @@
     }
   },
   "whyUs": {
-    "badge": "Why Us",
-    "titleMain": "The Optimis",
-    "titleGradient": "Advantage",
-    "description": "We're not just another AI agency. We're your strategic partner in building intelligent systems that drive measurable business growth.",
+    "badge": "Why Optimis AI",
+    "titleMain": "We Build, Test,",
+    "titleGradient": "Then Earn Trust",
+    "description": "We don't believe in upselling systems that don't work.",
+    "statement": "That is why we start by listening, then building, then proving — in that order. No contracts, no pressure, no upfront fees. Just results.",
     "stats": {
       "deployed": "AI Systems Deployed",
       "retention": "Client Retention",
       "roi": "Average ROI"
     },
     "items": {
-      "models": { "title": "Enterprise-Grade AI Models", "description": "We use the latest GPT, Claude, and custom-trained models for superior performance." },
-      "custom": { "title": "Custom-Built Systems", "description": "No cookie-cutter templates. Every solution is engineered for your specific needs." },
-      "deployment": { "title": "Fast Deployment", "description": "Go live in days, not months. Our streamlined process gets you results quickly." },
-      "optimization": { "title": "Ongoing Optimization", "description": "We continuously monitor and improve your AI systems for peak performance." },
-      "support": { "title": "Dedicated Support Team", "description": "Your success is our priority. Get expert support whenever you need it." },
-      "performance": { "title": "Data-Driven Performance", "description": "Real-time analytics and reporting so you always know your ROI." }
+      "consultation": { "title": "Free initial consultation", "description": "We start by understanding your business, your tools, and where AI could realistically help." },
+      "website": { "title": "Free website setup if needed", "description": "If your digital foundation needs work first, we can build or fix it and you only cover hosting." },
+      "pilot": { "title": "Free pilot for voice and chatbot agents", "description": "We test practical AI systems in your business before asking you to commit." },
+      "commercial": { "title": "Commercial terms only after proven value", "description": "We only introduce a paid arrangement once the pilot shows clear business value." },
+      "partner": { "title": "Built for a long-term partnership", "description": "Our goal is to become your AI partner, not a one-off vendor pushing software." }
     }
   },
   "pricing": {
@@ -296,15 +298,15 @@
     }
   },
   "cta": {
-    "badge": "Limited Spots Available",
-    "titleMain": "Ready to Optimize Your",
-    "titleGradient": "Revenue With AI?",
-    "description": "Join the businesses that are already using AI to scale faster, reduce costs, and close more deals.",
-    "button": "Book Your Free Voice-Agent Demo",
-    "urgency": "Limited onboarding slots available monthly. Secure your spot today."
+    "badge": "Free Consultation",
+    "titleMain": "Ready to See What AI Can Do",
+    "titleGradient": "for Your Business?",
+    "description": "Start with a free consultation. No strings attached.",
+    "button": "Book Your Free Consultation",
+    "urgency": ""
   },
   "footer": {
-    "description": "Advanced AI automation systems that optimize revenue and efficiency for modern businesses.",
+    "description": "Voice agents, chatbot agents, and automation workflows delivered through a zero-risk partnership model.",
     "location": "Munich, Germany",
     "servicesTitle": "Services",
     "companyTitle": "Company",
@@ -312,8 +314,8 @@
     "copyright": "© {{year}} Optimis AI. All rights reserved."
   },
   "contactModal": {
-    "title": "Book Your Free Strategy Call",
-    "description": "Fill out the form below and we'll contact you within 24 hours.",
+    "title": "Book Your Free Consultation",
+    "description": "Tell us about your business and where you think AI could help. We will review your setup and recommend the best next step.",
     "labels": {
       "name": "Name *",
       "email": "Email *",
@@ -329,8 +331,8 @@
       "message": "Tell us about your company and what you want to achieve with AI..."
     },
     "gdpr": "I agree that my details from the contact form will be collected and processed to answer my request. The data will be deleted after your request has been processed. Note: You can revoke your consent at any time for the future by e-mail to info@optimis-ai.com. Detailed information on the handling of user data can be found in our",
-    "submit": "Book My Free Strategy Call",
-    "footer": "We typically respond within 2 hours during business hours."
+    "submit": "Book My Free Consultation",
+    "footer": "We usually reply within 24 hours."
   },
   "leadPopup": {
     "title": "Get Your Free AI Voice Agent Demo",

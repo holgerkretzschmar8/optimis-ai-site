@@ -99,7 +99,7 @@ const HeroSection = ({ onContactClick }) => {
               {t('hero.headline.that')}{" "}
               <span className="gradient-text animate-gradient">{t('hero.headline.line2')}</span>
             </span>
-            <span className="block text-white mt-2">{t('hero.headline.line3')}</span>
+            <span className="block text-white ml-[-1px] mt-[-1px]">{t('hero.headline.line3')}</span>
           </h1>
 
           {/* Subheadline */}
@@ -119,8 +119,8 @@ const HeroSection = ({ onContactClick }) => {
           </p>
 
           {/* CTA Buttons */}
-          <div 
-            className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-fade-in-up"
+          <div
+            className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-fade-in-up"
             style={{ animationDelay: "0.4s" }}
           >
             <button
@@ -141,10 +141,11 @@ const HeroSection = ({ onContactClick }) => {
             </a>
           </div>
 
+
           {/* Trust Indicators */}
-          <div 
+          <div
             className="flex flex-wrap gap-8 justify-center animate-fade-in-up"
-            style={{ animationDelay: "0.5s" }}
+            style={{ animationDelay: "0.6s" }}
           >
             {trustIndicators.map((item) => (
               <div
@@ -160,7 +161,7 @@ const HeroSection = ({ onContactClick }) => {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-fade-in-up" style={{ animationDelay: "0.6s" }}>
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-fade-in-up" style={{ animationDelay: "0.7s" }}>
         <div className="w-6 h-10 border-2 border-white/20 rounded-full flex justify-center">
           <div className="w-1.5 h-3 bg-cyan-400 rounded-full mt-2 animate-bounce" />
         </div>
