@@ -76,14 +76,12 @@
       "voice": {
         "title": "KI-Voice-Agents",
         "description": "Übernehmen eingehende Anrufe, Buchungen und Support, ohne dass Ihr Team jede Anfrage selbst bearbeiten muss.",
-        "testNote": "Sie möchten es testen? Klicken Sie auf den Voxalio-Link, geben Sie Ihre Telefonnummer ein und der Voice Agent ruft Sie sofort an.",
+        "linkHint": "Klicken Sie auf das Voxalio-Logo, öffnen Sie die Demo, geben Sie Ihre Telefonnummer ein und erhalten Sie sofort einen Anruf vom Voice Agent.",
         "features": ["Inbound-Anrufe bearbeiten", "Buchungen und Follow-ups", "Übergabe an Menschen bei Bedarf"]
       },
       "chatbots": {
         "title": "KI-Chatbot-Agents",
         "description": "Automatisieren Kundengespräche, beantworten FAQs und qualifizieren Leads rund um die Uhr auf Ihrer Website.",
-        "previewNote": "Testen Sie den Chatbot unten rechts und führen Sie direkt ein echtes Gespräch.",
-        "previewAlt": "Hinweisgrafik zur Chat-Blase und zum Starten eines Gesprächs",
         "features": ["24/7 Website-Chat", "Lead-Qualifizierung", "Sofortige FAQ-Antworten"]
       },
       "appointment": {

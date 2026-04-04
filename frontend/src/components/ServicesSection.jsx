@@ -2,7 +2,7 @@ import { Phone, MessageSquare, Workflow, ArrowUpRight, ArrowDownRight } from "lu
 import { useTranslation } from "react-i18next";
 
 const VOXALIO_URL = "https://voxalio.de/";
-const CHATBOT_GUIDE_IMAGE = "https://cdn.builder.io/api/v1/image/assets%2Fb6ada3fcbf6a4608a81d82bb64ba566b%2F3f9d6227580d4ff1ae6139e226e9a6c7?format=webp&width=800&height=1200";
+const VOXALIO_LOGO_URL = "https://cdn.builder.io/api/v1/image/assets%2Fb6ada3fcbf6a4608a81d82bb64ba566b%2F731b8b9e1de94e0fa93e0fe77910d506?format=webp&width=800&height=1200";
 
 const ServicesSection = () => {
   const { t } = useTranslation();
@@ -11,15 +11,13 @@ const ServicesSection = () => {
       icon: MessageSquare,
       title: t('services.items.chatbots.title'),
       description: t('services.items.chatbots.description'),
-      previewNote: t('services.items.chatbots.previewNote'),
-      previewAlt: t('services.items.chatbots.previewAlt'),
       features: t('services.items.chatbots.features', { returnObjects: true }),
     },
     {
       icon: Phone,
       title: t('services.items.voice.title'),
       description: t('services.items.voice.description'),
-      note: t('services.items.voice.testNote'),
+      linkHint: t('services.items.voice.linkHint'),
       features: t('services.items.voice.features', { returnObjects: true }),
       href: VOXALIO_URL,
     },
@@ -61,37 +59,32 @@ const ServicesSection = () => {
                   <service.icon className="text-cyan-400" size={28} />
                 </div>
 
-                <h3 className="text-xl font-bold text-white mb-3 flex items-center gap-2">
-                  {service.title}
-                  {service.href && <ArrowUpRight size={18} className="text-cyan-400" />}
-                </h3>
+                <div className="mb-4 flex items-start justify-between gap-4">
+                  <h3 className="text-xl font-bold text-white flex items-center gap-2">
+                    {service.title}
+                    {service.href && <ArrowUpRight size={18} className="text-cyan-400" />}
+                  </h3>
+
+                  {service.href && (
+                    <div className="shrink-0 rounded-2xl border border-white/10 bg-white px-3 py-2 shadow-sm">
+                      <img
+                        src={VOXALIO_LOGO_URL}
+                        alt="Voxalio"
+                        className="h-9 w-auto object-contain"
+                        loading="lazy"
+                      />
+                    </div>
+                  )}
+                </div>
+
                 <p className="text-slate-400 mb-4 text-sm leading-relaxed">
                   {service.description}
                 </p>
 
-                {service.previewNote && (
-                  <div className="mb-6 rounded-2xl border border-cyan-500/20 bg-cyan-500/10 px-4 py-3">
-                    <div className="flex items-start gap-3">
-                      <ArrowDownRight size={18} className="mt-0.5 shrink-0 text-cyan-400 animate-bounce" />
-                      <p className="text-sm leading-relaxed text-cyan-100">
-                        {service.previewNote}
-                      </p>
-                    </div>
-                    <div className="mt-4 overflow-hidden rounded-xl border border-white/10 bg-slate-950/80">
-                      <img
-                        src={CHATBOT_GUIDE_IMAGE}
-                        alt={service.previewAlt}
-                        className="h-auto w-full object-contain"
-                        loading="lazy"
-                      />
-                    </div>
+                {service.linkHint && (
+                  <div className="mb-6 rounded-2xl border border-cyan-500/20 bg-cyan-500/10 px-4 py-3 text-sm leading-relaxed text-cyan-100">
+                    {service.linkHint}
                   </div>
-                )}
-
-                {service.note && (
-                  <p className="mb-6 rounded-2xl border border-cyan-500/20 bg-cyan-500/10 px-4 py-3 text-sm leading-relaxed text-cyan-100">
-                    {service.note}
-                  </p>
                 )}
 
                 <ul className="space-y-2">
