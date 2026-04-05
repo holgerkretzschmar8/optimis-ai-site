@@ -8,6 +8,8 @@ import AdminLogin from "@/pages/AdminLogin";
 import AdminDashboard from "@/pages/AdminDashboard";
 import TermsOfService from "@/pages/TermsOfService";
 import PrivacyPolicy from "@/pages/PrivacyPolicy";
+import KiBeratungPage from "@/pages/KiBeratungPage";
+import ImpressumPage from "@/pages/ImpressumPage";
 
 const LocaleManager = () => {
   const { i18n } = useTranslation();
@@ -31,6 +33,10 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/de" element={<LandingPage />} />
+          <Route path="/ki-beratung" element={<KiBeratungPage />} />
+          <Route path="/de/ki-beratung" element={<KiBeratungPage />} />
+          <Route path="/impressum" element={<ImpressumPage />} />
+          <Route path="/de/impressum" element={<ImpressumPage />} />
           <Route path="/admin/login" element={<AdminLogin />} />
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
