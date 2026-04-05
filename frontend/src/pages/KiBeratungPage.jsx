@@ -13,6 +13,7 @@ import {
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { useEffect, useState } from "react";
 
 const LOGO_URL = "https://customer-assets.emergentagent.com/job_7f9de4cc-23e2-4dee-b34f-6c95288f12e2/artifacts/5siww960_Screenshot%202026-02-17%20at%2022.30.43.png";
 const FORMSPREE_URL = "https://formspree.io/f/mqedjvzr";
@@ -176,6 +177,11 @@ const KiBeratungPage = () => {
       });
 
       setIsSubmitted(true);
+
+      if (typeof window.gtag === "function") {
+        window.gtag("event", "conversion", {"send_to": "AW-18065908893/CKLVCK7wpZYcEJ3Jv6ZD", "value": 1.0, "currency": "EUR"});
+      }
+
       setFormData({
         firstName: "",
         lastName: "",
