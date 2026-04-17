@@ -11,7 +11,7 @@ import {
   Workflow,
 } from "lucide-react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 const LOGO_URL = "https://customer-assets.emergentagent.com/job_7f9de4cc-23e2-4dee-b34f-6c95288f12e2/artifacts/5siww960_Screenshot%202026-02-17%20at%2022.30.43.png";
 const FORMSPREE_URL = "https://formspree.io/f/mqedjvzr";
@@ -73,6 +73,7 @@ const interestOptions = [
 ];
 
 const KiBeratungPage = () => {
+  const location = useLocation();
   const { i18n } = useTranslation();
   const [formData, setFormData] = useState({
     firstName: "",
@@ -469,8 +470,18 @@ const KiBeratungPage = () => {
         <div className="container-custom py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-slate-500">© {new Date().getFullYear()} Optimis AI</p>
           <div className="flex items-center gap-6">
-            <Link to="/impressum" className="ki-beratung-footer-link">Impressum</Link>
-            <Link to="/de/privacy-policy" className="ki-beratung-footer-link">Datenschutz</Link>
+            <Link
+              to={location.pathname.startsWith('/en') ? '/en/imprint' : '/impressum'}
+              className="ki-beratung-footer-link"
+            >
+              Impressum
+            </Link>
+            <Link
+              to={location.pathname.startsWith('/en') ? '/en/privacy-policy' : '/privacy-policy'}
+              className="ki-beratung-footer-link"
+            >
+              Datenschutz
+            </Link>
           </div>
         </div>
       </footer>

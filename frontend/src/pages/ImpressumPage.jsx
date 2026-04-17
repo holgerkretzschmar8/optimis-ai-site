@@ -1,10 +1,13 @@
 import { useEffect } from "react";
 import { Mail, Phone } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const LOGO_URL = "https://customer-assets.emergentagent.com/job_7f9de4cc-23e2-4dee-b34f-6c95288f12e2/artifacts/5siww960_Screenshot%202026-02-17%20at%2022.30.43.png";
 
 const ImpressumPage = () => {
+  const location = useLocation();
+  const isEnglish = location.pathname.startsWith('/en');
+
   useEffect(() => {
     window.scrollTo(0, 0);
 
@@ -46,12 +49,8 @@ const ImpressumPage = () => {
       tag.setAttribute("href", href);
     };
 
-    const englishAlternate = document.querySelector('link[rel="alternate"][hreflang="en"]');
-    if (englishAlternate) {
-      englishAlternate.remove();
-    }
-
     ensureAlternateLink("de", "https://www.optimis-ai.com/impressum");
+    ensureAlternateLink("en", "https://www.optimis-ai.com/en/imprint");
     ensureAlternateLink("x-default", "https://www.optimis-ai.com/impressum");
 
     let canonicalTag = document.querySelector('link[rel="canonical"]');
@@ -60,10 +59,13 @@ const ImpressumPage = () => {
       canonicalTag.setAttribute("rel", "canonical");
       document.head.appendChild(canonicalTag);
     }
-    canonicalTag.setAttribute("href", "https://www.optimis-ai.com/impressum");
+    const canonicalUrl = isEnglish
+      ? "https://www.optimis-ai.com/en/imprint"
+      : "https://www.optimis-ai.com/impressum";
+    canonicalTag.setAttribute("href", canonicalUrl);
 
-    document.documentElement.lang = "de";
-  }, []);
+    document.documentElement.lang = isEnglish ? "en" : "de";
+  }, [isEnglish]);
 
   return (
     <div className="min-h-screen bg-[#020617] relative flex flex-col">
@@ -124,8 +126,12 @@ const ImpressumPage = () => {
           </div>
 
           <div className="mt-10 flex flex-wrap items-center gap-6 text-sm">
-            <Link to="/ki-beratung" className="ki-beratung-footer-link">Zurück zur KI-Beratung</Link>
-            <Link to="/de/privacy-policy" className="ki-beratung-footer-link">Datenschutz</Link>
+            <Link to={isEnglish ? '/en/ai-consulting' : '/ki-beratung'} className="ki-beratung-footer-link">
+              {isEnglish ? 'Back to AI Consulting' : 'Zurück zur KI-Beratung'}
+            </Link>
+            <Link to={isEnglish ? '/en/privacy-policy' : '/privacy-policy'} className="ki-beratung-footer-link">
+              {isEnglish ? 'Privacy Policy' : 'Datenschutz'}
+            </Link>
           </div>
         </div>
       </main>

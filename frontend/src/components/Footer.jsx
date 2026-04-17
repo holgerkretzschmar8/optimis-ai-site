@@ -8,7 +8,7 @@ const VOXALIO_URL = "https://voxalio.de/";
 const Footer = ({ onContactClick }) => {
   const { t } = useTranslation();
   const location = useLocation();
-  const sectionBasePath = location.pathname.startsWith("/de") ? "/de" : "";
+  const sectionBasePath = location.pathname.startsWith("/en") ? "/en" : "";
 
   const links = {
     services: [

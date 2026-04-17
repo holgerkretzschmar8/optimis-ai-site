@@ -49,8 +49,8 @@ const TermsOfService = () => {
       tag.setAttribute(attr, content);
     };
 
-    updateLinkTag('link[hreflang="en"]', 'href', 'https://www.optimis-ai.com/terms-of-service');
-    updateLinkTag('link[hreflang="de"]', 'href', 'https://www.optimis-ai.com/de/terms-of-service');
+    updateLinkTag('link[hreflang="de"]', 'href', 'https://www.optimis-ai.com/terms-of-service');
+    updateLinkTag('link[hreflang="en"]', 'href', 'https://www.optimis-ai.com/en/terms-of-service');
     updateLinkTag('link[hreflang="x-default"]', 'href', 'https://www.optimis-ai.com/terms-of-service');
 
     // Update Canonical Tag
@@ -60,8 +60,8 @@ const TermsOfService = () => {
       canonicalTag.setAttribute('rel', 'canonical');
       document.head.appendChild(canonicalTag);
     }
-    const canonicalUrl = i18n.language === 'de'
-      ? 'https://www.optimis-ai.com/de/terms-of-service'
+    const canonicalUrl = i18n.language === 'en'
+      ? 'https://www.optimis-ai.com/en/terms-of-service'
       : 'https://www.optimis-ai.com/terms-of-service';
     canonicalTag.setAttribute('href', canonicalUrl);
 

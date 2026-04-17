@@ -16,11 +16,14 @@ const LocaleManager = () => {
   const location = useLocation();
 
   useEffect(() => {
-    if (location.pathname.startsWith('/de')) {
+    if (location.pathname.startsWith('/en')) {
+      i18n.changeLanguage('en');
+      document.documentElement.lang = 'en';
+    } else {
       i18n.changeLanguage('de');
+      document.documentElement.lang = 'de';
     }
-    document.documentElement.lang = i18n.language;
-  }, [i18n.language, location.pathname, i18n]);
+  }, [location.pathname, i18n]);
 
   return null;
 };
@@ -31,18 +34,23 @@ function App() {
       <BrowserRouter>
         <LocaleManager />
         <Routes>
+          {/* German routes (default — no prefix) */}
           <Route path="/" element={<LandingPage />} />
-          <Route path="/de" element={<LandingPage />} />
           <Route path="/ki-beratung" element={<KiBeratungPage />} />
-          <Route path="/de/ki-beratung" element={<KiBeratungPage />} />
           <Route path="/impressum" element={<ImpressumPage />} />
-          <Route path="/de/impressum" element={<ImpressumPage />} />
+          <Route path="/terms-of-service" element={<TermsOfService />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+
+          {/* English routes (/en prefix) */}
+          <Route path="/en" element={<LandingPage />} />
+          <Route path="/en/ai-consulting" element={<KiBeratungPage />} />
+          <Route path="/en/imprint" element={<ImpressumPage />} />
+          <Route path="/en/terms-of-service" element={<TermsOfService />} />
+          <Route path="/en/privacy-policy" element={<PrivacyPolicy />} />
+
+          {/* Admin routes */}
           <Route path="/admin/login" element={<AdminLogin />} />
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
-          <Route path="/terms-of-service" element={<TermsOfService />} />
-          <Route path="/de/terms-of-service" element={<TermsOfService />} />
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="/de/privacy-policy" element={<PrivacyPolicy />} />
         </Routes>
       </BrowserRouter>
       <Toaster position="top-right" richColors />

@@ -7,22 +7,25 @@ const LOGO_URL = "https://customer-assets.emergentagent.com/job_7f9de4cc-23e2-4d
 
 const LanguageToggle = () => {
   const { i18n } = useTranslation();
-  const currentLang = i18n.language || "en";
   const location = useLocation();
   const navigate = useNavigate();
 
+  // Active language determined by URL path
+  const isEnglish = location.pathname.startsWith('/en');
+  const activeLanguage = isEnglish ? 'en' : 'de';
+
   const toggleLanguage = () => {
-    const nextLang = currentLang === "en" ? "de" : "en";
     let nextPath = location.pathname;
 
-    if (nextLang === "de") {
-      if (!nextPath.startsWith("/de")) {
-        nextPath = `/de${nextPath === "/" ? "" : nextPath}`;
-      }
-    } else if (nextPath.startsWith("/de")) {
-      nextPath = nextPath.replace(/^\/de/, "") || "/";
+    if (isEnglish) {
+      // Switching to German - remove /en prefix
+      nextPath = nextPath.replace(/^\/en/, '') || '/';
+    } else {
+      // Switching to English - add /en prefix
+      nextPath = nextPath === '/' ? '/en' : `/en${nextPath}`;
     }
 
+    const nextLang = isEnglish ? 'de' : 'en';
     i18n.changeLanguage(nextLang);
     navigate(nextPath);
   };
@@ -34,12 +37,12 @@ const LanguageToggle = () => {
       aria-label="Toggle Language"
     >
       <img
-        src={currentLang === "en" ? "https://flagcdn.com/w20/us.png" : "https://flagcdn.com/w20/de.png"}
-        alt={currentLang.toUpperCase()}
+        src={activeLanguage === "en" ? "https://flagcdn.com/w20/us.png" : "https://flagcdn.com/w20/de.png"}
+        alt={activeLanguage.toUpperCase()}
         className="w-5 h-auto rounded-sm object-cover"
       />
       <span className="text-xs font-bold text-slate-300 group-hover:text-white uppercase">
-        {currentLang}
+        {activeLanguage}
       </span>
     </button>
   );
@@ -51,8 +54,8 @@ const Navigation = ({ onContactClick }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
-  const homePath = location.pathname.startsWith("/de") ? "/de" : "/";
-  const sectionBasePath = homePath === "/de" ? "/de" : "";
+  const homePath = location.pathname.startsWith("/en") ? "/en" : "/";
+  const sectionBasePath = location.pathname.startsWith("/en") ? "/en" : "";
 
   const handleLogoClick = (e) => {
     e.preventDefault();

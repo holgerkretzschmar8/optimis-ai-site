@@ -1,0 +1,7 @@
+{
+  "redirects": [
+    { "source": "/de", "destination": "/", "permanent": true },
+    { "source": "/de/:path*", "destination": "/:path*", "permanent": true },
+    { "source": "/en/ki-beratung", "destination": "/en/ai-consulting", "permanent": true }
+  ]
+}
