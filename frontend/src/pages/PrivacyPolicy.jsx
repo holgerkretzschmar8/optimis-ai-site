@@ -49,8 +49,8 @@ const PrivacyPolicy = () => {
       tag.setAttribute(attr, content);
     };
 
-    updateLinkTag('link[hreflang="en"]', 'href', 'https://www.optimis-ai.com/privacy-policy');
-    updateLinkTag('link[hreflang="de"]', 'href', 'https://www.optimis-ai.com/de/privacy-policy');
+    updateLinkTag('link[hreflang="de"]', 'href', 'https://www.optimis-ai.com/privacy-policy');
+    updateLinkTag('link[hreflang="en"]', 'href', 'https://www.optimis-ai.com/en/privacy-policy');
     updateLinkTag('link[hreflang="x-default"]', 'href', 'https://www.optimis-ai.com/privacy-policy');
 
     // Update Canonical Tag
@@ -60,8 +60,8 @@ const PrivacyPolicy = () => {
       canonicalTag.setAttribute('rel', 'canonical');
       document.head.appendChild(canonicalTag);
     }
-    const canonicalUrl = i18n.language === 'de'
-      ? 'https://www.optimis-ai.com/de/privacy-policy'
+    const canonicalUrl = i18n.language === 'en'
+      ? 'https://www.optimis-ai.com/en/privacy-policy'
       : 'https://www.optimis-ai.com/privacy-policy';
     canonicalTag.setAttribute('href', canonicalUrl);
 
