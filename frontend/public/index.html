@@ -19,27 +19,52 @@
   <!-- Canonical -->
   <link rel="canonical" href="https://www.optimis-ai.com/" />
 
-  <!-- Hreflang -->
+  <!-- Hreflang: German is default, English is explicit /en -->
   <link rel="alternate" hreflang="de" href="https://www.optimis-ai.com/" />
   <link rel="alternate" hreflang="en" href="https://www.optimis-ai.com/en" />
   <link rel="alternate" hreflang="x-default" href="https://www.optimis-ai.com/" />
 
-  <!-- Robots -->
+  <!-- Robots: noindex on preview/staging, noindex on privacy pages -->
   <meta name="robots" content="index, follow" id="robots-meta" />
   <script>
-    if (window.location.hostname.indexOf("vercel.app") !== -1 ||
-        window.location.hostname.indexOf("preview") !== -1 ||
-        window.location.hostname.indexOf("localhost") !== -1 ||
-        window.location.hostname.indexOf("127.0.0.1") !== -1) {
-        var robots = document.getElementById("robots-meta");
-        if (robots) robots.setAttribute("content", "noindex, nofollow");
-    }
+    (function() {
+      var host = window.location.hostname;
+      var path = window.location.pathname;
+      var robots = document.getElementById("robots-meta");
+      if (!robots) return;
+      // Noindex on preview/staging environments
+      if (host.indexOf("vercel.app") !== -1 ||
+          host.indexOf("preview") !== -1 ||
+          host.indexOf("localhost") !== -1 ||
+          host.indexOf("127.0.0.1") !== -1) {
+        robots.setAttribute("content", "noindex, nofollow");
+        return;
+      }
+      // Noindex privacy policy pages
+      if (path === "/privacy-policy" ||
+          path === "/en/privacy-policy" ||
+          path === "/de/privacy-policy") {
+        robots.setAttribute("content", "noindex, nofollow");
+      }
+    })();
   </script>
 
+  <!-- Dynamic lang attribute based on URL -->
+  <script>
+    (function() {
+      if (window.location.pathname.startsWith('/en')) {
+        document.documentElement.lang = 'en';
+      } else {
+        document.documentElement.lang = 'de';
+      }
+    })();
+  </script>
+
+  <!-- German meta as default (Google indexes this) -->
   <meta name="description"
     content="Optimis AI unterstützt Unternehmen mit KI-Sprachagenten, Chatbots und Workflow-Automatisierung beim Skalieren." />
   <meta name="keywords"
-    content="KI-Automatisierung, KI-Voice-Agents, Chatbots, Workflow-Automatisierung, KI-Agentur, Business-Optimierung" />
+    content="KI-Automatisierung, KI-Voice-Agents, Chatbots, Workflow-Automatisierung, KI-Agentur, Business-Optimierung, KI-Beratung, Automatisierung München" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Optimis AI | KI-Automatisierungsagentur für Unternehmen" />
@@ -52,6 +77,7 @@
   <meta property="og:image:height" content="630" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="de_DE" />
+  <meta property="og:locale:alternate" content="en_US" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
@@ -63,16 +89,17 @@
 
   <!-- Schema.org -->
   <script type="application/ld+json">
-  {
+    {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": "ProfessionalService",
     "name": "Optimis AI",
     "url": "https://www.optimis-ai.com/",
     "logo": "https://www.optimis-ai.com/apple-touch-icon.png",
     "description": "Optimis AI ist eine KI-Automatisierungsagentur für Unternehmen mit KI-Sprachagenten, Chatbots und Workflow-Automatisierung.",
+    "areaServed": ["DE", "AT", "CH"],
+    "availableLanguage": ["German", "English"],
     "sameAs": [
-      "https://www.linkedin.com/company/optimis-ai",
-      "https://github.com/holgerkretzschmar8/optimis-ai-site"
+      "https://www.linkedin.com/company/optimis-ai"
     ]
   }
   </script>
@@ -96,11 +123,13 @@
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18065908893"></script>
-  <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-18065908893');</script>
+  <script>
+    window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-18065908893');
+  </script>
 </head>
 
 <body>
-  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <noscript>JavaScript muss aktiviert sein, um diese App zu nutzen.</noscript>
   <div id="root"></div>
 
   <!-- PostHog Analytics -->
@@ -165,10 +194,24 @@
   <!-- Optimis AI Chatbot Widget -->
   <script>
     (function () {
+        var isEN = window.location.pathname.startsWith('/en');
         var API_URL  = "https://optimis-ai-site.vercel.app/api/chat";
         var ACCENT   = "#0EA5E9";
         var BOT_NAME = "Optimis Assistant";
-        var GREETING = "Hallo! Ich bin der Optimis AI Assistent 👋 Wie kann ich Ihnen helfen?";
+        var GREETING = isEN
+            ? "Hello! I'm the Optimis AI Assistant 👋 How can I help you?"
+            : "Hallo! Ich bin der Optimis AI Assistent 👋 Wie kann ich Ihnen helfen?";
+        var TYPING_TEXT = isEN ? BOT_NAME + " is typing…" : BOT_NAME + " schreibt…";
+        var PLACEHOLDER = isEN ? "Type a message…" : "Nachricht eingeben…";
+        var ERROR_MSG = isEN
+            ? "Something went wrong. Please try again."
+            : "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.";
+        var FETCH_ERROR = isEN
+            ? "Sorry, I couldn't get a response."
+            : "Entschuldigung, ich konnte keine Antwort abrufen.";
+        var CLOSE_LABEL = isEN ? "Close" : "Schließen";
+        var CHAT_LABEL  = isEN ? "Open chat" : "Chat öffnen";
+        var SEND_LABEL  = isEN ? "Send" : "Senden";
 
         var sessionId = sessionStorage.getItem("optimis_chat_session");
         if (!sessionId) {
@@ -207,7 +250,7 @@
         var fab = document.createElement("button");
         fab.id = "optimis-fab";
         fab.innerHTML = '<svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>';
-        fab.setAttribute("aria-label", "Chat öffnen");
+        fab.setAttribute("aria-label", CHAT_LABEL);
 
         var win = document.createElement("div");
         win.id = "optimis-win";
@@ -216,12 +259,12 @@
             '<div id="optimis-header">' +
                 '<div class="avatar">✦</div>' +
                 '<div class="info"><div class="name">' + BOT_NAME + '</div><div class="status">● Online</div></div>' +
-                '<button class="close" id="optimis-close" aria-label="Schließen">×</button>' +
+                '<button class="close" id="optimis-close" aria-label="' + CLOSE_LABEL + '">×</button>' +
             '</div>' +
             '<div id="optimis-msgs"></div>' +
             '<div id="optimis-footer">' +
-                '<input id="optimis-input" type="text" placeholder="Nachricht eingeben…" autocomplete="off" />' +
-                '<button id="optimis-send" aria-label="Senden"><svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg></button>' +
+                '<input id="optimis-input" type="text" placeholder="' + PLACEHOLDER + '" autocomplete="off" />' +
+                '<button id="optimis-send" aria-label="' + SEND_LABEL + '"><svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg></button>' +
             '</div>';
 
         document.body.appendChild(fab);
@@ -242,7 +285,7 @@
             var el = document.createElement("div");
             el.className = "opt-typing";
             el.id = "optimis-typing";
-            el.textContent = BOT_NAME + " schreibt…";
+            el.textContent = TYPING_TEXT;
             msgs.appendChild(el);
             msgs.scrollTop = msgs.scrollHeight;
         }
@@ -265,18 +308,18 @@
             fetch(API_URL, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ messages: history, sessionId: sessionId })
+                body: JSON.stringify({ messages: history, sessionId: sessionId, lang: isEN ? 'en' : 'de' })
             })
             .then(function(r) { return r.json(); })
             .then(function(data) {
                 removeTyping();
-                var reply = data.message || "Entschuldigung, ich konnte keine Antwort abrufen.";
+                var reply = data.message || FETCH_ERROR;
                 addMessage(reply, "bot");
                 history.push({ role: "assistant", content: reply });
             })
             .catch(function() {
                 removeTyping();
-                addMessage("Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.", "bot");
+                addMessage(ERROR_MSG, "bot");
             });
         }
 
