@@ -212,6 +212,9 @@
         var CLOSE_LABEL = isEN ? "Close" : "Schließen";
         var CHAT_LABEL  = isEN ? "Open chat" : "Chat öffnen";
         var SEND_LABEL  = isEN ? "Send" : "Senden";
+        var PRIVACY_HTML = isEN
+            ? 'Details you share are only used to contact you. <a href="/en/privacy-policy" target="_blank" rel="noopener">Privacy policy</a>'
+            : 'Ihre Angaben nutzen wir nur zur Kontaktaufnahme. <a href="/privacy-policy" target="_blank" rel="noopener">Datenschutzerklärung</a>';
 
         var sessionId = sessionStorage.getItem("optimis_chat_session");
         if (!sessionId) {
@@ -243,7 +246,11 @@
             "#optimis-input{flex:1;border:1px solid #e5e7eb;border-radius:8px;padding:8px 11px;font-size:13px;outline:none;color:#111;background:#f9f9fb;}",
             "#optimis-input:focus{border-color:" + ACCENT + ";}",
             "#optimis-send{background:" + ACCENT + ";border:none;border-radius:8px;width:36px;height:36px;cursor:pointer;display:flex;align-items:center;justify-content:center;}",
-            "#optimis-send svg{width:16px;height:16px;fill:white;}"
+            "#optimis-send svg{width:16px;height:16px;fill:white;}",
+            ".opt-action{align-self:flex-start;display:inline-block;background:" + ACCENT + ";color:#fff !important;text-decoration:none;font-size:13.5px;font-weight:600;padding:9px 14px;border-radius:10px;}",
+            ".opt-action:hover{filter:brightness(1.08);}",
+            "#optimis-privacy{font-size:10.5px;color:#9ca3af;padding:0 12px 8px;background:#fff;line-height:1.4;}",
+            "#optimis-privacy a{color:#6b7280;text-decoration:underline;}"
         ].join("");
         document.head.appendChild(style);
 
@@ -265,7 +272,8 @@
             '<div id="optimis-footer">' +
                 '<input id="optimis-input" type="text" placeholder="' + PLACEHOLDER + '" autocomplete="off" />' +
                 '<button id="optimis-send" aria-label="' + SEND_LABEL + '"><svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg></button>' +
-            '</div>';
+            '</div>' +
+            '<div id="optimis-privacy">' + PRIVACY_HTML + '</div>';
 
         document.body.appendChild(fab);
         document.body.appendChild(win);
@@ -279,6 +287,18 @@
             msgs.appendChild(el);
             msgs.scrollTop = msgs.scrollHeight;
             return el;
+        }
+
+        function addAction(action) {
+            if (!action || action.type !== "link" || !/^https:\/\//.test(action.url || "")) return;
+            var a = document.createElement("a");
+            a.className = "opt-action";
+            a.href = action.url;
+            a.target = "_blank";
+            a.rel = "noopener";
+            a.textContent = action.label || "📅";
+            msgs.appendChild(a);
+            msgs.scrollTop = msgs.scrollHeight;
         }
 
         function showTyping() {
@@ -315,6 +335,7 @@
                 removeTyping();
                 var reply = data.message || FETCH_ERROR;
                 addMessage(reply, "bot");
+                addAction(data.action);
                 history.push({ role: "assistant", content: reply });
             })
             .catch(function() {
